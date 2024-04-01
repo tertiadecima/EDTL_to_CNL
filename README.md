@@ -1,0 +1,2 @@
+Контекстно-свободная грамматика в формате BNF формате, разработанная в среде Eclipse при помощи библиотеки XText. Грамматика описывает все возможные представления формул LTL-семантики для EDTL на естественном (английском) языке.
+Полная LTL-семантика выглядит как как G ((trig ∧ (¬ rel)) → ((inv ∧ (¬ fin)) W (fin ∧ ((inv ∧ (¬ del)) W (rel v (inv ∧ rea)))))). Ее представление на естественном языке выглядит как “After <trigger>, <invariant> should remain valid until either <release> or <reaction>, which must occur within <delay> from <final>”.
