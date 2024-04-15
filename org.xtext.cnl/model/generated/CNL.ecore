@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cNL" nsURI="http://www.xtext.org/example/CNL" nsPrefix="cNL">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declVarInput" upperBound="-1"
+        eType="#//DeclVarInput" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declVarOutput" upperBound="-1"
+        eType="#//DeclVarOutput" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentDeclaration" upperBound="-1"
+        eType="#//SentDeclaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reqDeclaration" upperBound="-1"
+        eType="#//ReqDeclaration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReqDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="#//Trig"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv_always"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trig">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inv">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inv_always">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelRea">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reaction" eType="#//Reaction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DelFin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Delay"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclVarInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varDecls" upperBound="-1"
+        eType="#//VarDeclaration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclVarOutput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varDecls" upperBound="-1"
+        eType="#//VarDeclaration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VarDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SentDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//XorExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XorExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpression" eSuperTypes="#//XorExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="andOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompExpression" eSuperTypes="#//AndExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compOp" eType="#//CompOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EquExpression" eSuperTypes="#//CompExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="equOp" eType="#//EquOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EquOperator">
+    <eLiterals name="EQUAL" literal="=="/>
+    <eLiterals name="NOT_EQUAL" value="1" literal="&lt;>"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompOperator">
+    <eLiterals name="LESS" literal="&lt;"/>
+    <eLiterals name="GREATER" value="1" literal=">"/>
+    <eLiterals name="LESS_EQU" value="2" literal="&lt;="/>
+    <eLiterals name="GREATER_EQU" value="3" literal=">="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnExpression" eSuperTypes="#//EquExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TauExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//TimeLiteral"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpression" eSuperTypes="#//UnExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tau" eType="#//TauExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestExpr" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rel" eSuperTypes="#//RelRea">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rea" eSuperTypes="#//RelRea #//Reaction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rea" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sentence" eSuperTypes="#//DelFin">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//Delay"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Del" eSuperTypes="#//Delay">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="del" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclSent" eSuperTypes="#//SentDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sentenceDeclaration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicExpression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
