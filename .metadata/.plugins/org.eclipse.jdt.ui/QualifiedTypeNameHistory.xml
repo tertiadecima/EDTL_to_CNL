@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.validation.Check"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.Expression"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.xtext.generator.parser.antlr.splitting.simpleExpressions.Comparison"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.Model"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.VarDeclaration"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.DeclVarInput"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.DeclVarOutput"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.CompExpression"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.ReqDeclaration"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.ReqDeclaration.SentDeclaration"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.Reaction"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.Sentence"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.CNLPackage"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.xtext.example.cNL.SentDeclaration"/>
+</qualifiedTypeNameHistroy>
