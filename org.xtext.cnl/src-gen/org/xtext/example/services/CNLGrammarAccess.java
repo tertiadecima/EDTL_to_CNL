@@ -799,13 +799,39 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class SentenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.Sentence");
 		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSentenceAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameID_or_INTEGERParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Sentence:
+		//    {Sentence}
+		//    name=ID_or_INTEGER
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Sentence}
+		//name=ID_or_INTEGER
+		public Group getGroup() { return cGroup; }
+		
+		//{Sentence}
+		public Action getSentenceAction_0() { return cSentenceAction_0; }
+		
+		//name=ID_or_INTEGER
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID_or_INTEGER
+		public RuleCall getNameID_or_INTEGERParserRuleCall_1_0() { return cNameID_or_INTEGERParserRuleCall_1_0; }
+	}
+	public class ID_or_INTEGERElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.ID_or_INTEGER");
+		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
 		private final RuleCall cINTEGERTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
 		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//Sentence:
+		//ID_or_INTEGER:
 		//    '"' (ID | INTEGER)+ '"'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -982,33 +1008,32 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class SentDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.SentDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cDeclSentAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cSentDeclarationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSENTENCEKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cSentenceDeclarationAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSentenceDeclarationSentenceParserRuleCall_3_0 = (RuleCall)cSentenceDeclarationAssignment_3.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cLogicExpressionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLogicExpressionExpressionParserRuleCall_5_0 = (RuleCall)cLogicExpressionAssignment_5.eContents().get(0);
-		private final Keyword cEND_SENTENCEKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final RuleCall cSentenceDeclarationSentenceDeclarationParserRuleCall_3_0 = (RuleCall)cSentenceDeclarationAssignment_3.eContents().get(0);
+		private final Keyword cEND_SENTENCEKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//// объявление предложения
 		//SentDeclaration:
-		//    {DeclSent}
-		//    'SENTENCE' name=ID
-		//    sentenceDeclaration=Sentence '=' logicExpression=Expression
+		//    {SentDeclaration}
+		//    'SENTENCE'
+		//    name=ID
+		//    sentenceDeclaration=SentenceDeclaration
 		//    'END_SENTENCE';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DeclSent}
-		//'SENTENCE' name=ID
-		//sentenceDeclaration=Sentence '=' logicExpression=Expression
+		//{SentDeclaration}
+		//'SENTENCE'
+		//name=ID
+		//sentenceDeclaration=SentenceDeclaration
 		//'END_SENTENCE'
 		public Group getGroup() { return cGroup; }
 		
-		//{DeclSent}
-		public Action getDeclSentAction_0() { return cDeclSentAction_0; }
+		//{SentDeclaration}
+		public Action getSentDeclarationAction_0() { return cSentDeclarationAction_0; }
 		
 		//'SENTENCE'
 		public Keyword getSENTENCEKeyword_1() { return cSENTENCEKeyword_1; }
@@ -1019,23 +1044,51 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
-		//sentenceDeclaration=Sentence
+		//sentenceDeclaration=SentenceDeclaration
 		public Assignment getSentenceDeclarationAssignment_3() { return cSentenceDeclarationAssignment_3; }
 		
-		//Sentence
-		public RuleCall getSentenceDeclarationSentenceParserRuleCall_3_0() { return cSentenceDeclarationSentenceParserRuleCall_3_0; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
-		
-		//logicExpression=Expression
-		public Assignment getLogicExpressionAssignment_5() { return cLogicExpressionAssignment_5; }
-		
-		//Expression
-		public RuleCall getLogicExpressionExpressionParserRuleCall_5_0() { return cLogicExpressionExpressionParserRuleCall_5_0; }
+		//SentenceDeclaration
+		public RuleCall getSentenceDeclarationSentenceDeclarationParserRuleCall_3_0() { return cSentenceDeclarationSentenceDeclarationParserRuleCall_3_0; }
 		
 		//'END_SENTENCE'
-		public Keyword getEND_SENTENCEKeyword_6() { return cEND_SENTENCEKeyword_6; }
+		public Keyword getEND_SENTENCEKeyword_4() { return cEND_SENTENCEKeyword_4; }
+	}
+	public class SentenceDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.SentenceDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSentenceDeclarationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSentenceParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLogicExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLogicExpressionExpressionParserRuleCall_3_0 = (RuleCall)cLogicExpressionAssignment_3.eContents().get(0);
+		
+		//SentenceDeclaration:
+		//    {SentenceDeclaration}
+		//    name=Sentence '=' logicExpression=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SentenceDeclaration}
+		//name=Sentence '=' logicExpression=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//{SentenceDeclaration}
+		public Action getSentenceDeclarationAction_0() { return cSentenceDeclarationAction_0; }
+		
+		//name=Sentence
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//Sentence
+		public RuleCall getNameSentenceParserRuleCall_1_0() { return cNameSentenceParserRuleCall_1_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//logicExpression=Expression
+		public Assignment getLogicExpressionAssignment_3() { return cLogicExpressionAssignment_3; }
+		
+		//Expression
+		public RuleCall getLogicExpressionExpressionParserRuleCall_3_0() { return cLogicExpressionExpressionParserRuleCall_3_0; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.Expression");
@@ -1565,12 +1618,14 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final DelFinElements pDelFin;
 	private final DelayElements pDelay;
 	private final SentenceElements pSentence;
+	private final ID_or_INTEGERElements pID_or_INTEGER;
 	private final CommaElements pComma;
 	private final VariableTypeElements pVariableType;
 	private final DeclVarInputElements pDeclVarInput;
 	private final DeclVarOutputElements pDeclVarOutput;
 	private final VarDeclarationElements pVarDeclaration;
 	private final SentDeclarationElements pSentDeclaration;
+	private final SentenceDeclarationElements pSentenceDeclaration;
 	private final ExpressionElements pExpression;
 	private final TerminalRule tOR_OPERATOR;
 	private final XorExpressionElements pXorExpression;
@@ -1625,12 +1680,14 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pDelFin = new DelFinElements();
 		this.pDelay = new DelayElements();
 		this.pSentence = new SentenceElements();
+		this.pID_or_INTEGER = new ID_or_INTEGERElements();
 		this.pComma = new CommaElements();
 		this.pVariableType = new VariableTypeElements();
 		this.pDeclVarInput = new DeclVarInputElements();
 		this.pDeclVarOutput = new DeclVarOutputElements();
 		this.pVarDeclaration = new VarDeclarationElements();
 		this.pSentDeclaration = new SentDeclarationElements();
+		this.pSentenceDeclaration = new SentenceDeclarationElements();
 		this.pExpression = new ExpressionElements();
 		this.tOR_OPERATOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.CNL.OR_OPERATOR");
 		this.pXorExpression = new XorExpressionElements();
@@ -1849,7 +1906,8 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Sentence:
-	//    '"' (ID | INTEGER)+ '"'
+	//    {Sentence}
+	//    name=ID_or_INTEGER
 	//;
 	public SentenceElements getSentenceAccess() {
 		return pSentence;
@@ -1857,6 +1915,17 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getSentenceRule() {
 		return getSentenceAccess().getRule();
+	}
+	
+	//ID_or_INTEGER:
+	//    '"' (ID | INTEGER)+ '"'
+	//;
+	public ID_or_INTEGERElements getID_or_INTEGERAccess() {
+		return pID_or_INTEGER;
+	}
+	
+	public ParserRule getID_or_INTEGERRule() {
+		return getID_or_INTEGERAccess().getRule();
 	}
 	
 	//Comma: ',';
@@ -1917,9 +1986,10 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//// объявление предложения
 	//SentDeclaration:
-	//    {DeclSent}
-	//    'SENTENCE' name=ID
-	//    sentenceDeclaration=Sentence '=' logicExpression=Expression
+	//    {SentDeclaration}
+	//    'SENTENCE'
+	//    name=ID
+	//    sentenceDeclaration=SentenceDeclaration
 	//    'END_SENTENCE';
 	public SentDeclarationElements getSentDeclarationAccess() {
 		return pSentDeclaration;
@@ -1927,6 +1997,17 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getSentDeclarationRule() {
 		return getSentDeclarationAccess().getRule();
+	}
+	
+	//SentenceDeclaration:
+	//    {SentenceDeclaration}
+	//    name=Sentence '=' logicExpression=Expression;
+	public SentenceDeclarationElements getSentenceDeclarationAccess() {
+		return pSentenceDeclaration;
+	}
+	
+	public ParserRule getSentenceDeclarationRule() {
+		return getSentenceDeclarationAccess().getRule();
 	}
 	
 	//Expression:

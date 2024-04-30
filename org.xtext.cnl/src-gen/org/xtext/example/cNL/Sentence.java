@@ -15,6 +15,7 @@ package org.xtext.example.cNL;
  * <ul>
  *   <li>{@link org.xtext.example.cNL.Sentence#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.Sentence#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.cNL.CNLPackage#getSentence()
@@ -46,25 +47,47 @@ public interface Sentence extends DelFin
   void setDelay(Delay value);
 
   /**
-   * Returns the value of the '<em><b>Fin</b></em>' attribute.
+   * Returns the value of the '<em><b>Fin</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fin</em>' attribute.
-   * @see #setFin(String)
+   * @return the value of the '<em>Fin</em>' containment reference.
+   * @see #setFin(Sentence)
    * @see org.xtext.example.cNL.CNLPackage#getSentence_Fin()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getFin();
+  Sentence getFin();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fin</em>' attribute.
+   * @param value the new value of the '<em>Fin</em>' containment reference.
    * @see #getFin()
    * @generated
    */
-  void setFin(String value);
+  void setFin(Sentence value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.cNL.CNLPackage#getSentence_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
 } // Sentence

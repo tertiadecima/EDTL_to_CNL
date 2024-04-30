@@ -76,10 +76,12 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
       case CNLPackage.REACTION: return createReaction();
       case CNLPackage.DEL_FIN: return createDelFin();
       case CNLPackage.DELAY: return createDelay();
+      case CNLPackage.SENTENCE: return createSentence();
       case CNLPackage.DECL_VAR_INPUT: return createDeclVarInput();
       case CNLPackage.DECL_VAR_OUTPUT: return createDeclVarOutput();
       case CNLPackage.VAR_DECLARATION: return createVarDeclaration();
       case CNLPackage.SENT_DECLARATION: return createSentDeclaration();
+      case CNLPackage.SENTENCE_DECLARATION: return createSentenceDeclaration();
       case CNLPackage.EXPRESSION: return createExpression();
       case CNLPackage.XOR_EXPRESSION: return createXorExpression();
       case CNLPackage.AND_EXPRESSION: return createAndExpression();
@@ -91,9 +93,7 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
       case CNLPackage.PRIMARY_EXPRESSION: return createPrimaryExpression();
       case CNLPackage.REL: return createRel();
       case CNLPackage.REA: return createRea();
-      case CNLPackage.SENTENCE: return createSentence();
       case CNLPackage.DEL: return createDel();
-      case CNLPackage.DECL_SENT: return createDeclSent();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -263,6 +263,18 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
    * @generated
    */
   @Override
+  public Sentence createSentence()
+  {
+    SentenceImpl sentence = new SentenceImpl();
+    return sentence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DeclVarInput createDeclVarInput()
   {
     DeclVarInputImpl declVarInput = new DeclVarInputImpl();
@@ -303,6 +315,18 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
   {
     SentDeclarationImpl sentDeclaration = new SentDeclarationImpl();
     return sentDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SentenceDeclaration createSentenceDeclaration()
+  {
+    SentenceDeclarationImpl sentenceDeclaration = new SentenceDeclarationImpl();
+    return sentenceDeclaration;
   }
 
   /**
@@ -443,34 +467,10 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
    * @generated
    */
   @Override
-  public Sentence createSentence()
-  {
-    SentenceImpl sentence = new SentenceImpl();
-    return sentence;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Del createDel()
   {
     DelImpl del = new DelImpl();
     return del;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DeclSent createDeclSent()
-  {
-    DeclSentImpl declSent = new DeclSentImpl();
-    return declSent;
   }
 
   /**

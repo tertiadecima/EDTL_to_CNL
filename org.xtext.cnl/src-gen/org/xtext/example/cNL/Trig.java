@@ -27,26 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Trig extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Trig</b></em>' attribute.
+   * Returns the value of the '<em><b>Trig</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Trig</em>' attribute.
-   * @see #setTrig(String)
+   * @return the value of the '<em>Trig</em>' containment reference.
+   * @see #setTrig(Sentence)
    * @see org.xtext.example.cNL.CNLPackage#getTrig_Trig()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getTrig();
+  Sentence getTrig();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Trig#getTrig <em>Trig</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.Trig#getTrig <em>Trig</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Trig</em>' attribute.
+   * @param value the new value of the '<em>Trig</em>' containment reference.
    * @see #getTrig()
    * @generated
    */
-  void setTrig(String value);
+  void setTrig(Sentence value);
 
   /**
    * Returns the value of the '<em><b>Invariant</b></em>' containment reference.

@@ -16,7 +16,6 @@ import org.xtext.example.cNL.CNLFactory;
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.CompExpression;
 import org.xtext.example.cNL.CompOperator;
-import org.xtext.example.cNL.DeclSent;
 import org.xtext.example.cNL.DeclVarInput;
 import org.xtext.example.cNL.DeclVarOutput;
 import org.xtext.example.cNL.Del;
@@ -37,6 +36,7 @@ import org.xtext.example.cNL.ReqDeclaration;
 import org.xtext.example.cNL.Requirement;
 import org.xtext.example.cNL.SentDeclaration;
 import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 import org.xtext.example.cNL.TauExpression;
 import org.xtext.example.cNL.TimeLiteral;
 import org.xtext.example.cNL.Trig;
@@ -127,6 +127,13 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass sentenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass declVarInputEClass = null;
 
   /**
@@ -149,6 +156,13 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   private EClass sentDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sentenceDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -232,21 +246,7 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sentenceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass delEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass declSentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -462,9 +462,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getTrig_Trig()
+  public EReference getTrig_Trig()
   {
-    return (EAttribute)trigEClass.getEStructuralFeatures().get(0);
+    return (EReference)trigEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -517,9 +517,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getInv_Inv()
+  public EReference getInv_Inv()
   {
-    return (EAttribute)invEClass.getEStructuralFeatures().get(0);
+    return (EReference)invEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -561,9 +561,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getInv_always_Inv()
+  public EReference getInv_always_Inv()
   {
-    return (EAttribute)inv_alwaysEClass.getEStructuralFeatures().get(0);
+    return (EReference)inv_alwaysEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -641,6 +641,50 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
   public EClass getDelay()
   {
     return delayEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSentence()
+  {
+    return sentenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSentence_Delay()
+  {
+    return (EReference)sentenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSentence_Fin()
+  {
+    return (EReference)sentenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSentence_Name()
+  {
+    return (EAttribute)sentenceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -729,6 +773,61 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
   public EClass getSentDeclaration()
   {
     return sentDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSentDeclaration_Name()
+  {
+    return (EAttribute)sentDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSentDeclaration_SentenceDeclaration()
+  {
+    return (EReference)sentDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSentenceDeclaration()
+  {
+    return sentenceDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSentenceDeclaration_Name()
+  {
+    return (EReference)sentenceDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSentenceDeclaration_LogicExpression()
+  {
+    return (EReference)sentenceDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -990,9 +1089,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getRel_Rel()
+  public EReference getRel_Rel()
   {
-    return (EAttribute)relEClass.getEStructuralFeatures().get(0);
+    return (EReference)relEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1012,42 +1111,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getRea_Rea()
+  public EReference getRea_Rea()
   {
-    return (EAttribute)reaEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getSentence()
-  {
-    return sentenceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSentence_Delay()
-  {
-    return (EReference)sentenceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getSentence_Fin()
-  {
-    return (EAttribute)sentenceEClass.getEStructuralFeatures().get(1);
+    return (EReference)reaEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1067,53 +1133,9 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
    * @generated
    */
   @Override
-  public EAttribute getDel_Del()
+  public EReference getDel_Del()
   {
-    return (EAttribute)delEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getDeclSent()
-  {
-    return declSentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDeclSent_Name()
-  {
-    return (EAttribute)declSentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDeclSent_SentenceDeclaration()
-  {
-    return (EAttribute)declSentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDeclSent_LogicExpression()
-  {
-    return (EReference)declSentEClass.getEStructuralFeatures().get(2);
+    return (EReference)delEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1184,18 +1206,18 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     createEReference(requirementEClass, REQUIREMENT__INVARIANT);
 
     trigEClass = createEClass(TRIG);
-    createEAttribute(trigEClass, TRIG__TRIG);
+    createEReference(trigEClass, TRIG__TRIG);
     createEReference(trigEClass, TRIG__INVARIANT);
     createEReference(trigEClass, TRIG__RELEASE_REACTION);
     createEReference(trigEClass, TRIG__DELAY_FINAL);
 
     invEClass = createEClass(INV);
-    createEAttribute(invEClass, INV__INV);
+    createEReference(invEClass, INV__INV);
     createEReference(invEClass, INV__DELAY_FINAL);
     createEReference(invEClass, INV__RELEASE_REACTION);
 
     inv_alwaysEClass = createEClass(INV_ALWAYS);
-    createEAttribute(inv_alwaysEClass, INV_ALWAYS__INV);
+    createEReference(inv_alwaysEClass, INV_ALWAYS__INV);
     createEReference(inv_alwaysEClass, INV_ALWAYS__RELEASE_REACTION);
 
     relReaEClass = createEClass(REL_REA);
@@ -1208,6 +1230,11 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
 
     delayEClass = createEClass(DELAY);
 
+    sentenceEClass = createEClass(SENTENCE);
+    createEReference(sentenceEClass, SENTENCE__DELAY);
+    createEReference(sentenceEClass, SENTENCE__FIN);
+    createEAttribute(sentenceEClass, SENTENCE__NAME);
+
     declVarInputEClass = createEClass(DECL_VAR_INPUT);
     createEReference(declVarInputEClass, DECL_VAR_INPUT__VAR_DECLS);
 
@@ -1219,6 +1246,12 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     createEAttribute(varDeclarationEClass, VAR_DECLARATION__TYPE);
 
     sentDeclarationEClass = createEClass(SENT_DECLARATION);
+    createEAttribute(sentDeclarationEClass, SENT_DECLARATION__NAME);
+    createEReference(sentDeclarationEClass, SENT_DECLARATION__SENTENCE_DECLARATION);
+
+    sentenceDeclarationEClass = createEClass(SENTENCE_DECLARATION);
+    createEReference(sentenceDeclarationEClass, SENTENCE_DECLARATION__NAME);
+    createEReference(sentenceDeclarationEClass, SENTENCE_DECLARATION__LOGIC_EXPRESSION);
 
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__LEFT);
@@ -1252,22 +1285,13 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     createEReference(primaryExpressionEClass, PRIMARY_EXPRESSION__NEST_EXPR);
 
     relEClass = createEClass(REL);
-    createEAttribute(relEClass, REL__REL);
+    createEReference(relEClass, REL__REL);
 
     reaEClass = createEClass(REA);
-    createEAttribute(reaEClass, REA__REA);
-
-    sentenceEClass = createEClass(SENTENCE);
-    createEReference(sentenceEClass, SENTENCE__DELAY);
-    createEAttribute(sentenceEClass, SENTENCE__FIN);
+    createEReference(reaEClass, REA__REA);
 
     delEClass = createEClass(DEL);
-    createEAttribute(delEClass, DEL__DEL);
-
-    declSentEClass = createEClass(DECL_SENT);
-    createEAttribute(declSentEClass, DECL_SENT__NAME);
-    createEAttribute(declSentEClass, DECL_SENT__SENTENCE_DECLARATION);
-    createEReference(declSentEClass, DECL_SENT__LOGIC_EXPRESSION);
+    createEReference(delEClass, DEL__DEL);
 
     // Create enums
     equOperatorEEnum = createEEnum(EQU_OPERATOR);
@@ -1303,6 +1327,7 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    sentenceEClass.getESuperTypes().add(this.getDelFin());
     xorExpressionEClass.getESuperTypes().add(this.getExpression());
     andExpressionEClass.getESuperTypes().add(this.getXorExpression());
     compExpressionEClass.getESuperTypes().add(this.getAndExpression());
@@ -1312,9 +1337,7 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     relEClass.getESuperTypes().add(this.getRelRea());
     reaEClass.getESuperTypes().add(this.getRelRea());
     reaEClass.getESuperTypes().add(this.getReaction());
-    sentenceEClass.getESuperTypes().add(this.getDelFin());
     delEClass.getESuperTypes().add(this.getDelay());
-    declSentEClass.getESuperTypes().add(this.getSentDeclaration());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1332,18 +1355,18 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     initEReference(getRequirement_Invariant(), this.getInv_always(), null, "invariant", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(trigEClass, Trig.class, "Trig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTrig_Trig(), ecorePackage.getEString(), "trig", null, 0, 1, Trig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTrig_Trig(), this.getSentence(), null, "trig", null, 0, 1, Trig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTrig_Invariant(), this.getInv(), null, "invariant", null, 0, 1, Trig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTrig_Release_reaction(), this.getRelRea(), null, "release_reaction", null, 0, 1, Trig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTrig_Delay_final(), this.getDelFin(), null, "delay_final", null, 0, 1, Trig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(invEClass, Inv.class, "Inv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInv_Inv(), ecorePackage.getEString(), "inv", null, 0, 1, Inv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInv_Inv(), this.getSentence(), null, "inv", null, 0, 1, Inv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInv_Delay_final(), this.getDelFin(), null, "delay_final", null, 0, 1, Inv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInv_Release_reaction(), this.getRelRea(), null, "release_reaction", null, 0, 1, Inv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inv_alwaysEClass, Inv_always.class, "Inv_always", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInv_always_Inv(), ecorePackage.getEString(), "inv", null, 0, 1, Inv_always.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInv_always_Inv(), this.getSentence(), null, "inv", null, 0, 1, Inv_always.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInv_always_Release_reaction(), this.getRelRea(), null, "release_reaction", null, 0, 1, Inv_always.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relReaEClass, RelRea.class, "RelRea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1356,6 +1379,11 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
 
     initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(sentenceEClass, Sentence.class, "Sentence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSentence_Delay(), this.getDelay(), null, "delay", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSentence_Fin(), this.getSentence(), null, "fin", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSentence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(declVarInputEClass, DeclVarInput.class, "DeclVarInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDeclVarInput_VarDecls(), this.getVarDeclaration(), null, "varDecls", null, 0, -1, DeclVarInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1367,6 +1395,12 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     initEAttribute(getVarDeclaration_Type(), ecorePackage.getEString(), "type", null, 0, 1, VarDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sentDeclarationEClass, SentDeclaration.class, "SentDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSentDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, SentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSentDeclaration_SentenceDeclaration(), this.getSentenceDeclaration(), null, "sentenceDeclaration", null, 0, 1, SentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sentenceDeclarationEClass, SentenceDeclaration.class, "SentenceDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSentenceDeclaration_Name(), this.getSentence(), null, "name", null, 0, 1, SentenceDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSentenceDeclaration_LogicExpression(), this.getExpression(), null, "logicExpression", null, 0, 1, SentenceDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_Left(), this.getExpression(), null, "left", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1400,22 +1434,13 @@ public class CNLPackageImpl extends EPackageImpl implements CNLPackage
     initEReference(getPrimaryExpression_NestExpr(), this.getExpression(), null, "nestExpr", null, 0, 1, PrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(relEClass, Rel.class, "Rel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRel_Rel(), ecorePackage.getEString(), "rel", null, 0, 1, Rel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRel_Rel(), this.getSentence(), null, "rel", null, 0, 1, Rel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reaEClass, Rea.class, "Rea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRea_Rea(), ecorePackage.getEString(), "rea", null, 0, 1, Rea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(sentenceEClass, Sentence.class, "Sentence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSentence_Delay(), this.getDelay(), null, "delay", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSentence_Fin(), ecorePackage.getEString(), "fin", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRea_Rea(), this.getSentence(), null, "rea", null, 0, 1, Rea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(delEClass, Del.class, "Del", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDel_Del(), ecorePackage.getEString(), "del", null, 0, 1, Del.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(declSentEClass, DeclSent.class, "DeclSent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeclSent_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeclSent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeclSent_SentenceDeclaration(), ecorePackage.getEString(), "sentenceDeclaration", null, 0, 1, DeclSent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclSent_LogicExpression(), this.getExpression(), null, "logicExpression", null, 0, 1, DeclSent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDel_Del(), this.getSentence(), null, "del", null, 0, 1, Del.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(equOperatorEEnum, EquOperator.class, "EquOperator");

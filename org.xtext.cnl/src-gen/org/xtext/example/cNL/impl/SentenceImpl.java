@@ -25,6 +25,7 @@ import org.xtext.example.cNL.Sentence;
  * <ul>
  *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getFin <em>Fin</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,24 +43,34 @@ public class SentenceImpl extends DelFinImpl implements Sentence
   protected Delay delay;
 
   /**
-   * The default value of the '{@link #getFin() <em>Fin</em>}' attribute.
+   * The cached value of the '{@link #getFin() <em>Fin</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFin()
    * @generated
    * @ordered
    */
-  protected static final String FIN_EDEFAULT = null;
+  protected Sentence fin;
 
   /**
-   * The cached value of the '{@link #getFin() <em>Fin</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFin()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String fin = FIN_EDEFAULT;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,7 +149,7 @@ public class SentenceImpl extends DelFinImpl implements Sentence
    * @generated
    */
   @Override
-  public String getFin()
+  public Sentence getFin()
   {
     return fin;
   }
@@ -148,13 +159,63 @@ public class SentenceImpl extends DelFinImpl implements Sentence
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFin(String newFin)
+  public NotificationChain basicSetFin(Sentence newFin, NotificationChain msgs)
   {
-    String oldFin = fin;
+    Sentence oldFin = fin;
     fin = newFin;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, oldFin, fin));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, oldFin, newFin);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFin(Sentence newFin)
+  {
+    if (newFin != fin)
+    {
+      NotificationChain msgs = null;
+      if (fin != null)
+        msgs = ((InternalEObject)fin).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE__FIN, null, msgs);
+      if (newFin != null)
+        msgs = ((InternalEObject)newFin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE__FIN, null, msgs);
+      msgs = basicSetFin(newFin, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, newFin, newFin));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__NAME, oldName, name));
   }
 
   /**
@@ -169,6 +230,8 @@ public class SentenceImpl extends DelFinImpl implements Sentence
     {
       case CNLPackage.SENTENCE__DELAY:
         return basicSetDelay(null, msgs);
+      case CNLPackage.SENTENCE__FIN:
+        return basicSetFin(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -187,6 +250,8 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         return getDelay();
       case CNLPackage.SENTENCE__FIN:
         return getFin();
+      case CNLPackage.SENTENCE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -205,7 +270,10 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         setDelay((Delay)newValue);
         return;
       case CNLPackage.SENTENCE__FIN:
-        setFin((String)newValue);
+        setFin((Sentence)newValue);
+        return;
+      case CNLPackage.SENTENCE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -225,7 +293,10 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         setDelay((Delay)null);
         return;
       case CNLPackage.SENTENCE__FIN:
-        setFin(FIN_EDEFAULT);
+        setFin((Sentence)null);
+        return;
+      case CNLPackage.SENTENCE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -244,7 +315,9 @@ public class SentenceImpl extends DelFinImpl implements Sentence
       case CNLPackage.SENTENCE__DELAY:
         return delay != null;
       case CNLPackage.SENTENCE__FIN:
-        return FIN_EDEFAULT == null ? fin != null : !FIN_EDEFAULT.equals(fin);
+        return fin != null;
+      case CNLPackage.SENTENCE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -260,8 +333,8 @@ public class SentenceImpl extends DelFinImpl implements Sentence
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (fin: ");
-    result.append(fin);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

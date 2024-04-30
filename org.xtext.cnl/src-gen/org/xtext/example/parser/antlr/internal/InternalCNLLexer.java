@@ -771,10 +771,11 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:43:7: ( '=' )
-            // InternalCNL.g:43:9: '='
+            // InternalCNL.g:43:7: ( 'END_SENTENCE' )
+            // InternalCNL.g:43:9: 'END_SENTENCE'
             {
-            match('='); 
+            match("END_SENTENCE"); 
+
 
             }
 
@@ -791,11 +792,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:44:7: ( 'END_SENTENCE' )
-            // InternalCNL.g:44:9: 'END_SENTENCE'
+            // InternalCNL.g:44:7: ( '=' )
+            // InternalCNL.g:44:9: '='
             {
-            match("END_SENTENCE"); 
-
+            match('='); 
 
             }
 
@@ -1206,10 +1206,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_OR_OPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2381:18: ( ( '||' | 'OR' ) )
-            // InternalCNL.g:2381:20: ( '||' | 'OR' )
+            // InternalCNL.g:2471:18: ( ( '||' | 'OR' ) )
+            // InternalCNL.g:2471:20: ( '||' | 'OR' )
             {
-            // InternalCNL.g:2381:20: ( '||' | 'OR' )
+            // InternalCNL.g:2471:20: ( '||' | 'OR' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1227,7 +1227,7 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalCNL.g:2381:21: '||'
+                    // InternalCNL.g:2471:21: '||'
                     {
                     match("||"); 
 
@@ -1235,7 +1235,7 @@ public class InternalCNLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCNL.g:2381:26: 'OR'
+                    // InternalCNL.g:2471:26: 'OR'
                     {
                     match("OR"); 
 
@@ -1261,15 +1261,15 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_INTERVAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2383:15: ( ( RULE_INTEGER 'd' )? ( RULE_INTEGER 'h' )? ( RULE_INTEGER 'm' )? ( RULE_INTEGER 's' )? ( RULE_INTEGER 'ms' )? )
-            // InternalCNL.g:2383:17: ( RULE_INTEGER 'd' )? ( RULE_INTEGER 'h' )? ( RULE_INTEGER 'm' )? ( RULE_INTEGER 's' )? ( RULE_INTEGER 'ms' )?
+            // InternalCNL.g:2473:15: ( ( RULE_INTEGER 'd' )? ( RULE_INTEGER 'h' )? ( RULE_INTEGER 'm' )? ( RULE_INTEGER 's' )? ( RULE_INTEGER 'ms' )? )
+            // InternalCNL.g:2473:17: ( RULE_INTEGER 'd' )? ( RULE_INTEGER 'h' )? ( RULE_INTEGER 'm' )? ( RULE_INTEGER 's' )? ( RULE_INTEGER 'ms' )?
             {
-            // InternalCNL.g:2383:17: ( RULE_INTEGER 'd' )?
+            // InternalCNL.g:2473:17: ( RULE_INTEGER 'd' )?
             int alt2=2;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // InternalCNL.g:2383:18: RULE_INTEGER 'd'
+                    // InternalCNL.g:2473:18: RULE_INTEGER 'd'
                     {
                     mRULE_INTEGER(); 
                     match('d'); 
@@ -1279,12 +1279,12 @@ public class InternalCNLLexer extends Lexer {
 
             }
 
-            // InternalCNL.g:2383:37: ( RULE_INTEGER 'h' )?
+            // InternalCNL.g:2473:37: ( RULE_INTEGER 'h' )?
             int alt3=2;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // InternalCNL.g:2383:38: RULE_INTEGER 'h'
+                    // InternalCNL.g:2473:38: RULE_INTEGER 'h'
                     {
                     mRULE_INTEGER(); 
                     match('h'); 
@@ -1294,12 +1294,12 @@ public class InternalCNLLexer extends Lexer {
 
             }
 
-            // InternalCNL.g:2383:57: ( RULE_INTEGER 'm' )?
+            // InternalCNL.g:2473:57: ( RULE_INTEGER 'm' )?
             int alt4=2;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // InternalCNL.g:2383:58: RULE_INTEGER 'm'
+                    // InternalCNL.g:2473:58: RULE_INTEGER 'm'
                     {
                     mRULE_INTEGER(); 
                     match('m'); 
@@ -1309,12 +1309,12 @@ public class InternalCNLLexer extends Lexer {
 
             }
 
-            // InternalCNL.g:2383:77: ( RULE_INTEGER 's' )?
+            // InternalCNL.g:2473:77: ( RULE_INTEGER 's' )?
             int alt5=2;
             alt5 = dfa5.predict(input);
             switch (alt5) {
                 case 1 :
-                    // InternalCNL.g:2383:78: RULE_INTEGER 's'
+                    // InternalCNL.g:2473:78: RULE_INTEGER 's'
                     {
                     mRULE_INTEGER(); 
                     match('s'); 
@@ -1324,7 +1324,7 @@ public class InternalCNLLexer extends Lexer {
 
             }
 
-            // InternalCNL.g:2383:97: ( RULE_INTEGER 'ms' )?
+            // InternalCNL.g:2473:97: ( RULE_INTEGER 'ms' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1333,7 +1333,7 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalCNL.g:2383:98: RULE_INTEGER 'ms'
+                    // InternalCNL.g:2473:98: RULE_INTEGER 'ms'
                     {
                     mRULE_INTEGER(); 
                     match("ms"); 
@@ -1360,14 +1360,14 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_DIRECT_VARIABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2385:22: ( '%' RULE_DIRECT_TYPE_PREFIX RULE_DIRECT_SIZE_PREFIX RULE_OCTAL_DIGIT ( '.' RULE_OCTAL_DIGIT )* )
-            // InternalCNL.g:2385:24: '%' RULE_DIRECT_TYPE_PREFIX RULE_DIRECT_SIZE_PREFIX RULE_OCTAL_DIGIT ( '.' RULE_OCTAL_DIGIT )*
+            // InternalCNL.g:2475:22: ( '%' RULE_DIRECT_TYPE_PREFIX RULE_DIRECT_SIZE_PREFIX RULE_OCTAL_DIGIT ( '.' RULE_OCTAL_DIGIT )* )
+            // InternalCNL.g:2475:24: '%' RULE_DIRECT_TYPE_PREFIX RULE_DIRECT_SIZE_PREFIX RULE_OCTAL_DIGIT ( '.' RULE_OCTAL_DIGIT )*
             {
             match('%'); 
             mRULE_DIRECT_TYPE_PREFIX(); 
             mRULE_DIRECT_SIZE_PREFIX(); 
             mRULE_OCTAL_DIGIT(); 
-            // InternalCNL.g:2385:93: ( '.' RULE_OCTAL_DIGIT )*
+            // InternalCNL.g:2475:93: ( '.' RULE_OCTAL_DIGIT )*
             loop7:
             do {
                 int alt7=2;
@@ -1380,7 +1380,7 @@ public class InternalCNLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalCNL.g:2385:94: '.' RULE_OCTAL_DIGIT
+            	    // InternalCNL.g:2475:94: '.' RULE_OCTAL_DIGIT
             	    {
             	    match('.'); 
             	    mRULE_OCTAL_DIGIT(); 
@@ -1407,8 +1407,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_DIRECT_TYPE_PREFIX"
     public final void mRULE_DIRECT_TYPE_PREFIX() throws RecognitionException {
         try {
-            // InternalCNL.g:2387:34: ( ( 'I' | 'Q' | 'M' ) )
-            // InternalCNL.g:2387:36: ( 'I' | 'Q' | 'M' )
+            // InternalCNL.g:2477:34: ( ( 'I' | 'Q' | 'M' ) )
+            // InternalCNL.g:2477:36: ( 'I' | 'Q' | 'M' )
             {
             if ( input.LA(1)=='I'||input.LA(1)=='M'||input.LA(1)=='Q' ) {
                 input.consume();
@@ -1431,8 +1431,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_DIRECT_SIZE_PREFIX"
     public final void mRULE_DIRECT_SIZE_PREFIX() throws RecognitionException {
         try {
-            // InternalCNL.g:2389:34: ( ( 'X' | 'B' | 'W' | 'D' | 'L' ) )
-            // InternalCNL.g:2389:36: ( 'X' | 'B' | 'W' | 'D' | 'L' )
+            // InternalCNL.g:2479:34: ( ( 'X' | 'B' | 'W' | 'D' | 'L' ) )
+            // InternalCNL.g:2479:36: ( 'X' | 'B' | 'W' | 'D' | 'L' )
             {
             if ( input.LA(1)=='B'||input.LA(1)=='D'||input.LA(1)=='L'||(input.LA(1)>='W' && input.LA(1)<='X') ) {
                 input.consume();
@@ -1457,10 +1457,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2391:14: ( ( RULE_DIGIT )+ )
-            // InternalCNL.g:2391:16: ( RULE_DIGIT )+
+            // InternalCNL.g:2481:14: ( ( RULE_DIGIT )+ )
+            // InternalCNL.g:2481:16: ( RULE_DIGIT )+
             {
-            // InternalCNL.g:2391:16: ( RULE_DIGIT )+
+            // InternalCNL.g:2481:16: ( RULE_DIGIT )+
             int cnt8=0;
             loop8:
             do {
@@ -1474,7 +1474,7 @@ public class InternalCNLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalCNL.g:2391:16: RULE_DIGIT
+            	    // InternalCNL.g:2481:16: RULE_DIGIT
             	    {
             	    mRULE_DIGIT(); 
 
@@ -1504,8 +1504,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_LETTER"
     public final void mRULE_LETTER() throws RecognitionException {
         try {
-            // InternalCNL.g:2393:22: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) )
-            // InternalCNL.g:2393:24: ( 'A' .. 'Z' | 'a' .. 'z' | '_' )
+            // InternalCNL.g:2483:22: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) )
+            // InternalCNL.g:2483:24: ( 'A' .. 'Z' | 'a' .. 'z' | '_' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -1528,8 +1528,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_BIT"
     public final void mRULE_BIT() throws RecognitionException {
         try {
-            // InternalCNL.g:2395:19: ( ( '0' | '1' ) )
-            // InternalCNL.g:2395:21: ( '0' | '1' )
+            // InternalCNL.g:2485:19: ( ( '0' | '1' ) )
+            // InternalCNL.g:2485:21: ( '0' | '1' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='1') ) {
                 input.consume();
@@ -1552,8 +1552,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_OCTAL_DIGIT"
     public final void mRULE_OCTAL_DIGIT() throws RecognitionException {
         try {
-            // InternalCNL.g:2397:27: ( '0' .. '7' )
-            // InternalCNL.g:2397:29: '0' .. '7'
+            // InternalCNL.g:2487:27: ( '0' .. '7' )
+            // InternalCNL.g:2487:29: '0' .. '7'
             {
             matchRange('0','7'); 
 
@@ -1568,8 +1568,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_DIGIT"
     public final void mRULE_DIGIT() throws RecognitionException {
         try {
-            // InternalCNL.g:2399:21: ( '0' .. '9' )
-            // InternalCNL.g:2399:23: '0' .. '9'
+            // InternalCNL.g:2489:21: ( '0' .. '9' )
+            // InternalCNL.g:2489:23: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -1584,8 +1584,8 @@ public class InternalCNLLexer extends Lexer {
     // $ANTLR start "RULE_HEX_DIGIT"
     public final void mRULE_HEX_DIGIT() throws RecognitionException {
         try {
-            // InternalCNL.g:2401:25: ( ( RULE_DIGIT | 'A' .. 'F' ) )
-            // InternalCNL.g:2401:27: ( RULE_DIGIT | 'A' .. 'F' )
+            // InternalCNL.g:2491:25: ( ( RULE_DIGIT | 'A' .. 'F' ) )
+            // InternalCNL.g:2491:27: ( RULE_DIGIT | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F') ) {
                 input.consume();
@@ -1610,10 +1610,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2403:22: ( ( 'TRUE' | 'FALSE' ) )
-            // InternalCNL.g:2403:24: ( 'TRUE' | 'FALSE' )
+            // InternalCNL.g:2493:22: ( ( 'TRUE' | 'FALSE' ) )
+            // InternalCNL.g:2493:24: ( 'TRUE' | 'FALSE' )
             {
-            // InternalCNL.g:2403:24: ( 'TRUE' | 'FALSE' )
+            // InternalCNL.g:2493:24: ( 'TRUE' | 'FALSE' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1631,7 +1631,7 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalCNL.g:2403:25: 'TRUE'
+                    // InternalCNL.g:2493:25: 'TRUE'
                     {
                     match("TRUE"); 
 
@@ -1639,7 +1639,7 @@ public class InternalCNLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCNL.g:2403:32: 'FALSE'
+                    // InternalCNL.g:2493:32: 'FALSE'
                     {
                     match("FALSE"); 
 
@@ -1665,10 +1665,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2405:17: ( ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' ) )
-            // InternalCNL.g:2405:19: ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' )
+            // InternalCNL.g:2495:17: ( ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' ) )
+            // InternalCNL.g:2495:19: ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' )
             {
-            // InternalCNL.g:2405:19: ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' )
+            // InternalCNL.g:2495:19: ( '/*' ( options {greedy=false; } : . )* '*/' | '(*' ( options {greedy=false; } : . )* '*)' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1686,11 +1686,11 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalCNL.g:2405:20: '/*' ( options {greedy=false; } : . )* '*/'
+                    // InternalCNL.g:2495:20: '/*' ( options {greedy=false; } : . )* '*/'
                     {
                     match("/*"); 
 
-                    // InternalCNL.g:2405:25: ( options {greedy=false; } : . )*
+                    // InternalCNL.g:2495:25: ( options {greedy=false; } : . )*
                     loop10:
                     do {
                         int alt10=2;
@@ -1715,7 +1715,7 @@ public class InternalCNLLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalCNL.g:2405:53: .
+                    	    // InternalCNL.g:2495:53: .
                     	    {
                     	    matchAny(); 
 
@@ -1733,11 +1733,11 @@ public class InternalCNLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCNL.g:2405:62: '(*' ( options {greedy=false; } : . )* '*)'
+                    // InternalCNL.g:2495:62: '(*' ( options {greedy=false; } : . )* '*)'
                     {
                     match("(*"); 
 
-                    // InternalCNL.g:2405:67: ( options {greedy=false; } : . )*
+                    // InternalCNL.g:2495:67: ( options {greedy=false; } : . )*
                     loop11:
                     do {
                         int alt11=2;
@@ -1762,7 +1762,7 @@ public class InternalCNLLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalCNL.g:2405:95: .
+                    	    // InternalCNL.g:2495:95: .
                     	    {
                     	    matchAny(); 
 
@@ -1798,12 +1798,12 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2407:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalCNL.g:2407:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCNL.g:2497:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCNL.g:2497:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalCNL.g:2407:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCNL.g:2497:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -1816,7 +1816,7 @@ public class InternalCNLLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalCNL.g:2407:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCNL.g:2497:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1836,7 +1836,7 @@ public class InternalCNLLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCNL.g:2407:40: ( ( '\\r' )? '\\n' )?
+            // InternalCNL.g:2497:40: ( ( '\\r' )? '\\n' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1845,9 +1845,9 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalCNL.g:2407:41: ( '\\r' )? '\\n'
+                    // InternalCNL.g:2497:41: ( '\\r' )? '\\n'
                     {
-                    // InternalCNL.g:2407:41: ( '\\r' )?
+                    // InternalCNL.g:2497:41: ( '\\r' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -1856,7 +1856,7 @@ public class InternalCNLLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalCNL.g:2407:41: '\\r'
+                            // InternalCNL.g:2497:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1888,11 +1888,11 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2409:13: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            // InternalCNL.g:2409:15: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+            // InternalCNL.g:2499:13: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCNL.g:2499:15: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
             {
             match('\''); 
-            // InternalCNL.g:2409:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+            // InternalCNL.g:2499:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
             loop16:
             do {
                 int alt16=3;
@@ -1908,7 +1908,7 @@ public class InternalCNLLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalCNL.g:2409:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // InternalCNL.g:2499:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1924,7 +1924,7 @@ public class InternalCNLLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalCNL.g:2409:66: ~ ( ( '\\\\' | '\\'' ) )
+            	    // InternalCNL.g:2499:66: ~ ( ( '\\\\' | '\\'' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1961,10 +1961,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2411:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalCNL.g:2411:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCNL.g:2501:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCNL.g:2501:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCNL.g:2411:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCNL.g:2501:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt17=0;
             loop17:
             do {
@@ -2018,10 +2018,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2413:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalCNL.g:2413:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCNL.g:2503:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalCNL.g:2503:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalCNL.g:2413:11: ( '^' )?
+            // InternalCNL.g:2503:11: ( '^' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2030,7 +2030,7 @@ public class InternalCNLLexer extends Lexer {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalCNL.g:2413:11: '^'
+                    // InternalCNL.g:2503:11: '^'
                     {
                     match('^'); 
 
@@ -2048,7 +2048,7 @@ public class InternalCNLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalCNL.g:2413:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCNL.g:2503:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop19:
             do {
                 int alt19=2;
@@ -2097,10 +2097,10 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2415:10: ( ( '0' .. '9' )+ )
-            // InternalCNL.g:2415:12: ( '0' .. '9' )+
+            // InternalCNL.g:2505:10: ( ( '0' .. '9' )+ )
+            // InternalCNL.g:2505:12: ( '0' .. '9' )+
             {
-            // InternalCNL.g:2415:12: ( '0' .. '9' )+
+            // InternalCNL.g:2505:12: ( '0' .. '9' )+
             int cnt20=0;
             loop20:
             do {
@@ -2114,7 +2114,7 @@ public class InternalCNLLexer extends Lexer {
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalCNL.g:2415:13: '0' .. '9'
+            	    // InternalCNL.g:2505:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2146,8 +2146,8 @@ public class InternalCNLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCNL.g:2417:16: ( . )
-            // InternalCNL.g:2417:18: .
+            // InternalCNL.g:2507:16: ( . )
+            // InternalCNL.g:2507:18: .
             {
             matchAny(); 
 
@@ -2681,7 +2681,7 @@ public class InternalCNLLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "2383:17: ( RULE_INTEGER 'd' )?";
+            return "2473:17: ( RULE_INTEGER 'd' )?";
         }
     }
     static final String DFA3_eotS =
@@ -2733,7 +2733,7 @@ public class InternalCNLLexer extends Lexer {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "2383:37: ( RULE_INTEGER 'h' )?";
+            return "2473:37: ( RULE_INTEGER 'h' )?";
         }
     }
     static final String DFA4_eotS =
@@ -2786,7 +2786,7 @@ public class InternalCNLLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "2383:57: ( RULE_INTEGER 'm' )?";
+            return "2473:57: ( RULE_INTEGER 'm' )?";
         }
     }
     static final String DFA5_eotS =
@@ -2838,7 +2838,7 @@ public class InternalCNLLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "2383:77: ( RULE_INTEGER 's' )?";
+            return "2473:77: ( RULE_INTEGER 's' )?";
         }
     }
     static final String DFA21_eotS =
@@ -2850,9 +2850,9 @@ public class InternalCNLLexer extends Lexer {
     static final String DFA21_maxS =
         "\1\uffff\1\145\1\116\1\uffff\1\154\1\150\1\145\1\141\1\156\1\154\1\151\1\162\1\163\1\151\1\165\1\162\2\uffff\1\117\1\116\1\101\2\uffff\1\105\1\75\1\117\1\46\1\105\1\111\2\117\1\uffff\1\122\1\52\1\uffff\1\124\1\76\1\75\1\174\1\122\1\163\1\uffff\1\121\1\57\1\uffff\1\uffff\1\172\2\uffff\1\172\1\141\1\uffff\1\104\1\uffff\1\164\1\167\1\104\1\157\1\155\1\154\1\164\1\167\2\164\1\172\1\143\1\172\1\155\1\151\1\164\1\163\1\157\2\uffff\1\117\1\124\1\122\2\uffff\1\116\2\uffff\1\122\1\uffff\1\172\1\114\1\107\1\127\1\124\1\uffff\2\125\12\uffff\1\172\1\uffff\1\163\4\uffff\1\125\1\uffff\1\143\1\137\1\145\1\141\1\172\1\165\1\141\1\143\2\151\1\141\1\145\1\150\1\uffff\1\165\1\uffff\1\145\1\143\1\150\1\164\1\155\1\114\1\172\1\137\1\124\1\172\1\uffff\1\123\1\110\3\172\1\105\1\111\1\164\1\126\1\162\1\171\1\uffff\1\154\1\151\1\164\1\144\1\154\1\171\1\162\1\145\1\162\1\144\1\150\1\151\3\172\1\uffff\1\117\1\105\1\uffff\1\105\1\172\3\uffff\1\172\1\122\1\151\1\105\1\101\1\105\1\172\1\163\1\144\1\156\1\151\2\172\1\163\1\172\1\162\1\172\1\151\1\172\1\156\3\uffff\1\116\1\125\1\116\1\172\2\uffff\1\105\1\157\1\121\1\122\1\116\1\uffff\3\172\1\157\2\uffff\1\172\1\uffff\1\172\1\uffff\1\141\1\uffff\1\172\1\120\1\124\1\103\1\115\1\156\1\125\1\172\1\124\3\uffff\1\156\2\uffff\1\164\1\uffff\1\125\1\120\2\105\1\172\1\111\1\uffff\1\105\1\172\1\145\1\124\1\125\1\172\1\116\1\uffff\1\122\1\116\1\uffff\1\154\1\172\1\124\1\uffff\1\124\1\105\1\103\1\171\1\uffff\2\172\1\115\1\105\1\172\2\uffff\1\105\1\172\1\uffff\1\116\1\uffff\1\124\1\172\1\uffff";
     static final String DFA21_acceptS =
-        "\3\uffff\1\3\14\uffff\1\27\1\30\3\uffff\1\34\1\37\10\uffff\1\53\2\uffff\1\56\6\uffff\1\67\3\uffff\1\76\1\uffff\1\77\1\101\2\uffff\1\77\1\uffff\1\3\22\uffff\1\27\1\30\3\uffff\1\34\1\37\1\uffff\1\60\1\41\1\uffff\1\44\5\uffff\1\53\2\uffff\1\73\1\55\1\56\1\57\1\61\1\64\1\62\1\65\1\63\1\66\1\uffff\1\71\1\uffff\1\70\1\74\1\75\1\76\1\uffff\1\47\15\uffff\1\14\1\uffff\1\16\12\uffff\1\46\13\uffff\1\45\17\uffff\1\32\2\uffff\1\43\2\uffff\1\51\1\52\1\54\24\uffff\1\21\1\23\1\31\4\uffff\1\50\1\72\5\uffff\1\4\4\uffff\1\10\1\11\1\uffff\1\25\1\uffff\1\22\1\uffff\1\20\11\uffff\1\5\1\6\1\7\1\uffff\1\12\1\13\1\uffff\1\26\6\uffff\1\35\7\uffff\1\15\2\uffff\1\17\3\uffff\1\40\4\uffff\1\33\5\uffff\1\36\1\1\2\uffff\1\24\1\uffff\1\42\2\uffff\1\2";
+        "\3\uffff\1\3\14\uffff\1\27\1\30\3\uffff\1\34\1\37\10\uffff\1\53\2\uffff\1\56\6\uffff\1\67\3\uffff\1\76\1\uffff\1\77\1\101\2\uffff\1\77\1\uffff\1\3\22\uffff\1\27\1\30\3\uffff\1\34\1\37\1\uffff\1\60\1\42\1\uffff\1\44\5\uffff\1\53\2\uffff\1\73\1\55\1\56\1\57\1\61\1\64\1\62\1\65\1\63\1\66\1\uffff\1\71\1\uffff\1\70\1\74\1\75\1\76\1\uffff\1\47\15\uffff\1\14\1\uffff\1\16\12\uffff\1\46\13\uffff\1\45\17\uffff\1\32\2\uffff\1\43\2\uffff\1\51\1\52\1\54\24\uffff\1\21\1\23\1\31\4\uffff\1\50\1\72\5\uffff\1\4\4\uffff\1\10\1\11\1\uffff\1\25\1\uffff\1\22\1\uffff\1\20\11\uffff\1\5\1\6\1\7\1\uffff\1\12\1\13\1\uffff\1\26\6\uffff\1\35\7\uffff\1\15\2\uffff\1\17\3\uffff\1\40\4\uffff\1\33\5\uffff\1\36\1\1\2\uffff\1\24\1\uffff\1\41\2\uffff\1\2";
     static final String DFA21_specialS =
-        "\1\0\53\uffff\1\1\u00eb\uffff}>";
+        "\1\1\53\uffff\1\0\u00eb\uffff}>";
     static final String[] DFA21_transitionS = {
             "\11\60\2\55\2\60\1\55\22\60\1\55\1\37\1\20\1\43\1\60\1\52\1\32\1\54\1\41\1\42\2\60\1\21\1\60\1\3\1\53\12\50\1\26\1\25\1\44\1\30\1\45\2\60\1\4\1\22\2\57\1\2\1\33\1\57\1\34\1\23\2\57\1\35\1\57\1\36\1\47\2\57\1\1\1\27\1\40\1\57\1\24\1\57\1\31\2\57\3\60\1\56\1\57\1\60\1\11\3\57\1\12\1\17\2\57\1\14\3\57\1\16\1\57\1\13\2\57\1\6\1\5\1\57\1\10\1\7\1\15\3\57\1\60\1\46\uff83\60",
             "\1\61\37\uffff\1\62",
@@ -3173,6 +3173,16 @@ public class InternalCNLLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA21_44 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA21_44>='\u0000' && LA21_44<='\uFFFF')) ) {s = 107;}
+
+                        else s = 48;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA21_0 = input.LA(1);
 
                         s = -1;
@@ -3271,16 +3281,6 @@ public class InternalCNLLexer extends Lexer {
                         else if ( ((LA21_0>='\u0000' && LA21_0<='\b')||(LA21_0>='\u000B' && LA21_0<='\f')||(LA21_0>='\u000E' && LA21_0<='\u001F')||LA21_0=='$'||(LA21_0>='*' && LA21_0<='+')||LA21_0=='-'||(LA21_0>='?' && LA21_0<='@')||(LA21_0>='[' && LA21_0<=']')||LA21_0=='`'||LA21_0=='{'||(LA21_0>='}' && LA21_0<='\uFFFF')) ) {s = 48;}
 
                         else s = 41;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA21_44 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA21_44>='\u0000' && LA21_44<='\uFFFF')) ) {s = 107;}
-
-                        else s = 48;
 
                         if ( s>=0 ) return s;
                         break;

@@ -26,26 +26,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Inv extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Inv</b></em>' attribute.
+   * Returns the value of the '<em><b>Inv</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Inv</em>' attribute.
-   * @see #setInv(String)
+   * @return the value of the '<em>Inv</em>' containment reference.
+   * @see #setInv(Sentence)
    * @see org.xtext.example.cNL.CNLPackage#getInv_Inv()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getInv();
+  Sentence getInv();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Inv#getInv <em>Inv</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.Inv#getInv <em>Inv</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inv</em>' attribute.
+   * @param value the new value of the '<em>Inv</em>' containment reference.
    * @see #getInv()
    * @generated
    */
-  void setInv(String value);
+  void setInv(Sentence value);
 
   /**
    * Returns the value of the '<em><b>Delay final</b></em>' containment reference.

@@ -4,13 +4,16 @@
 package org.xtext.example.cNL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Rea;
+import org.xtext.example.cNL.Sentence;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,24 +31,14 @@ import org.xtext.example.cNL.Rea;
 public class ReaImpl extends RelReaImpl implements Rea
 {
   /**
-   * The default value of the '{@link #getRea() <em>Rea</em>}' attribute.
+   * The cached value of the '{@link #getRea() <em>Rea</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRea()
    * @generated
    * @ordered
    */
-  protected static final String REA_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRea() <em>Rea</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRea()
-   * @generated
-   * @ordered
-   */
-  protected String rea = REA_EDEFAULT;
+  protected Sentence rea;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +67,7 @@ public class ReaImpl extends RelReaImpl implements Rea
    * @generated
    */
   @Override
-  public String getRea()
+  public Sentence getRea()
   {
     return rea;
   }
@@ -84,13 +77,54 @@ public class ReaImpl extends RelReaImpl implements Rea
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setRea(String newRea)
+  public NotificationChain basicSetRea(Sentence newRea, NotificationChain msgs)
   {
-    String oldRea = rea;
+    Sentence oldRea = rea;
     rea = newRea;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.REA__REA, oldRea, rea));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.REA__REA, oldRea, newRea);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRea(Sentence newRea)
+  {
+    if (newRea != rea)
+    {
+      NotificationChain msgs = null;
+      if (rea != null)
+        msgs = ((InternalEObject)rea).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.REA__REA, null, msgs);
+      if (newRea != null)
+        msgs = ((InternalEObject)newRea).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.REA__REA, null, msgs);
+      msgs = basicSetRea(newRea, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.REA__REA, newRea, newRea));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CNLPackage.REA__REA:
+        return basicSetRea(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -120,7 +154,7 @@ public class ReaImpl extends RelReaImpl implements Rea
     switch (featureID)
     {
       case CNLPackage.REA__REA:
-        setRea((String)newValue);
+        setRea((Sentence)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,7 +171,7 @@ public class ReaImpl extends RelReaImpl implements Rea
     switch (featureID)
     {
       case CNLPackage.REA__REA:
-        setRea(REA_EDEFAULT);
+        setRea((Sentence)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,26 +188,9 @@ public class ReaImpl extends RelReaImpl implements Rea
     switch (featureID)
     {
       case CNLPackage.REA__REA:
-        return REA_EDEFAULT == null ? rea != null : !REA_EDEFAULT.equals(rea);
+        return rea != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (rea: ");
-    result.append(rea);
-    result.append(')');
-    return result.toString();
   }
 
 } //ReaImpl

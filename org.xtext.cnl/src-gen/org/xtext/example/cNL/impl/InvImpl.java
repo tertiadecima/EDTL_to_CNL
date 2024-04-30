@@ -16,6 +16,7 @@ import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.DelFin;
 import org.xtext.example.cNL.Inv;
 import org.xtext.example.cNL.RelRea;
+import org.xtext.example.cNL.Sentence;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,24 +36,14 @@ import org.xtext.example.cNL.RelRea;
 public class InvImpl extends MinimalEObjectImpl.Container implements Inv
 {
   /**
-   * The default value of the '{@link #getInv() <em>Inv</em>}' attribute.
+   * The cached value of the '{@link #getInv() <em>Inv</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInv()
    * @generated
    * @ordered
    */
-  protected static final String INV_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getInv() <em>Inv</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInv()
-   * @generated
-   * @ordered
-   */
-  protected String inv = INV_EDEFAULT;
+  protected Sentence inv;
 
   /**
    * The cached value of the '{@link #getDelay_final() <em>Delay final</em>}' containment reference.
@@ -101,7 +92,7 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
    * @generated
    */
   @Override
-  public String getInv()
+  public Sentence getInv()
   {
     return inv;
   }
@@ -111,13 +102,38 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setInv(String newInv)
+  public NotificationChain basicSetInv(Sentence newInv, NotificationChain msgs)
   {
-    String oldInv = inv;
+    Sentence oldInv = inv;
     inv = newInv;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, oldInv, inv));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, oldInv, newInv);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setInv(Sentence newInv)
+  {
+    if (newInv != inv)
+    {
+      NotificationChain msgs = null;
+      if (inv != null)
+        msgs = ((InternalEObject)inv).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV__INV, null, msgs);
+      if (newInv != null)
+        msgs = ((InternalEObject)newInv).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV__INV, null, msgs);
+      msgs = basicSetInv(newInv, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, newInv, newInv));
   }
 
   /**
@@ -230,6 +246,8 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
   {
     switch (featureID)
     {
+      case CNLPackage.INV__INV:
+        return basicSetInv(null, msgs);
       case CNLPackage.INV__DELAY_FINAL:
         return basicSetDelay_final(null, msgs);
       case CNLPackage.INV__RELEASE_REACTION:
@@ -269,7 +287,7 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        setInv((String)newValue);
+        setInv((Sentence)newValue);
         return;
       case CNLPackage.INV__DELAY_FINAL:
         setDelay_final((DelFin)newValue);
@@ -292,7 +310,7 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        setInv(INV_EDEFAULT);
+        setInv((Sentence)null);
         return;
       case CNLPackage.INV__DELAY_FINAL:
         setDelay_final((DelFin)null);
@@ -315,30 +333,13 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        return INV_EDEFAULT == null ? inv != null : !INV_EDEFAULT.equals(inv);
+        return inv != null;
       case CNLPackage.INV__DELAY_FINAL:
         return delay_final != null;
       case CNLPackage.INV__RELEASE_REACTION:
         return release_reaction != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (inv: ");
-    result.append(inv);
-    result.append(')');
-    return result.toString();
   }
 
 } //InvImpl

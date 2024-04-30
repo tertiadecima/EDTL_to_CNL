@@ -126,6 +126,11 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
         return createDelayAdapter();
       }
       @Override
+      public Adapter caseSentence(Sentence object)
+      {
+        return createSentenceAdapter();
+      }
+      @Override
       public Adapter caseDeclVarInput(DeclVarInput object)
       {
         return createDeclVarInputAdapter();
@@ -144,6 +149,11 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSentDeclaration(SentDeclaration object)
       {
         return createSentDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseSentenceDeclaration(SentenceDeclaration object)
+      {
+        return createSentenceDeclarationAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -201,19 +211,9 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
         return createReaAdapter();
       }
       @Override
-      public Adapter caseSentence(Sentence object)
-      {
-        return createSentenceAdapter();
-      }
-      @Override
       public Adapter caseDel(Del object)
       {
         return createDelAdapter();
-      }
-      @Override
-      public Adapter caseDeclSent(DeclSent object)
-      {
-        return createDeclSentAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -388,6 +388,21 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Sentence
+   * @generated
+   */
+  public Adapter createSentenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.DeclVarInput <em>Decl Var Input</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -443,6 +458,21 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSentDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.SentenceDeclaration <em>Sentence Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.SentenceDeclaration
+   * @generated
+   */
+  public Adapter createSentenceDeclarationAdapter()
   {
     return null;
   }
@@ -613,21 +643,6 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Sentence
-   * @generated
-   */
-  public Adapter createSentenceAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Del <em>Del</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -638,21 +653,6 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.DeclSent <em>Decl Sent</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.DeclSent
-   * @generated
-   */
-  public Adapter createDeclSentAdapter()
   {
     return null;
   }

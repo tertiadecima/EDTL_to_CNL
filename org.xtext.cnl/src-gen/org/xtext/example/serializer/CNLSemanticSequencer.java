@@ -17,7 +17,6 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.example.cNL.AndExpression;
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.CompExpression;
-import org.xtext.example.cNL.DeclSent;
 import org.xtext.example.cNL.DeclVarInput;
 import org.xtext.example.cNL.DeclVarOutput;
 import org.xtext.example.cNL.Del;
@@ -31,7 +30,9 @@ import org.xtext.example.cNL.Rea;
 import org.xtext.example.cNL.Rel;
 import org.xtext.example.cNL.ReqDeclaration;
 import org.xtext.example.cNL.Requirement;
+import org.xtext.example.cNL.SentDeclaration;
 import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 import org.xtext.example.cNL.TauExpression;
 import org.xtext.example.cNL.TimeLiteral;
 import org.xtext.example.cNL.Trig;
@@ -59,9 +60,6 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CNLPackage.COMP_EXPRESSION:
 				sequence_CompExpression(context, (CompExpression) semanticObject); 
-				return; 
-			case CNLPackage.DECL_SENT:
-				sequence_SentDeclaration(context, (DeclSent) semanticObject); 
 				return; 
 			case CNLPackage.DECL_VAR_INPUT:
 				sequence_DeclVarInput(context, (DeclVarInput) semanticObject); 
@@ -109,8 +107,21 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CNLPackage.REQUIREMENT:
 				sequence_Requirement(context, (Requirement) semanticObject); 
 				return; 
+			case CNLPackage.SENT_DECLARATION:
+				sequence_SentDeclaration(context, (SentDeclaration) semanticObject); 
+				return; 
 			case CNLPackage.SENTENCE:
-				sequence_DelFin(context, (Sentence) semanticObject); 
+				if (rule == grammarAccess.getDelFinRule()) {
+					sequence_DelFin(context, (Sentence) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSentenceRule()) {
+					sequence_Sentence(context, (Sentence) semanticObject); 
+					return; 
+				}
+				else break;
+			case CNLPackage.SENTENCE_DECLARATION:
+				sequence_SentenceDeclaration(context, (SentenceDeclaration) semanticObject); 
 				return; 
 			case CNLPackage.TAU_EXPRESSION:
 				sequence_TauExpression(context, (TauExpression) semanticObject); 
@@ -487,25 +498,65 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     SentDeclaration returns DeclSent
+	 *     SentDeclaration returns SentDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID sentenceDeclaration=Sentence logicExpression=Expression)
+	 *     (name=ID sentenceDeclaration=SentenceDeclaration)
 	 * </pre>
 	 */
-	protected void sequence_SentDeclaration(ISerializationContext context, DeclSent semanticObject) {
+	protected void sequence_SentDeclaration(ISerializationContext context, SentDeclaration semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.DECL_SENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.DECL_SENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.DECL_SENT__SENTENCE_DECLARATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.DECL_SENT__SENTENCE_DECLARATION));
-			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.DECL_SENT__LOGIC_EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.DECL_SENT__LOGIC_EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENT_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENT_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENT_DECLARATION__SENTENCE_DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENT_DECLARATION__SENTENCE_DECLARATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSentDeclarationAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSentDeclarationAccess().getSentenceDeclarationSentenceParserRuleCall_3_0(), semanticObject.getSentenceDeclaration());
-		feeder.accept(grammarAccess.getSentDeclarationAccess().getLogicExpressionExpressionParserRuleCall_5_0(), semanticObject.getLogicExpression());
+		feeder.accept(grammarAccess.getSentDeclarationAccess().getSentenceDeclarationSentenceDeclarationParserRuleCall_3_0(), semanticObject.getSentenceDeclaration());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SentenceDeclaration returns SentenceDeclaration
+	 *
+	 * Constraint:
+	 *     (name=Sentence logicExpression=Expression)
+	 * </pre>
+	 */
+	protected void sequence_SentenceDeclaration(ISerializationContext context, SentenceDeclaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENTENCE_DECLARATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENTENCE_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENTENCE_DECLARATION__LOGIC_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENTENCE_DECLARATION__LOGIC_EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSentenceDeclarationAccess().getNameSentenceParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSentenceDeclarationAccess().getLogicExpressionExpressionParserRuleCall_3_0(), semanticObject.getLogicExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Sentence returns Sentence
+	 *
+	 * Constraint:
+	 *     name=ID_or_INTEGER
+	 * </pre>
+	 */
+	protected void sequence_Sentence(ISerializationContext context, Sentence semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENTENCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENTENCE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSentenceAccess().getNameID_or_INTEGERParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

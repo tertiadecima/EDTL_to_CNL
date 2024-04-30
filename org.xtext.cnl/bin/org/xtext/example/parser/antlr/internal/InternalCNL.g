@@ -1122,14 +1122,59 @@ ruleDelay returns [EObject current=null]
 ;
 
 // Entry rule entryRuleSentence
-entryRuleSentence returns [String current=null]:
+entryRuleSentence returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSentenceRule()); }
 	iv_ruleSentence=ruleSentence
-	{ $current=$iv_ruleSentence.current.getText(); }
+	{ $current=$iv_ruleSentence.current; }
 	EOF;
 
 // Rule Sentence
-ruleSentence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleSentence returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSentenceAccess().getSentenceAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSentenceAccess().getNameID_or_INTEGERParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleID_or_INTEGER
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSentenceRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.xtext.example.CNL.ID_or_INTEGER");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleID_or_INTEGER
+entryRuleID_or_INTEGER returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getID_or_INTEGERRule()); }
+	iv_ruleID_or_INTEGER=ruleID_or_INTEGER
+	{ $current=$iv_ruleID_or_INTEGER.current.getText(); }
+	EOF;
+
+// Rule ID_or_INTEGER
+ruleID_or_INTEGER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
@@ -1140,7 +1185,7 @@ ruleSentence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 		kw='"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getSentenceAccess().getQuotationMarkKeyword_0());
+			newLeafNode(kw, grammarAccess.getID_or_INTEGERAccess().getQuotationMarkKeyword_0());
 		}
 		(
 			this_ID_1=RULE_ID
@@ -1148,7 +1193,7 @@ ruleSentence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 				$current.merge(this_ID_1);
 			}
 			{
-				newLeafNode(this_ID_1, grammarAccess.getSentenceAccess().getIDTerminalRuleCall_1_0());
+				newLeafNode(this_ID_1, grammarAccess.getID_or_INTEGERAccess().getIDTerminalRuleCall_1_0());
 			}
 			    |
 			this_INTEGER_2=RULE_INTEGER
@@ -1156,13 +1201,13 @@ ruleSentence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 				$current.merge(this_INTEGER_2);
 			}
 			{
-				newLeafNode(this_INTEGER_2, grammarAccess.getSentenceAccess().getINTEGERTerminalRuleCall_1_1());
+				newLeafNode(this_INTEGER_2, grammarAccess.getID_or_INTEGERAccess().getINTEGERTerminalRuleCall_1_1());
 			}
 		)+
 		kw='"'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getSentenceAccess().getQuotationMarkKeyword_2());
+			newLeafNode(kw, grammarAccess.getID_or_INTEGERAccess().getQuotationMarkKeyword_2());
 		}
 	)
 ;
@@ -1416,7 +1461,7 @@ ruleSentDeclaration returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getSentDeclarationAccess().getDeclSentAction_0(),
+					grammarAccess.getSentDeclarationAccess().getSentDeclarationAction_0(),
 					$current);
 			}
 		)
@@ -1445,9 +1490,9 @@ ruleSentDeclaration returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSentDeclarationAccess().getSentenceDeclarationSentenceParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSentDeclarationAccess().getSentenceDeclarationSentenceDeclarationParserRuleCall_3_0());
 				}
-				lv_sentenceDeclaration_3_0=ruleSentence
+				lv_sentenceDeclaration_3_0=ruleSentenceDeclaration
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSentDeclarationRule());
@@ -1456,38 +1501,83 @@ ruleSentDeclaration returns [EObject current=null]
 						$current,
 						"sentenceDeclaration",
 						lv_sentenceDeclaration_3_0,
+						"org.xtext.example.CNL.SentenceDeclaration");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='END_SENTENCE'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getSentDeclarationAccess().getEND_SENTENCEKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleSentenceDeclaration
+entryRuleSentenceDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSentenceDeclarationRule()); }
+	iv_ruleSentenceDeclaration=ruleSentenceDeclaration
+	{ $current=$iv_ruleSentenceDeclaration.current; }
+	EOF;
+
+// Rule SentenceDeclaration
+ruleSentenceDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSentenceDeclarationAccess().getSentenceDeclarationAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSentenceDeclarationAccess().getNameSentenceParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleSentence
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSentenceDeclarationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
 						"org.xtext.example.CNL.Sentence");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='='
+		otherlv_2='='
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSentDeclarationAccess().getEqualsSignKeyword_4());
+			newLeafNode(otherlv_2, grammarAccess.getSentenceDeclarationAccess().getEqualsSignKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSentDeclarationAccess().getLogicExpressionExpressionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSentenceDeclarationAccess().getLogicExpressionExpressionParserRuleCall_3_0());
 				}
-				lv_logicExpression_5_0=ruleExpression
+				lv_logicExpression_3_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSentDeclarationRule());
+						$current = createModelElementForParent(grammarAccess.getSentenceDeclarationRule());
 					}
 					set(
 						$current,
 						"logicExpression",
-						lv_logicExpression_5_0,
+						lv_logicExpression_3_0,
 						"org.xtext.example.CNL.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_6='END_SENTENCE'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getSentDeclarationAccess().getEND_SENTENCEKeyword_6());
-		}
 	)
 ;
 

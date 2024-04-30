@@ -143,6 +143,14 @@ public class CNLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CNLPackage.SENTENCE:
+      {
+        Sentence sentence = (Sentence)theEObject;
+        T result = caseSentence(sentence);
+        if (result == null) result = caseDelFin(sentence);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CNLPackage.DECL_VAR_INPUT:
       {
         DeclVarInput declVarInput = (DeclVarInput)theEObject;
@@ -168,6 +176,13 @@ public class CNLSwitch<T> extends Switch<T>
       {
         SentDeclaration sentDeclaration = (SentDeclaration)theEObject;
         T result = caseSentDeclaration(sentDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.SENTENCE_DECLARATION:
+      {
+        SentenceDeclaration sentenceDeclaration = (SentenceDeclaration)theEObject;
+        T result = caseSentenceDeclaration(sentenceDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -272,27 +287,11 @@ public class CNLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CNLPackage.SENTENCE:
-      {
-        Sentence sentence = (Sentence)theEObject;
-        T result = caseSentence(sentence);
-        if (result == null) result = caseDelFin(sentence);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CNLPackage.DEL:
       {
         Del del = (Del)theEObject;
         T result = caseDel(del);
         if (result == null) result = caseDelay(del);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.DECL_SENT:
-      {
-        DeclSent declSent = (DeclSent)theEObject;
-        T result = caseDeclSent(declSent);
-        if (result == null) result = caseSentDeclaration(declSent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -461,6 +460,22 @@ public class CNLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Sentence</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sentence</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSentence(Sentence object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Decl Var Input</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -520,6 +535,22 @@ public class CNLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSentDeclaration(SentDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sentence Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sentence Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSentenceDeclaration(SentenceDeclaration object)
   {
     return null;
   }
@@ -701,22 +732,6 @@ public class CNLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSentence(Sentence object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Del</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -728,22 +743,6 @@ public class CNLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDel(Del object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Decl Sent</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Decl Sent</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDeclSent(DeclSent object)
   {
     return null;
   }

@@ -114,6 +114,15 @@ public interface CNLFactory extends EFactory
   Delay createDelay();
 
   /**
+   * Returns a new object of class '<em>Sentence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sentence</em>'.
+   * @generated
+   */
+  Sentence createSentence();
+
+  /**
    * Returns a new object of class '<em>Decl Var Input</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface CNLFactory extends EFactory
    * @generated
    */
   SentDeclaration createSentDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Sentence Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sentence Declaration</em>'.
+   * @generated
+   */
+  SentenceDeclaration createSentenceDeclaration();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.
@@ -249,15 +267,6 @@ public interface CNLFactory extends EFactory
   Rea createRea();
 
   /**
-   * Returns a new object of class '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sentence</em>'.
-   * @generated
-   */
-  Sentence createSentence();
-
-  /**
    * Returns a new object of class '<em>Del</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -265,15 +274,6 @@ public interface CNLFactory extends EFactory
    * @generated
    */
   Del createDel();
-
-  /**
-   * Returns a new object of class '<em>Decl Sent</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Decl Sent</em>'.
-   * @generated
-   */
-  DeclSent createDeclSent();
 
   /**
    * Returns the package supported by this factory.

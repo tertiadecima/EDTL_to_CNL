@@ -4,13 +4,16 @@
 package org.xtext.example.cNL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Del;
+import org.xtext.example.cNL.Sentence;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,24 +31,14 @@ import org.xtext.example.cNL.Del;
 public class DelImpl extends DelayImpl implements Del
 {
   /**
-   * The default value of the '{@link #getDel() <em>Del</em>}' attribute.
+   * The cached value of the '{@link #getDel() <em>Del</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDel()
    * @generated
    * @ordered
    */
-  protected static final String DEL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDel() <em>Del</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDel()
-   * @generated
-   * @ordered
-   */
-  protected String del = DEL_EDEFAULT;
+  protected Sentence del;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +67,7 @@ public class DelImpl extends DelayImpl implements Del
    * @generated
    */
   @Override
-  public String getDel()
+  public Sentence getDel()
   {
     return del;
   }
@@ -84,13 +77,54 @@ public class DelImpl extends DelayImpl implements Del
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDel(String newDel)
+  public NotificationChain basicSetDel(Sentence newDel, NotificationChain msgs)
   {
-    String oldDel = del;
+    Sentence oldDel = del;
     del = newDel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, oldDel, del));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, oldDel, newDel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDel(Sentence newDel)
+  {
+    if (newDel != del)
+    {
+      NotificationChain msgs = null;
+      if (del != null)
+        msgs = ((InternalEObject)del).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.DEL__DEL, null, msgs);
+      if (newDel != null)
+        msgs = ((InternalEObject)newDel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.DEL__DEL, null, msgs);
+      msgs = basicSetDel(newDel, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, newDel, newDel));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CNLPackage.DEL__DEL:
+        return basicSetDel(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -120,7 +154,7 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        setDel((String)newValue);
+        setDel((Sentence)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,7 +171,7 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        setDel(DEL_EDEFAULT);
+        setDel((Sentence)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,26 +188,9 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        return DEL_EDEFAULT == null ? del != null : !DEL_EDEFAULT.equals(del);
+        return del != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (del: ");
-    result.append(del);
-    result.append(')');
-    return result.toString();
   }
 
 } //DelImpl

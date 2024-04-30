@@ -11,7 +11,7 @@
 '<'=72
 '<='=74
 '<>'=71
-'='=55
+'='=56
 '=='=70
 '>'=73
 '>='=75
@@ -20,7 +20,7 @@
 'Always'=27
 'BOOL'=47
 'END_REQUIREMENT'=24
-'END_SENTENCE'=56
+'END_SENTENCE'=55
 'END_VAR'=51
 'FE'=60
 'HIGH'=62

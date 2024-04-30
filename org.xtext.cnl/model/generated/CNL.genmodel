@@ -31,18 +31,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Requirement/invariant"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Trig">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Trig/trig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/trig"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/invariant"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/release_reaction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/delay_final"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Inv">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Inv/inv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/inv"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/delay_final"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/release_reaction"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Inv_always">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Inv_always/inv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/inv"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/release_reaction"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//RelRea">
@@ -52,6 +52,11 @@
     <genClasses ecoreClass="CNL.ecore#//Reaction"/>
     <genClasses ecoreClass="CNL.ecore#//DelFin"/>
     <genClasses ecoreClass="CNL.ecore#//Delay"/>
+    <genClasses ecoreClass="CNL.ecore#//Sentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/fin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Sentence/name"/>
+    </genClasses>
     <genClasses ecoreClass="CNL.ecore#//DeclVarInput">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//DeclVarInput/varDecls"/>
     </genClasses>
@@ -62,7 +67,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//VarDeclaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//VarDeclaration/type"/>
     </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//SentDeclaration"/>
+    <genClasses ecoreClass="CNL.ecore#//SentDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//SentDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentDeclaration/sentenceDeclaration"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//SentenceDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentenceDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentenceDeclaration/logicExpression"/>
+    </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Expression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Expression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Expression/orOp"/>
@@ -94,22 +106,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//PrimaryExpression/nestExpr"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Rel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Rel/rel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Rel/rel"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Rea">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Rea/rea"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Sentence">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/delay"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Sentence/fin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Rea/rea"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Del">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Del/del"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//DeclSent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//DeclSent/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//DeclSent/sentenceDeclaration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//DeclSent/logicExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Del/del"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

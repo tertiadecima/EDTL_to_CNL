@@ -3,16 +3,22 @@
  */
 package org.xtext.example.validation;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
-import org.xtext.example.cNL.CNLPackage;
-import org.xtext.example.cNL.CompExpression;
+import org.eclipse.xtext.validation.ValidationMessageAcceptor;
 import org.xtext.example.cNL.DeclVarInput;
 import org.xtext.example.cNL.DeclVarOutput;
 import org.xtext.example.cNL.Expression;
 import org.xtext.example.cNL.Model;
-import org.xtext.example.cNL.Reaction;
+import org.xtext.example.cNL.ReqDeclaration;
 import org.xtext.example.cNL.SentDeclaration;
 import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 import org.xtext.example.cNL.VarDeclaration;
 
 /**
@@ -60,34 +66,148 @@ public class CNLValidator extends AbstractCNLValidator {
                 }
             }
         }
-    }    
+    }
     
-    // Переменные сначала объявлены, потом использованы в логическом выражении
-//    @Check
-//    public void checkVariableUsageInExpression(Model model) {
-//    	for (DeclVarInput declVarInput : model.getDeclVarInput()) {
-//            for (VarDeclaration varDecl : declVarInput.getVarDecls()) {
-//                String varName = varDecl.getName();
-//         }
-//    }
-    	
-         
+    // Идентификаторы требований не совпадают
+    @Check
+    public void checkUniqueRequirementNames(Model model) {
+        Set<String> requirementNames = new HashSet<>();
+    	for (ReqDeclaration reqDeclaration : model.getReqDeclaration()) {
+            String reqName = reqDeclaration.getName();
+            if (!requirementNames.add(reqName)) {
+                error("Повторяется идентификатор требования '" + reqName + "'", reqDeclaration, null, -1);
+            }
+        }
+    }  
+    
+    // Идентификаторы предложений не совпадают
+    @Check
+    public void checkUniqueSentenceNames(Model model) {
+        Set<String> sentenceNames = new HashSet<>();
+        for (SentDeclaration sentDeclaration : model.getSentDeclaration()) {
+            String sentName = sentDeclaration.getName();
+            if (!sentenceNames.add(sentName)) {
+                error("Повторяется идентификатор предложения '" + sentName + "'", sentDeclaration, null, -1);
+            }
+        }
+    }
+    
     // Строки сначала объявлены, потом использованы в требованиях
+    @Check
+    public void checkSentencesUsedInTrigger(Model model) {
+        Set<String> declaredSentenceNames = new HashSet<>();
+        for (SentDeclaration sentDeclaration : model.getSentDeclaration()) {
+            SentenceDeclaration sentenceDeclaration = sentDeclaration.getSentenceDeclaration();
+            Sentence sentenceName = sentenceDeclaration.getName();
+            declaredSentenceNames.add(sentenceName.getName());
+        }
 
-         
-	// в логических выражениях переменные одного типа
-//    @Check
-//    public void checkComparedVariablesAreOfTheSameType(CompExpression compExpression) {
-//        Expression leftVariable = compExpression.getLeft();
-//        Expression rightVariable = compExpression.getRight();
-//
-//        if (!leftVariable.getClass().getName().equals(rightVariable.getClass().getName())) {
-//            error("Переменные разных типов", compExpression, null, -1);
-//        }
-//    }
+        for (ReqDeclaration reqDeclaration : model.getReqDeclaration()) {
+            if (reqDeclaration.getRequirement().getTrigger().getTrig() != null) {
+                Sentence sentence = reqDeclaration.getRequirement().getTrigger().getTrig();
+                Sentence sentenceName = sentence;
+                if (!declaredSentenceNames.contains(sentenceName.getName())) {
+                    error("Trigger не объявлен: " + sentenceName.getName() + "'", reqDeclaration, null, -1);
+                }
+            }
+        }
+    }
+    
+    @Check
+    public void checkSentencesUsedInInvariant(Model model) {
+        Set<String> declaredSentenceNames = new HashSet<>();
+        for (SentDeclaration sentDeclaration : model.getSentDeclaration()) {
+            SentenceDeclaration sentenceDeclaration = sentDeclaration.getSentenceDeclaration();
+            Sentence sentenceName = sentenceDeclaration.getName();
+            declaredSentenceNames.add(sentenceName.getName());
+        }
+        
+        for (ReqDeclaration reqDeclaration : model.getReqDeclaration()) {
+            if (reqDeclaration.getRequirement().getInvariant().getInv() != null) {
+                Sentence sentence = reqDeclaration.getRequirement().getInvariant().getInv();
+                Sentence sentenceName = sentence;
+                if (!declaredSentenceNames.contains(sentenceName.getName())) {
+                    error("Invariant не объявлен: " + sentenceName.getName() + "'", reqDeclaration, null, -1);
+                }
+            }
+            
+            else if (reqDeclaration.getRequirement().getTrigger().getInvariant().getInv() != null) {
+                Sentence sentence = reqDeclaration.getRequirement().getTrigger().getInvariant().getInv();
+                Sentence sentenceName = sentence;
+                if (!declaredSentenceNames.contains(sentenceName.getName())) {
+                    error("Invariant не объявлен: " + sentenceName.getName() + "'", reqDeclaration, null, -1);
+                }
+            }
+        }
+    }
+    
+     
+    // Переменные сначала объявлены, потом использованы в логическом выражении
+    
 
+	// В логических выражениях переменные одного типа
+    @Check
+    public void checkVariableTypesInExpression(Expression expression) {
+        Model model = (Model) expression.eContainer();
+
+        // Collect variable types from DeclVarInput and DeclVarOutput
+        Map<String, String> variableTypes = collectVariableTypes(model);
+
+        // Check for variable type consistency within the given expression
+        Set<String> usedTypes = new HashSet<>();
+        Set<String> usedVariables = collectUsedVariables(expression);
+
+        for (String varName : usedVariables) {
+            String varType = variableTypes.get(varName);
+            if (varType != null) {
+                usedTypes.add(varType);
+            }
+        }
+
+        if (usedTypes.size() > 1) {
+            error("Mixed variable types in expression. Expected all variables to be of the same type.", 
+                  expression, 
+                  null, 
+                  ValidationMessageAcceptor.INSIGNIFICANT_INDEX);
+        }
+    }
+
+    private Map<String, String> collectVariableTypes(Model model) {
+        Map<String, String> variableTypes = new HashMap<>();
+
+        // Collect variable types from DeclVarInput
+        for (DeclVarInput declVarInput : model.getDeclVarInput()) {
+            for (VarDeclaration varDecl : declVarInput.getVarDecls()) {
+                variableTypes.put(varDecl.getName(), varDecl.getType().toString());
+            }
+        }
+
+        // Collect variable types from DeclVarOutput
+        for (DeclVarOutput declVarOutput : model.getDeclVarOutput()) {
+            for (VarDeclaration varDecl : declVarOutput.getVarDecls()) {
+                variableTypes.put(varDecl.getName(), varDecl.getType().toString());
+            }
+        }
+
+        return variableTypes;
+    }
+
+    private Set<String> collectUsedVariables(Expression expression) {
+        Set<String> usedVariables = new HashSet<>();
+
+        for (EObject content : expression.eContents()) {
+            if (content instanceof VarDeclaration) {
+                usedVariables.add(((VarDeclaration) content).getName());
+            } else if (content instanceof Expression) {
+                usedVariables.addAll(collectUsedVariables((Expression) content)); // Recursive call for nested expressions
+            }
+        }
+
+        return usedVariables;
+    }
     
     
+    // Объявлено (предложение, переменная), но не используется - через warning
     
 
 }

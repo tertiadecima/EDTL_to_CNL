@@ -23,25 +23,25 @@ package org.xtext.example.cNL;
 public interface Rel extends RelRea
 {
   /**
-   * Returns the value of the '<em><b>Rel</b></em>' attribute.
+   * Returns the value of the '<em><b>Rel</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rel</em>' attribute.
-   * @see #setRel(String)
+   * @return the value of the '<em>Rel</em>' containment reference.
+   * @see #setRel(Sentence)
    * @see org.xtext.example.cNL.CNLPackage#getRel_Rel()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getRel();
+  Sentence getRel();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Rel#getRel <em>Rel</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.Rel#getRel <em>Rel</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rel</em>' attribute.
+   * @param value the new value of the '<em>Rel</em>' containment reference.
    * @see #getRel()
    * @generated
    */
-  void setRel(String value);
+  void setRel(Sentence value);
 
 } // Rel

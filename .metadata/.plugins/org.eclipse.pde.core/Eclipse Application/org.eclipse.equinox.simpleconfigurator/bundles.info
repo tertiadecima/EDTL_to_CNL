@@ -587,11 +587,6 @@ org.eclipse.xtext.xtext.ui,2.32.0.v20230827-1315,file:/C:/Users/qaza2/.p2/pool/p
 org.eclipse.xtext.xtext.ui.examples,2.32.0.v20230827-1315,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.xtext.xtext.ui.examples_2.32.0.v20230827-1315.jar,4,false
 org.eclipse.xtext.xtext.ui.graph,2.32.0.v20230827-1315,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.xtext.xtext.ui.graph_2.32.0.v20230827-1315.jar,4,false
 org.eclipse.xtext.xtext.wizard,2.32.0.v20230827-1315,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.xtext.xtext.wizard_2.32.0.v20230827-1315.jar,4,false
-org.example.domainmodel,1.0.0.qualifier,file:/C:/Users/qaza2/eclipse-workspace/org.example.domainmodel/,4,false
-org.example.domainmodel.ide,1.0.0.qualifier,file:/C:/Users/qaza2/eclipse-workspace/org.example.domainmodel.ide/,4,false
-org.example.domainmodel.tests,1.0.0.qualifier,file:/C:/Users/qaza2/eclipse-workspace/org.example.domainmodel.tests/,4,false
-org.example.domainmodel.ui,1.0.0.qualifier,file:/C:/Users/qaza2/eclipse-workspace/org.example.domainmodel.ui/,4,false
-org.example.domainmodel.ui.tests,1.0.0.qualifier,file:/C:/Users/qaza2/eclipse-workspace/org.example.domainmodel.ui.tests/,4,false
 org.gradle.toolingapi,8.1.1.v20231117-1658,file:/C:/Users/qaza2/.p2/pool/plugins/org.gradle.toolingapi_8.1.1.v20231117-1658.jar,4,false
 org.hamcrest,2.2.0,file:/C:/Users/qaza2/.p2/pool/plugins/org.hamcrest_2.2.0.jar,4,false
 org.hamcrest.core,2.2.0.v20230809-1000,file:/C:/Users/qaza2/.p2/pool/plugins/org.hamcrest.core_2.2.0.v20230809-1000.jar,4,false
