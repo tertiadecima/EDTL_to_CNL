@@ -15,7 +15,6 @@ package org.xtext.example.cNL;
  * <ul>
  *   <li>{@link org.xtext.example.cNL.Sentence#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}</li>
- *   <li>{@link org.xtext.example.cNL.Sentence#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.cNL.CNLPackage#getSentence()
@@ -47,47 +46,25 @@ public interface Sentence extends DelFin
   void setDelay(Delay value);
 
   /**
-   * Returns the value of the '<em><b>Fin</b></em>' containment reference.
+   * Returns the value of the '<em><b>Fin</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fin</em>' containment reference.
-   * @see #setFin(Sentence)
+   * @return the value of the '<em>Fin</em>' reference.
+   * @see #setFin(SentenceDeclaration)
    * @see org.xtext.example.cNL.CNLPackage#getSentence_Fin()
-   * @model containment="true"
-   * @generated
-   */
-  Sentence getFin();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fin</em>' containment reference.
-   * @see #getFin()
-   * @generated
-   */
-  void setFin(Sentence value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.example.cNL.CNLPackage#getSentence_Name()
    * @model
    * @generated
    */
-  String getName();
+  SentenceDeclaration getFin();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Fin</em>' reference.
+   * @see #getFin()
    * @generated
    */
-  void setName(String value);
+  void setFin(SentenceDeclaration value);
 
 } // Sentence

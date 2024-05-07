@@ -11,51 +11,16 @@
       <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//EquOperator/NOT_EQUAL"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="CNL.ecore#//CompOperator">
-      <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/LESS"/>
-      <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/GREATER"/>
       <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/LESS_EQU"/>
       <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/GREATER_EQU"/>
+      <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="CNL.ecore#//CompOperator/GREATER"/>
     </genEnums>
     <genClasses ecoreClass="CNL.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Model/declVarInput"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Model/declVarOutput"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Model/sentDeclaration"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Model/reqDeclaration"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//ReqDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//ReqDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//ReqDeclaration/requirement"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Requirement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Requirement/trigger"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Requirement/invariant"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Trig">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/trig"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/invariant"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/release_reaction"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/delay_final"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Inv">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/inv"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/delay_final"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/release_reaction"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Inv_always">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/inv"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/release_reaction"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//RelRea">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//RelRea/reaction"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//RelRea/delay_final"/>
-    </genClasses>
-    <genClasses ecoreClass="CNL.ecore#//Reaction"/>
-    <genClasses ecoreClass="CNL.ecore#//DelFin"/>
-    <genClasses ecoreClass="CNL.ecore#//Delay"/>
-    <genClasses ecoreClass="CNL.ecore#//Sentence">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/delay"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/fin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//Sentence/name"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//DeclVarInput">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//DeclVarInput/varDecls"/>
@@ -68,11 +33,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//VarDeclaration/type"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//SentDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//SentDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//SentDeclaration/DeclarationName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentDeclaration/sentenceDeclaration"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//SentenceDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentenceDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//SentenceDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//SentenceDeclaration/logicExpression"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Expression">
@@ -100,19 +65,53 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//TimeLiteral/interval"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//PrimaryExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//PrimaryExpression/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//PrimaryExpression/constant"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//PrimaryExpression/tau"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//PrimaryExpression/v"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//PrimaryExpression/nestExpr"/>
     </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//ReqDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CNL.ecore#//ReqDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//ReqDeclaration/requirement"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Requirement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Requirement/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Requirement/invariant"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Trig">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/invariant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/release_reaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Trig/delay_final"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Inv">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/inv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/delay_final"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv/release_reaction"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Inv_always">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/inv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Inv_always/release_reaction"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//RelRea">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//RelRea/reaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//RelRea/delay_final"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Reaction"/>
+    <genClasses ecoreClass="CNL.ecore#//DelFin"/>
+    <genClasses ecoreClass="CNL.ecore#//Delay"/>
     <genClasses ecoreClass="CNL.ecore#//Rel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Rel/rel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Rel/rel"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Rea">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Rea/rea"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Rea/rea"/>
+    </genClasses>
+    <genClasses ecoreClass="CNL.ecore#//Sentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/delay"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Sentence/fin"/>
     </genClasses>
     <genClasses ecoreClass="CNL.ecore#//Del">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CNL.ecore#//Del/del"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CNL.ecore#//Del/del"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

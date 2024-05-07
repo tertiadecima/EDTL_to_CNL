@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cNL.Trig#getTrig <em>Trig</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.Trig#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.Trig#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.xtext.example.cNL.Trig#getRelease_reaction <em>Release reaction</em>}</li>
  *   <li>{@link org.xtext.example.cNL.Trig#getDelay_final <em>Delay final</em>}</li>
@@ -27,26 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Trig extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Trig</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Trig</em>' containment reference.
-   * @see #setTrig(Sentence)
-   * @see org.xtext.example.cNL.CNLPackage#getTrig_Trig()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(SentenceDeclaration)
+   * @see org.xtext.example.cNL.CNLPackage#getTrig_Name()
+   * @model
    * @generated
    */
-  Sentence getTrig();
+  SentenceDeclaration getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Trig#getTrig <em>Trig</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.cNL.Trig#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Trig</em>' containment reference.
-   * @see #getTrig()
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
    * @generated
    */
-  void setTrig(Sentence value);
+  void setName(SentenceDeclaration value);
 
   /**
    * Returns the value of the '<em><b>Invariant</b></em>' containment reference.

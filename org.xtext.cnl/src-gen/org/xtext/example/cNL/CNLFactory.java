@@ -33,96 +33,6 @@ public interface CNLFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Req Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Req Declaration</em>'.
-   * @generated
-   */
-  ReqDeclaration createReqDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Requirement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirement</em>'.
-   * @generated
-   */
-  Requirement createRequirement();
-
-  /**
-   * Returns a new object of class '<em>Trig</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trig</em>'.
-   * @generated
-   */
-  Trig createTrig();
-
-  /**
-   * Returns a new object of class '<em>Inv</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inv</em>'.
-   * @generated
-   */
-  Inv createInv();
-
-  /**
-   * Returns a new object of class '<em>Inv always</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inv always</em>'.
-   * @generated
-   */
-  Inv_always createInv_always();
-
-  /**
-   * Returns a new object of class '<em>Rel Rea</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rel Rea</em>'.
-   * @generated
-   */
-  RelRea createRelRea();
-
-  /**
-   * Returns a new object of class '<em>Reaction</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reaction</em>'.
-   * @generated
-   */
-  Reaction createReaction();
-
-  /**
-   * Returns a new object of class '<em>Del Fin</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Del Fin</em>'.
-   * @generated
-   */
-  DelFin createDelFin();
-
-  /**
-   * Returns a new object of class '<em>Delay</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Delay</em>'.
-   * @generated
-   */
-  Delay createDelay();
-
-  /**
-   * Returns a new object of class '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sentence</em>'.
-   * @generated
-   */
-  Sentence createSentence();
-
-  /**
    * Returns a new object of class '<em>Decl Var Input</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -249,6 +159,87 @@ public interface CNLFactory extends EFactory
   PrimaryExpression createPrimaryExpression();
 
   /**
+   * Returns a new object of class '<em>Req Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Req Declaration</em>'.
+   * @generated
+   */
+  ReqDeclaration createReqDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Requirement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Requirement</em>'.
+   * @generated
+   */
+  Requirement createRequirement();
+
+  /**
+   * Returns a new object of class '<em>Trig</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trig</em>'.
+   * @generated
+   */
+  Trig createTrig();
+
+  /**
+   * Returns a new object of class '<em>Inv</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inv</em>'.
+   * @generated
+   */
+  Inv createInv();
+
+  /**
+   * Returns a new object of class '<em>Inv always</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inv always</em>'.
+   * @generated
+   */
+  Inv_always createInv_always();
+
+  /**
+   * Returns a new object of class '<em>Rel Rea</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rel Rea</em>'.
+   * @generated
+   */
+  RelRea createRelRea();
+
+  /**
+   * Returns a new object of class '<em>Reaction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reaction</em>'.
+   * @generated
+   */
+  Reaction createReaction();
+
+  /**
+   * Returns a new object of class '<em>Del Fin</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Del Fin</em>'.
+   * @generated
+   */
+  DelFin createDelFin();
+
+  /**
+   * Returns a new object of class '<em>Delay</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Delay</em>'.
+   * @generated
+   */
+  Delay createDelay();
+
+  /**
    * Returns a new object of class '<em>Rel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -265,6 +256,15 @@ public interface CNLFactory extends EFactory
    * @generated
    */
   Rea createRea();
+
+  /**
+   * Returns a new object of class '<em>Sentence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sentence</em>'.
+   * @generated
+   */
+  Sentence createSentence();
 
   /**
    * Returns a new object of class '<em>Del</em>'.

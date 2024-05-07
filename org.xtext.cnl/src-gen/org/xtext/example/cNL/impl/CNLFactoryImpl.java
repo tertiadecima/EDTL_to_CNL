@@ -67,16 +67,6 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
     switch (eClass.getClassifierID())
     {
       case CNLPackage.MODEL: return createModel();
-      case CNLPackage.REQ_DECLARATION: return createReqDeclaration();
-      case CNLPackage.REQUIREMENT: return createRequirement();
-      case CNLPackage.TRIG: return createTrig();
-      case CNLPackage.INV: return createInv();
-      case CNLPackage.INV_ALWAYS: return createInv_always();
-      case CNLPackage.REL_REA: return createRelRea();
-      case CNLPackage.REACTION: return createReaction();
-      case CNLPackage.DEL_FIN: return createDelFin();
-      case CNLPackage.DELAY: return createDelay();
-      case CNLPackage.SENTENCE: return createSentence();
       case CNLPackage.DECL_VAR_INPUT: return createDeclVarInput();
       case CNLPackage.DECL_VAR_OUTPUT: return createDeclVarOutput();
       case CNLPackage.VAR_DECLARATION: return createVarDeclaration();
@@ -91,8 +81,18 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
       case CNLPackage.TAU_EXPRESSION: return createTauExpression();
       case CNLPackage.TIME_LITERAL: return createTimeLiteral();
       case CNLPackage.PRIMARY_EXPRESSION: return createPrimaryExpression();
+      case CNLPackage.REQ_DECLARATION: return createReqDeclaration();
+      case CNLPackage.REQUIREMENT: return createRequirement();
+      case CNLPackage.TRIG: return createTrig();
+      case CNLPackage.INV: return createInv();
+      case CNLPackage.INV_ALWAYS: return createInv_always();
+      case CNLPackage.REL_REA: return createRelRea();
+      case CNLPackage.REACTION: return createReaction();
+      case CNLPackage.DEL_FIN: return createDelFin();
+      case CNLPackage.DELAY: return createDelay();
       case CNLPackage.REL: return createRel();
       case CNLPackage.REA: return createRea();
+      case CNLPackage.SENTENCE: return createSentence();
       case CNLPackage.DEL: return createDel();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -147,126 +147,6 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ReqDeclaration createReqDeclaration()
-  {
-    ReqDeclarationImpl reqDeclaration = new ReqDeclarationImpl();
-    return reqDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Requirement createRequirement()
-  {
-    RequirementImpl requirement = new RequirementImpl();
-    return requirement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Trig createTrig()
-  {
-    TrigImpl trig = new TrigImpl();
-    return trig;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Inv createInv()
-  {
-    InvImpl inv = new InvImpl();
-    return inv;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Inv_always createInv_always()
-  {
-    Inv_alwaysImpl inv_always = new Inv_alwaysImpl();
-    return inv_always;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public RelRea createRelRea()
-  {
-    RelReaImpl relRea = new RelReaImpl();
-    return relRea;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Reaction createReaction()
-  {
-    ReactionImpl reaction = new ReactionImpl();
-    return reaction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DelFin createDelFin()
-  {
-    DelFinImpl delFin = new DelFinImpl();
-    return delFin;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Delay createDelay()
-  {
-    DelayImpl delay = new DelayImpl();
-    return delay;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Sentence createSentence()
-  {
-    SentenceImpl sentence = new SentenceImpl();
-    return sentence;
   }
 
   /**
@@ -443,6 +323,114 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
    * @generated
    */
   @Override
+  public ReqDeclaration createReqDeclaration()
+  {
+    ReqDeclarationImpl reqDeclaration = new ReqDeclarationImpl();
+    return reqDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Requirement createRequirement()
+  {
+    RequirementImpl requirement = new RequirementImpl();
+    return requirement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Trig createTrig()
+  {
+    TrigImpl trig = new TrigImpl();
+    return trig;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Inv createInv()
+  {
+    InvImpl inv = new InvImpl();
+    return inv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Inv_always createInv_always()
+  {
+    Inv_alwaysImpl inv_always = new Inv_alwaysImpl();
+    return inv_always;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RelRea createRelRea()
+  {
+    RelReaImpl relRea = new RelReaImpl();
+    return relRea;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Reaction createReaction()
+  {
+    ReactionImpl reaction = new ReactionImpl();
+    return reaction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DelFin createDelFin()
+  {
+    DelFinImpl delFin = new DelFinImpl();
+    return delFin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Delay createDelay()
+  {
+    DelayImpl delay = new DelayImpl();
+    return delay;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Rel createRel()
   {
     RelImpl rel = new RelImpl();
@@ -459,6 +447,18 @@ public class CNLFactoryImpl extends EFactoryImpl implements CNLFactory
   {
     ReaImpl rea = new ReaImpl();
     return rea;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Sentence createSentence()
+  {
+    SentenceImpl sentence = new SentenceImpl();
+    return sentence;
   }
 
   /**

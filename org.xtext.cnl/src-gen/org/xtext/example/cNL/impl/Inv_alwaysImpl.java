@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Inv_always;
 import org.xtext.example.cNL.RelRea;
-import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,14 +34,14 @@ import org.xtext.example.cNL.Sentence;
 public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_always
 {
   /**
-   * The cached value of the '{@link #getInv() <em>Inv</em>}' containment reference.
+   * The cached value of the '{@link #getInv() <em>Inv</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInv()
    * @generated
    * @ordered
    */
-  protected Sentence inv;
+  protected SentenceDeclaration inv;
 
   /**
    * The cached value of the '{@link #getRelease_reaction() <em>Release reaction</em>}' containment reference.
@@ -80,7 +80,27 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
    * @generated
    */
   @Override
-  public Sentence getInv()
+  public SentenceDeclaration getInv()
+  {
+    if (inv != null && inv.eIsProxy())
+    {
+      InternalEObject oldInv = (InternalEObject)inv;
+      inv = (SentenceDeclaration)eResolveProxy(oldInv);
+      if (inv != oldInv)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.INV_ALWAYS__INV, oldInv, inv));
+      }
+    }
+    return inv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SentenceDeclaration basicGetInv()
   {
     return inv;
   }
@@ -90,38 +110,13 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInv(Sentence newInv, NotificationChain msgs)
+  @Override
+  public void setInv(SentenceDeclaration newInv)
   {
-    Sentence oldInv = inv;
+    SentenceDeclaration oldInv = inv;
     inv = newInv;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.INV_ALWAYS__INV, oldInv, newInv);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setInv(Sentence newInv)
-  {
-    if (newInv != inv)
-    {
-      NotificationChain msgs = null;
-      if (inv != null)
-        msgs = ((InternalEObject)inv).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV_ALWAYS__INV, null, msgs);
-      if (newInv != null)
-        msgs = ((InternalEObject)newInv).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV_ALWAYS__INV, null, msgs);
-      msgs = basicSetInv(newInv, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV_ALWAYS__INV, newInv, newInv));
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV_ALWAYS__INV, oldInv, inv));
   }
 
   /**
@@ -184,8 +179,6 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
   {
     switch (featureID)
     {
-      case CNLPackage.INV_ALWAYS__INV:
-        return basicSetInv(null, msgs);
       case CNLPackage.INV_ALWAYS__RELEASE_REACTION:
         return basicSetRelease_reaction(null, msgs);
     }
@@ -203,7 +196,8 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
     switch (featureID)
     {
       case CNLPackage.INV_ALWAYS__INV:
-        return getInv();
+        if (resolve) return getInv();
+        return basicGetInv();
       case CNLPackage.INV_ALWAYS__RELEASE_REACTION:
         return getRelease_reaction();
     }
@@ -221,7 +215,7 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
     switch (featureID)
     {
       case CNLPackage.INV_ALWAYS__INV:
-        setInv((Sentence)newValue);
+        setInv((SentenceDeclaration)newValue);
         return;
       case CNLPackage.INV_ALWAYS__RELEASE_REACTION:
         setRelease_reaction((RelRea)newValue);
@@ -241,7 +235,7 @@ public class Inv_alwaysImpl extends MinimalEObjectImpl.Container implements Inv_
     switch (featureID)
     {
       case CNLPackage.INV_ALWAYS__INV:
-        setInv((Sentence)null);
+        setInv((SentenceDeclaration)null);
         return;
       case CNLPackage.INV_ALWAYS__RELEASE_REACTION:
         setRelease_reaction((RelRea)null);

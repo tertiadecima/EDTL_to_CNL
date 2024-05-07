@@ -16,7 +16,7 @@ import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.DelFin;
 import org.xtext.example.cNL.Inv;
 import org.xtext.example.cNL.RelRea;
-import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,14 +36,14 @@ import org.xtext.example.cNL.Sentence;
 public class InvImpl extends MinimalEObjectImpl.Container implements Inv
 {
   /**
-   * The cached value of the '{@link #getInv() <em>Inv</em>}' containment reference.
+   * The cached value of the '{@link #getInv() <em>Inv</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInv()
    * @generated
    * @ordered
    */
-  protected Sentence inv;
+  protected SentenceDeclaration inv;
 
   /**
    * The cached value of the '{@link #getDelay_final() <em>Delay final</em>}' containment reference.
@@ -92,7 +92,27 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
    * @generated
    */
   @Override
-  public Sentence getInv()
+  public SentenceDeclaration getInv()
+  {
+    if (inv != null && inv.eIsProxy())
+    {
+      InternalEObject oldInv = (InternalEObject)inv;
+      inv = (SentenceDeclaration)eResolveProxy(oldInv);
+      if (inv != oldInv)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.INV__INV, oldInv, inv));
+      }
+    }
+    return inv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SentenceDeclaration basicGetInv()
   {
     return inv;
   }
@@ -102,38 +122,13 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInv(Sentence newInv, NotificationChain msgs)
+  @Override
+  public void setInv(SentenceDeclaration newInv)
   {
-    Sentence oldInv = inv;
+    SentenceDeclaration oldInv = inv;
     inv = newInv;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, oldInv, newInv);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setInv(Sentence newInv)
-  {
-    if (newInv != inv)
-    {
-      NotificationChain msgs = null;
-      if (inv != null)
-        msgs = ((InternalEObject)inv).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV__INV, null, msgs);
-      if (newInv != null)
-        msgs = ((InternalEObject)newInv).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.INV__INV, null, msgs);
-      msgs = basicSetInv(newInv, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, newInv, newInv));
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.INV__INV, oldInv, inv));
   }
 
   /**
@@ -246,8 +241,6 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
   {
     switch (featureID)
     {
-      case CNLPackage.INV__INV:
-        return basicSetInv(null, msgs);
       case CNLPackage.INV__DELAY_FINAL:
         return basicSetDelay_final(null, msgs);
       case CNLPackage.INV__RELEASE_REACTION:
@@ -267,7 +260,8 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        return getInv();
+        if (resolve) return getInv();
+        return basicGetInv();
       case CNLPackage.INV__DELAY_FINAL:
         return getDelay_final();
       case CNLPackage.INV__RELEASE_REACTION:
@@ -287,7 +281,7 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        setInv((Sentence)newValue);
+        setInv((SentenceDeclaration)newValue);
         return;
       case CNLPackage.INV__DELAY_FINAL:
         setDelay_final((DelFin)newValue);
@@ -310,7 +304,7 @@ public class InvImpl extends MinimalEObjectImpl.Container implements Inv
     switch (featureID)
     {
       case CNLPackage.INV__INV:
-        setInv((Sentence)null);
+        setInv((SentenceDeclaration)null);
         return;
       case CNLPackage.INV__DELAY_FINAL:
         setDelay_final((DelFin)null);

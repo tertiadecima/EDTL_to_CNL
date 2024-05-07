@@ -11,57 +11,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="reqDeclaration" upperBound="-1"
         eType="#//ReqDeclaration" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReqDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="#//Trig"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv_always"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Trig">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="trig" eType="#//Sentence"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inv">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inv" eType="#//Sentence"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inv_always">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inv" eType="#//Sentence"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelRea">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reaction" eType="#//Reaction"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reaction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DelFin"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Delay"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sentence" eSuperTypes="#//DelFin">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//Delay"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fin" eType="#//Sentence"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclVarInput">
     <eStructuralFeatures xsi:type="ecore:EReference" name="varDecls" upperBound="-1"
         eType="#//VarDeclaration" containment="true"/>
@@ -75,13 +24,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SentDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DeclarationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sentenceDeclaration" eType="#//SentenceDeclaration"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SentenceDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Sentence"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicExpression" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
@@ -107,10 +55,10 @@
     <eLiterals name="NOT_EQUAL" value="1" literal="&lt;>"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CompOperator">
-    <eLiterals name="LESS" literal="&lt;"/>
-    <eLiterals name="GREATER" value="1" literal=">"/>
-    <eLiterals name="LESS_EQU" value="2" literal="&lt;="/>
-    <eLiterals name="GREATER_EQU" value="3" literal=">="/>
+    <eLiterals name="LESS_EQU" literal="&lt;="/>
+    <eLiterals name="GREATER_EQU" value="1" literal=">="/>
+    <eLiterals name="LESS" value="2" literal="&lt;"/>
+    <eLiterals name="GREATER" value="3" literal=">"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnExpression" eSuperTypes="#//EquExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -123,23 +71,66 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryExpression" eSuperTypes="#//UnExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VarDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tau" eType="#//TauExpression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestExpr" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rel" eSuperTypes="#//RelRea">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rel" eType="#//Sentence"
+  <eClassifiers xsi:type="ecore:EClass" name="ReqDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" eType="#//Requirement"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="#//Trig"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv_always"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//SentenceDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" eType="#//Inv"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inv">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inv" eType="#//SentenceDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inv_always">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inv" eType="#//SentenceDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release_reaction" eType="#//RelRea"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelRea">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reaction" eType="#//Reaction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay_final" eType="#//DelFin"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DelFin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Delay"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rel" eSuperTypes="#//RelRea">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rel" eType="#//SentenceDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rea" eSuperTypes="#//RelRea #//Reaction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rea" eType="#//Sentence"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rea" eType="#//SentenceDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sentence" eSuperTypes="#//DelFin">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//Delay"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fin" eType="#//SentenceDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Del" eSuperTypes="#//Delay">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="del" eType="#//Sentence"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="del" eType="#//SentenceDeclaration"/>
   </eClassifiers>
 </ecore:EPackage>

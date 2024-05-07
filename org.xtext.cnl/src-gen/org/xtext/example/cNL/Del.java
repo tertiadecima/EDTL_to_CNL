@@ -23,25 +23,25 @@ package org.xtext.example.cNL;
 public interface Del extends Delay
 {
   /**
-   * Returns the value of the '<em><b>Del</b></em>' containment reference.
+   * Returns the value of the '<em><b>Del</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Del</em>' containment reference.
-   * @see #setDel(Sentence)
+   * @return the value of the '<em>Del</em>' reference.
+   * @see #setDel(SentenceDeclaration)
    * @see org.xtext.example.cNL.CNLPackage#getDel_Del()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Sentence getDel();
+  SentenceDeclaration getDel();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Del#getDel <em>Del</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.cNL.Del#getDel <em>Del</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Del</em>' containment reference.
+   * @param value the new value of the '<em>Del</em>' reference.
    * @see #getDel()
    * @generated
    */
-  void setDel(Sentence value);
+  void setDel(SentenceDeclaration value);
 
 } // Del

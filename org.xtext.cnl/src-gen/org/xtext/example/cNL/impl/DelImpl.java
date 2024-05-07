@@ -4,7 +4,6 @@
 package org.xtext.example.cNL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -13,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Del;
-import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,14 +30,14 @@ import org.xtext.example.cNL.Sentence;
 public class DelImpl extends DelayImpl implements Del
 {
   /**
-   * The cached value of the '{@link #getDel() <em>Del</em>}' containment reference.
+   * The cached value of the '{@link #getDel() <em>Del</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDel()
    * @generated
    * @ordered
    */
-  protected Sentence del;
+  protected SentenceDeclaration del;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +66,27 @@ public class DelImpl extends DelayImpl implements Del
    * @generated
    */
   @Override
-  public Sentence getDel()
+  public SentenceDeclaration getDel()
+  {
+    if (del != null && del.eIsProxy())
+    {
+      InternalEObject oldDel = (InternalEObject)del;
+      del = (SentenceDeclaration)eResolveProxy(oldDel);
+      if (del != oldDel)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.DEL__DEL, oldDel, del));
+      }
+    }
+    return del;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SentenceDeclaration basicGetDel()
   {
     return del;
   }
@@ -77,54 +96,13 @@ public class DelImpl extends DelayImpl implements Del
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetDel(Sentence newDel, NotificationChain msgs)
+  @Override
+  public void setDel(SentenceDeclaration newDel)
   {
-    Sentence oldDel = del;
+    SentenceDeclaration oldDel = del;
     del = newDel;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, oldDel, newDel);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDel(Sentence newDel)
-  {
-    if (newDel != del)
-    {
-      NotificationChain msgs = null;
-      if (del != null)
-        msgs = ((InternalEObject)del).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.DEL__DEL, null, msgs);
-      if (newDel != null)
-        msgs = ((InternalEObject)newDel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.DEL__DEL, null, msgs);
-      msgs = basicSetDel(newDel, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, newDel, newDel));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CNLPackage.DEL__DEL:
-        return basicSetDel(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.DEL__DEL, oldDel, del));
   }
 
   /**
@@ -138,7 +116,8 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        return getDel();
+        if (resolve) return getDel();
+        return basicGetDel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,7 +133,7 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        setDel((Sentence)newValue);
+        setDel((SentenceDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +150,7 @@ public class DelImpl extends DelayImpl implements Del
     switch (featureID)
     {
       case CNLPackage.DEL__DEL:
-        setDel((Sentence)null);
+        setDel((SentenceDeclaration)null);
         return;
     }
     super.eUnset(featureID);

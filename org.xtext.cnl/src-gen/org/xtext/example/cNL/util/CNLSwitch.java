@@ -80,77 +80,6 @@ public class CNLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CNLPackage.REQ_DECLARATION:
-      {
-        ReqDeclaration reqDeclaration = (ReqDeclaration)theEObject;
-        T result = caseReqDeclaration(reqDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.REQUIREMENT:
-      {
-        Requirement requirement = (Requirement)theEObject;
-        T result = caseRequirement(requirement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.TRIG:
-      {
-        Trig trig = (Trig)theEObject;
-        T result = caseTrig(trig);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.INV:
-      {
-        Inv inv = (Inv)theEObject;
-        T result = caseInv(inv);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.INV_ALWAYS:
-      {
-        Inv_always inv_always = (Inv_always)theEObject;
-        T result = caseInv_always(inv_always);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.REL_REA:
-      {
-        RelRea relRea = (RelRea)theEObject;
-        T result = caseRelRea(relRea);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.REACTION:
-      {
-        Reaction reaction = (Reaction)theEObject;
-        T result = caseReaction(reaction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.DEL_FIN:
-      {
-        DelFin delFin = (DelFin)theEObject;
-        T result = caseDelFin(delFin);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.DELAY:
-      {
-        Delay delay = (Delay)theEObject;
-        T result = caseDelay(delay);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CNLPackage.SENTENCE:
-      {
-        Sentence sentence = (Sentence)theEObject;
-        T result = caseSentence(sentence);
-        if (result == null) result = caseDelFin(sentence);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CNLPackage.DECL_VAR_INPUT:
       {
         DeclVarInput declVarInput = (DeclVarInput)theEObject;
@@ -270,6 +199,69 @@ public class CNLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CNLPackage.REQ_DECLARATION:
+      {
+        ReqDeclaration reqDeclaration = (ReqDeclaration)theEObject;
+        T result = caseReqDeclaration(reqDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.REQUIREMENT:
+      {
+        Requirement requirement = (Requirement)theEObject;
+        T result = caseRequirement(requirement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.TRIG:
+      {
+        Trig trig = (Trig)theEObject;
+        T result = caseTrig(trig);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.INV:
+      {
+        Inv inv = (Inv)theEObject;
+        T result = caseInv(inv);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.INV_ALWAYS:
+      {
+        Inv_always inv_always = (Inv_always)theEObject;
+        T result = caseInv_always(inv_always);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.REL_REA:
+      {
+        RelRea relRea = (RelRea)theEObject;
+        T result = caseRelRea(relRea);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.REACTION:
+      {
+        Reaction reaction = (Reaction)theEObject;
+        T result = caseReaction(reaction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.DEL_FIN:
+      {
+        DelFin delFin = (DelFin)theEObject;
+        T result = caseDelFin(delFin);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.DELAY:
+      {
+        Delay delay = (Delay)theEObject;
+        T result = caseDelay(delay);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CNLPackage.REL:
       {
         Rel rel = (Rel)theEObject;
@@ -284,6 +276,14 @@ public class CNLSwitch<T> extends Switch<T>
         T result = caseRea(rea);
         if (result == null) result = caseRelRea(rea);
         if (result == null) result = caseReaction(rea);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CNLPackage.SENTENCE:
+      {
+        Sentence sentence = (Sentence)theEObject;
+        T result = caseSentence(sentence);
+        if (result == null) result = caseDelFin(sentence);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -311,166 +311,6 @@ public class CNLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Req Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Req Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReqDeclaration(ReqDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Requirement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Requirement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRequirement(Requirement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Trig</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Trig</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTrig(Trig object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Inv</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Inv</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInv(Inv object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Inv always</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Inv always</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInv_always(Inv_always object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Rel Rea</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Rel Rea</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRelRea(RelRea object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Reaction</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Reaction</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReaction(Reaction object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Del Fin</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Del Fin</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDelFin(DelFin object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Delay</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Delay</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDelay(Delay object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSentence(Sentence object)
   {
     return null;
   }
@@ -700,6 +540,150 @@ public class CNLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Req Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Req Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReqDeclaration(ReqDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Requirement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Requirement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRequirement(Requirement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Trig</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Trig</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrig(Trig object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inv</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inv</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInv(Inv object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inv always</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inv always</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInv_always(Inv_always object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rel Rea</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rel Rea</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelRea(RelRea object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reaction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reaction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReaction(Reaction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Del Fin</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Del Fin</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDelFin(DelFin object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Delay</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Delay</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDelay(Delay object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Rel</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -727,6 +711,22 @@ public class CNLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRea(Rea object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sentence</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sentence</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSentence(Sentence object)
   {
     return null;
   }

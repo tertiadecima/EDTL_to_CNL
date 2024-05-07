@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface SentenceDeclaration extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Sentence)
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
    * @see org.xtext.example.cNL.CNLPackage#getSentenceDeclaration_Name()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Sentence getName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.SentenceDeclaration#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.cNL.SentenceDeclaration#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @param value the new value of the '<em>Name</em>' attribute.
    * @see #getName()
    * @generated
    */
-  void setName(Sentence value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Logic Expression</b></em>' containment reference.

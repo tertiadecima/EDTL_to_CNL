@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cNL.SentDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.SentDeclaration#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.SentDeclaration#getSentenceDeclaration <em>Sentence Declaration</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface SentDeclaration extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Declaration Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.example.cNL.CNLPackage#getSentDeclaration_Name()
+   * @return the value of the '<em>Declaration Name</em>' attribute.
+   * @see #setDeclarationName(String)
+   * @see org.xtext.example.cNL.CNLPackage#getSentDeclaration_DeclarationName()
    * @model
    * @generated
    */
-  String getName();
+  String getDeclarationName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.SentDeclaration#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cNL.SentDeclaration#getDeclarationName <em>Declaration Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Declaration Name</em>' attribute.
+   * @see #getDeclarationName()
    * @generated
    */
-  void setName(String value);
+  void setDeclarationName(String value);
 
   /**
    * Returns the value of the '<em><b>Sentence Declaration</b></em>' containment reference.

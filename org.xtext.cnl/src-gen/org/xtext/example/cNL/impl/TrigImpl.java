@@ -16,7 +16,7 @@ import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.DelFin;
 import org.xtext.example.cNL.Inv;
 import org.xtext.example.cNL.RelRea;
-import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 import org.xtext.example.cNL.Trig;
 
 /**
@@ -27,7 +27,7 @@ import org.xtext.example.cNL.Trig;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cNL.impl.TrigImpl#getTrig <em>Trig</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.impl.TrigImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.TrigImpl#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.TrigImpl#getRelease_reaction <em>Release reaction</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.TrigImpl#getDelay_final <em>Delay final</em>}</li>
@@ -38,14 +38,14 @@ import org.xtext.example.cNL.Trig;
 public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
 {
   /**
-   * The cached value of the '{@link #getTrig() <em>Trig</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTrig()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Sentence trig;
+  protected SentenceDeclaration name;
 
   /**
    * The cached value of the '{@link #getInvariant() <em>Invariant</em>}' containment reference.
@@ -104,9 +104,19 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
    * @generated
    */
   @Override
-  public Sentence getTrig()
+  public SentenceDeclaration getName()
   {
-    return trig;
+    if (name != null && name.eIsProxy())
+    {
+      InternalEObject oldName = (InternalEObject)name;
+      name = (SentenceDeclaration)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.TRIG__NAME, oldName, name));
+      }
+    }
+    return name;
   }
 
   /**
@@ -114,16 +124,9 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTrig(Sentence newTrig, NotificationChain msgs)
+  public SentenceDeclaration basicGetName()
   {
-    Sentence oldTrig = trig;
-    trig = newTrig;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.TRIG__TRIG, oldTrig, newTrig);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return name;
   }
 
   /**
@@ -132,20 +135,12 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
    * @generated
    */
   @Override
-  public void setTrig(Sentence newTrig)
+  public void setName(SentenceDeclaration newName)
   {
-    if (newTrig != trig)
-    {
-      NotificationChain msgs = null;
-      if (trig != null)
-        msgs = ((InternalEObject)trig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.TRIG__TRIG, null, msgs);
-      if (newTrig != null)
-        msgs = ((InternalEObject)newTrig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.TRIG__TRIG, null, msgs);
-      msgs = basicSetTrig(newTrig, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.TRIG__TRIG, newTrig, newTrig));
+    SentenceDeclaration oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.TRIG__NAME, oldName, name));
   }
 
   /**
@@ -308,8 +303,6 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
   {
     switch (featureID)
     {
-      case CNLPackage.TRIG__TRIG:
-        return basicSetTrig(null, msgs);
       case CNLPackage.TRIG__INVARIANT:
         return basicSetInvariant(null, msgs);
       case CNLPackage.TRIG__RELEASE_REACTION:
@@ -330,8 +323,9 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
   {
     switch (featureID)
     {
-      case CNLPackage.TRIG__TRIG:
-        return getTrig();
+      case CNLPackage.TRIG__NAME:
+        if (resolve) return getName();
+        return basicGetName();
       case CNLPackage.TRIG__INVARIANT:
         return getInvariant();
       case CNLPackage.TRIG__RELEASE_REACTION:
@@ -352,8 +346,8 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
   {
     switch (featureID)
     {
-      case CNLPackage.TRIG__TRIG:
-        setTrig((Sentence)newValue);
+      case CNLPackage.TRIG__NAME:
+        setName((SentenceDeclaration)newValue);
         return;
       case CNLPackage.TRIG__INVARIANT:
         setInvariant((Inv)newValue);
@@ -378,8 +372,8 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
   {
     switch (featureID)
     {
-      case CNLPackage.TRIG__TRIG:
-        setTrig((Sentence)null);
+      case CNLPackage.TRIG__NAME:
+        setName((SentenceDeclaration)null);
         return;
       case CNLPackage.TRIG__INVARIANT:
         setInvariant((Inv)null);
@@ -404,8 +398,8 @@ public class TrigImpl extends MinimalEObjectImpl.Container implements Trig
   {
     switch (featureID)
     {
-      case CNLPackage.TRIG__TRIG:
-        return trig != null;
+      case CNLPackage.TRIG__NAME:
+        return name != null;
       case CNLPackage.TRIG__INVARIANT:
         return invariant != null;
       case CNLPackage.TRIG__RELEASE_REACTION:

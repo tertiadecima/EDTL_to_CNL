@@ -15,6 +15,7 @@ import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Expression;
 import org.xtext.example.cNL.PrimaryExpression;
 import org.xtext.example.cNL.TauExpression;
+import org.xtext.example.cNL.VarDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,9 +25,9 @@ import org.xtext.example.cNL.TauExpression;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.cNL.impl.PrimaryExpressionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.PrimaryExpressionImpl#getConstant <em>Constant</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.PrimaryExpressionImpl#getTau <em>Tau</em>}</li>
- *   <li>{@link org.xtext.example.cNL.impl.PrimaryExpressionImpl#getV <em>V</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.PrimaryExpressionImpl#getNestExpr <em>Nest Expr</em>}</li>
  * </ul>
  *
@@ -34,6 +35,16 @@ import org.xtext.example.cNL.TauExpression;
  */
 public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryExpression
 {
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected VarDeclaration name;
+
   /**
    * The default value of the '{@link #getConstant() <em>Constant</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -65,26 +76,6 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   protected TauExpression tau;
 
   /**
-   * The default value of the '{@link #getV() <em>V</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getV()
-   * @generated
-   * @ordered
-   */
-  protected static final String V_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getV() <em>V</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getV()
-   * @generated
-   * @ordered
-   */
-  protected String v = V_EDEFAULT;
-
-  /**
    * The cached value of the '{@link #getNestExpr() <em>Nest Expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,6 +104,51 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   protected EClass eStaticClass()
   {
     return CNLPackage.Literals.PRIMARY_EXPRESSION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VarDeclaration getName()
+  {
+    if (name != null && name.eIsProxy())
+    {
+      InternalEObject oldName = (InternalEObject)name;
+      name = (VarDeclaration)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.PRIMARY_EXPRESSION__NAME, oldName, name));
+      }
+    }
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarDeclaration basicGetName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(VarDeclaration newName)
+  {
+    VarDeclaration oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.PRIMARY_EXPRESSION__NAME, oldName, name));
   }
 
   /**
@@ -196,31 +232,6 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
    * @generated
    */
   @Override
-  public String getV()
-  {
-    return v;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setV(String newV)
-  {
-    String oldV = v;
-    v = newV;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.PRIMARY_EXPRESSION__V, oldV, v));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Expression getNestExpr()
   {
     return nestExpr;
@@ -293,12 +304,13 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   {
     switch (featureID)
     {
+      case CNLPackage.PRIMARY_EXPRESSION__NAME:
+        if (resolve) return getName();
+        return basicGetName();
       case CNLPackage.PRIMARY_EXPRESSION__CONSTANT:
         return getConstant();
       case CNLPackage.PRIMARY_EXPRESSION__TAU:
         return getTau();
-      case CNLPackage.PRIMARY_EXPRESSION__V:
-        return getV();
       case CNLPackage.PRIMARY_EXPRESSION__NEST_EXPR:
         return getNestExpr();
     }
@@ -315,14 +327,14 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   {
     switch (featureID)
     {
+      case CNLPackage.PRIMARY_EXPRESSION__NAME:
+        setName((VarDeclaration)newValue);
+        return;
       case CNLPackage.PRIMARY_EXPRESSION__CONSTANT:
         setConstant((String)newValue);
         return;
       case CNLPackage.PRIMARY_EXPRESSION__TAU:
         setTau((TauExpression)newValue);
-        return;
-      case CNLPackage.PRIMARY_EXPRESSION__V:
-        setV((String)newValue);
         return;
       case CNLPackage.PRIMARY_EXPRESSION__NEST_EXPR:
         setNestExpr((Expression)newValue);
@@ -341,14 +353,14 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   {
     switch (featureID)
     {
+      case CNLPackage.PRIMARY_EXPRESSION__NAME:
+        setName((VarDeclaration)null);
+        return;
       case CNLPackage.PRIMARY_EXPRESSION__CONSTANT:
         setConstant(CONSTANT_EDEFAULT);
         return;
       case CNLPackage.PRIMARY_EXPRESSION__TAU:
         setTau((TauExpression)null);
-        return;
-      case CNLPackage.PRIMARY_EXPRESSION__V:
-        setV(V_EDEFAULT);
         return;
       case CNLPackage.PRIMARY_EXPRESSION__NEST_EXPR:
         setNestExpr((Expression)null);
@@ -367,12 +379,12 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
   {
     switch (featureID)
     {
+      case CNLPackage.PRIMARY_EXPRESSION__NAME:
+        return name != null;
       case CNLPackage.PRIMARY_EXPRESSION__CONSTANT:
         return CONSTANT_EDEFAULT == null ? constant != null : !CONSTANT_EDEFAULT.equals(constant);
       case CNLPackage.PRIMARY_EXPRESSION__TAU:
         return tau != null;
-      case CNLPackage.PRIMARY_EXPRESSION__V:
-        return V_EDEFAULT == null ? v != null : !V_EDEFAULT.equals(v);
       case CNLPackage.PRIMARY_EXPRESSION__NEST_EXPR:
         return nestExpr != null;
     }
@@ -392,8 +404,6 @@ public class PrimaryExpressionImpl extends UnExpressionImpl implements PrimaryEx
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (constant: ");
     result.append(constant);
-    result.append(", v: ");
-    result.append(v);
     result.append(')');
     return result.toString();
   }

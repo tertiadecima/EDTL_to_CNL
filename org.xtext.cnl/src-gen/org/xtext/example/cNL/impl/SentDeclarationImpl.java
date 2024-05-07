@@ -24,7 +24,7 @@ import org.xtext.example.cNL.SentenceDeclaration;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cNL.impl.SentDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cNL.impl.SentDeclarationImpl#getDeclarationName <em>Declaration Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.SentDeclarationImpl#getSentenceDeclaration <em>Sentence Declaration</em>}</li>
  * </ul>
  *
@@ -33,24 +33,24 @@ import org.xtext.example.cNL.SentenceDeclaration;
 public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements SentDeclaration
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclarationName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String DECLARATION_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getDeclarationName() <em>Declaration Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclarationName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String declarationName = DECLARATION_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSentenceDeclaration() <em>Sentence Declaration</em>}' containment reference.
@@ -89,9 +89,9 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public String getName()
+  public String getDeclarationName()
   {
-    return name;
+    return declarationName;
   }
 
   /**
@@ -100,12 +100,12 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setDeclarationName(String newDeclarationName)
   {
-    String oldName = name;
-    name = newName;
+    String oldDeclarationName = declarationName;
+    declarationName = newDeclarationName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENT_DECLARATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENT_DECLARATION__DECLARATION_NAME, oldDeclarationName, declarationName));
   }
 
   /**
@@ -184,8 +184,8 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CNLPackage.SENT_DECLARATION__NAME:
-        return getName();
+      case CNLPackage.SENT_DECLARATION__DECLARATION_NAME:
+        return getDeclarationName();
       case CNLPackage.SENT_DECLARATION__SENTENCE_DECLARATION:
         return getSentenceDeclaration();
     }
@@ -202,8 +202,8 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CNLPackage.SENT_DECLARATION__NAME:
-        setName((String)newValue);
+      case CNLPackage.SENT_DECLARATION__DECLARATION_NAME:
+        setDeclarationName((String)newValue);
         return;
       case CNLPackage.SENT_DECLARATION__SENTENCE_DECLARATION:
         setSentenceDeclaration((SentenceDeclaration)newValue);
@@ -222,8 +222,8 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CNLPackage.SENT_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
+      case CNLPackage.SENT_DECLARATION__DECLARATION_NAME:
+        setDeclarationName(DECLARATION_NAME_EDEFAULT);
         return;
       case CNLPackage.SENT_DECLARATION__SENTENCE_DECLARATION:
         setSentenceDeclaration((SentenceDeclaration)null);
@@ -242,8 +242,8 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case CNLPackage.SENT_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CNLPackage.SENT_DECLARATION__DECLARATION_NAME:
+        return DECLARATION_NAME_EDEFAULT == null ? declarationName != null : !DECLARATION_NAME_EDEFAULT.equals(declarationName);
       case CNLPackage.SENT_DECLARATION__SENTENCE_DECLARATION:
         return sentenceDeclaration != null;
     }
@@ -261,8 +261,8 @@ public class SentDeclarationImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (DeclarationName: ");
+    result.append(declarationName);
     result.append(')');
     return result.toString();
   }

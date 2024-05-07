@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="INT"/>
+		<item key="selection" value="REQUI"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="int"/>
-			<item value="number"/>
-			<item value="comp"/>
-			<item value="&apos;(&apos;"/>
-			<item value="variable"/>
-			<item value="primary"/>
-			<item value="Fin"/>
+			<item value="requi"/>
+			<item value="requie"/>
+			<item value="Req"/>
+			<item value="=sentence"/>
+			<item value="sentence="/>
 			<item value="Sentence"/>
-			<item value="type"/>
-			<item value="decl"/>
-			<item value="&apos;&quot;&apos;"/>
-			<item value="}"/>
-			<item value="{"/>
-			<item value="rule_id"/>
-			<item value="=}"/>
+			<item value="sentence"/>
+			<item value="variable"/>
+			<item value="&quot;"/>
+			<item value="and"/>
+			<item value="STRING"/>
+			<item value="STRING:"/>
+			<item value="string "/>
+			<item value="string"/>
+			<item value="ID "/>
 		</list>
 		<list key="replacehistory">
+			<item value="=[SentenceDeclaration]"/>
 			<item value=""/>
 			<item value="&quot;"/>
 		</list>

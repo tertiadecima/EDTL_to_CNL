@@ -114,358 +114,6 @@ public interface CNLPackage extends EPackage
   int MODEL_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.ReqDeclarationImpl <em>Req Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.ReqDeclarationImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReqDeclaration()
-   * @generated
-   */
-  int REQ_DECLARATION = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQ_DECLARATION__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Requirement</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQ_DECLARATION__REQUIREMENT = 1;
-
-  /**
-   * The number of structural features of the '<em>Req Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQ_DECLARATION_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.RequirementImpl <em>Requirement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.RequirementImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRequirement()
-   * @generated
-   */
-  int REQUIREMENT = 2;
-
-  /**
-   * The feature id for the '<em><b>Trigger</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENT__TRIGGER = 0;
-
-  /**
-   * The feature id for the '<em><b>Invariant</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENT__INVARIANT = 1;
-
-  /**
-   * The number of structural features of the '<em>Requirement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.TrigImpl <em>Trig</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.TrigImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTrig()
-   * @generated
-   */
-  int TRIG = 3;
-
-  /**
-   * The feature id for the '<em><b>Trig</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIG__TRIG = 0;
-
-  /**
-   * The feature id for the '<em><b>Invariant</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIG__INVARIANT = 1;
-
-  /**
-   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIG__RELEASE_REACTION = 2;
-
-  /**
-   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIG__DELAY_FINAL = 3;
-
-  /**
-   * The number of structural features of the '<em>Trig</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIG_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.InvImpl <em>Inv</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.InvImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv()
-   * @generated
-   */
-  int INV = 4;
-
-  /**
-   * The feature id for the '<em><b>Inv</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV__INV = 0;
-
-  /**
-   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV__DELAY_FINAL = 1;
-
-  /**
-   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV__RELEASE_REACTION = 2;
-
-  /**
-   * The number of structural features of the '<em>Inv</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.Inv_alwaysImpl <em>Inv always</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.Inv_alwaysImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv_always()
-   * @generated
-   */
-  int INV_ALWAYS = 5;
-
-  /**
-   * The feature id for the '<em><b>Inv</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV_ALWAYS__INV = 0;
-
-  /**
-   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV_ALWAYS__RELEASE_REACTION = 1;
-
-  /**
-   * The number of structural features of the '<em>Inv always</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INV_ALWAYS_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.RelReaImpl <em>Rel Rea</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.RelReaImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRelRea()
-   * @generated
-   */
-  int REL_REA = 6;
-
-  /**
-   * The feature id for the '<em><b>Reaction</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REL_REA__REACTION = 0;
-
-  /**
-   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REL_REA__DELAY_FINAL = 1;
-
-  /**
-   * The number of structural features of the '<em>Rel Rea</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REL_REA_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.ReactionImpl <em>Reaction</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.ReactionImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReaction()
-   * @generated
-   */
-  int REACTION = 7;
-
-  /**
-   * The number of structural features of the '<em>Reaction</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REACTION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.DelFinImpl <em>Del Fin</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.DelFinImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelFin()
-   * @generated
-   */
-  int DEL_FIN = 8;
-
-  /**
-   * The number of structural features of the '<em>Del Fin</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEL_FIN_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.DelayImpl <em>Delay</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.DelayImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelay()
-   * @generated
-   */
-  int DELAY = 9;
-
-  /**
-   * The number of structural features of the '<em>Delay</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DELAY_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cNL.impl.SentenceImpl <em>Sentence</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cNL.impl.SentenceImpl
-   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentence()
-   * @generated
-   */
-  int SENTENCE = 10;
-
-  /**
-   * The feature id for the '<em><b>Delay</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENTENCE__DELAY = DEL_FIN_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Fin</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENTENCE__FIN = DEL_FIN_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENTENCE__NAME = DEL_FIN_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Sentence</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SENTENCE_FEATURE_COUNT = DEL_FIN_FEATURE_COUNT + 3;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.cNL.impl.DeclVarInputImpl <em>Decl Var Input</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -473,7 +121,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDeclVarInput()
    * @generated
    */
-  int DECL_VAR_INPUT = 11;
+  int DECL_VAR_INPUT = 1;
 
   /**
    * The feature id for the '<em><b>Var Decls</b></em>' containment reference list.
@@ -501,7 +149,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDeclVarOutput()
    * @generated
    */
-  int DECL_VAR_OUTPUT = 12;
+  int DECL_VAR_OUTPUT = 2;
 
   /**
    * The feature id for the '<em><b>Var Decls</b></em>' containment reference list.
@@ -529,7 +177,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getVarDeclaration()
    * @generated
    */
-  int VAR_DECLARATION = 13;
+  int VAR_DECLARATION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -566,16 +214,16 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentDeclaration()
    * @generated
    */
-  int SENT_DECLARATION = 14;
+  int SENT_DECLARATION = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Declaration Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENT_DECLARATION__NAME = 0;
+  int SENT_DECLARATION__DECLARATION_NAME = 0;
 
   /**
    * The feature id for the '<em><b>Sentence Declaration</b></em>' containment reference.
@@ -603,10 +251,10 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentenceDeclaration()
    * @generated
    */
-  int SENTENCE_DECLARATION = 15;
+  int SENTENCE_DECLARATION = 5;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -640,7 +288,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 16;
+  int EXPRESSION = 6;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -686,7 +334,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getXorExpression()
    * @generated
    */
-  int XOR_EXPRESSION = 17;
+  int XOR_EXPRESSION = 7;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -732,7 +380,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 18;
+  int AND_EXPRESSION = 8;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -787,7 +435,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getCompExpression()
    * @generated
    */
-  int COMP_EXPRESSION = 19;
+  int COMP_EXPRESSION = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -851,7 +499,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getEquExpression()
    * @generated
    */
-  int EQU_EXPRESSION = 20;
+  int EQU_EXPRESSION = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -924,7 +572,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getUnExpression()
    * @generated
    */
-  int UN_EXPRESSION = 21;
+  int UN_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1006,7 +654,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTauExpression()
    * @generated
    */
-  int TAU_EXPRESSION = 22;
+  int TAU_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -1034,7 +682,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTimeLiteral()
    * @generated
    */
-  int TIME_LITERAL = 23;
+  int TIME_LITERAL = 13;
 
   /**
    * The feature id for the '<em><b>Interval</b></em>' attribute.
@@ -1062,7 +710,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getPrimaryExpression()
    * @generated
    */
-  int PRIMARY_EXPRESSION = 24;
+  int PRIMARY_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1128,13 +776,22 @@ public interface CNLPackage extends EPackage
   int PRIMARY_EXPRESSION__UN_OP = UN_EXPRESSION__UN_OP;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_EXPRESSION__NAME = UN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Constant</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPRESSION__CONSTANT = UN_EXPRESSION_FEATURE_COUNT + 0;
+  int PRIMARY_EXPRESSION__CONSTANT = UN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Tau</b></em>' containment reference.
@@ -1143,16 +800,7 @@ public interface CNLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_EXPRESSION__TAU = UN_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>V</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_EXPRESSION__V = UN_EXPRESSION_FEATURE_COUNT + 2;
+  int PRIMARY_EXPRESSION__TAU = UN_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Nest Expr</b></em>' containment reference.
@@ -1173,6 +821,312 @@ public interface CNLPackage extends EPackage
   int PRIMARY_EXPRESSION_FEATURE_COUNT = UN_EXPRESSION_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.ReqDeclarationImpl <em>Req Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.ReqDeclarationImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReqDeclaration()
+   * @generated
+   */
+  int REQ_DECLARATION = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQ_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Requirement</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQ_DECLARATION__REQUIREMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Req Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQ_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.RequirementImpl <em>Requirement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.RequirementImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRequirement()
+   * @generated
+   */
+  int REQUIREMENT = 16;
+
+  /**
+   * The feature id for the '<em><b>Trigger</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__TRIGGER = 0;
+
+  /**
+   * The feature id for the '<em><b>Invariant</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__INVARIANT = 1;
+
+  /**
+   * The number of structural features of the '<em>Requirement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.TrigImpl <em>Trig</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.TrigImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTrig()
+   * @generated
+   */
+  int TRIG = 17;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIG__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Invariant</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIG__INVARIANT = 1;
+
+  /**
+   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIG__RELEASE_REACTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIG__DELAY_FINAL = 3;
+
+  /**
+   * The number of structural features of the '<em>Trig</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIG_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.InvImpl <em>Inv</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.InvImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv()
+   * @generated
+   */
+  int INV = 18;
+
+  /**
+   * The feature id for the '<em><b>Inv</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV__INV = 0;
+
+  /**
+   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV__DELAY_FINAL = 1;
+
+  /**
+   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV__RELEASE_REACTION = 2;
+
+  /**
+   * The number of structural features of the '<em>Inv</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.Inv_alwaysImpl <em>Inv always</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.Inv_alwaysImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv_always()
+   * @generated
+   */
+  int INV_ALWAYS = 19;
+
+  /**
+   * The feature id for the '<em><b>Inv</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_ALWAYS__INV = 0;
+
+  /**
+   * The feature id for the '<em><b>Release reaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_ALWAYS__RELEASE_REACTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Inv always</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_ALWAYS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.RelReaImpl <em>Rel Rea</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.RelReaImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRelRea()
+   * @generated
+   */
+  int REL_REA = 20;
+
+  /**
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REL_REA__REACTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Delay final</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REL_REA__DELAY_FINAL = 1;
+
+  /**
+   * The number of structural features of the '<em>Rel Rea</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REL_REA_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.ReactionImpl <em>Reaction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.ReactionImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReaction()
+   * @generated
+   */
+  int REACTION = 21;
+
+  /**
+   * The number of structural features of the '<em>Reaction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REACTION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.DelFinImpl <em>Del Fin</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.DelFinImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelFin()
+   * @generated
+   */
+  int DEL_FIN = 22;
+
+  /**
+   * The number of structural features of the '<em>Del Fin</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEL_FIN_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.DelayImpl <em>Delay</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.DelayImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelay()
+   * @generated
+   */
+  int DELAY = 23;
+
+  /**
+   * The number of structural features of the '<em>Delay</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DELAY_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.cNL.impl.RelImpl <em>Rel</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1180,7 +1134,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRel()
    * @generated
    */
-  int REL = 25;
+  int REL = 24;
 
   /**
    * The feature id for the '<em><b>Reaction</b></em>' containment reference.
@@ -1201,7 +1155,7 @@ public interface CNLPackage extends EPackage
   int REL__DELAY_FINAL = REL_REA__DELAY_FINAL;
 
   /**
-   * The feature id for the '<em><b>Rel</b></em>' containment reference.
+   * The feature id for the '<em><b>Rel</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1226,7 +1180,7 @@ public interface CNLPackage extends EPackage
    * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRea()
    * @generated
    */
-  int REA = 26;
+  int REA = 25;
 
   /**
    * The feature id for the '<em><b>Reaction</b></em>' containment reference.
@@ -1247,7 +1201,7 @@ public interface CNLPackage extends EPackage
   int REA__DELAY_FINAL = REL_REA__DELAY_FINAL;
 
   /**
-   * The feature id for the '<em><b>Rea</b></em>' containment reference.
+   * The feature id for the '<em><b>Rea</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1265,6 +1219,43 @@ public interface CNLPackage extends EPackage
   int REA_FEATURE_COUNT = REL_REA_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.cNL.impl.SentenceImpl <em>Sentence</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cNL.impl.SentenceImpl
+   * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentence()
+   * @generated
+   */
+  int SENTENCE = 26;
+
+  /**
+   * The feature id for the '<em><b>Delay</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENTENCE__DELAY = DEL_FIN_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Fin</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENTENCE__FIN = DEL_FIN_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Sentence</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENTENCE_FEATURE_COUNT = DEL_FIN_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.cNL.impl.DelImpl <em>Del</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1275,7 +1266,7 @@ public interface CNLPackage extends EPackage
   int DEL = 27;
 
   /**
-   * The feature id for the '<em><b>Del</b></em>' containment reference.
+   * The feature id for the '<em><b>Del</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1368,304 +1359,6 @@ public interface CNLPackage extends EPackage
   EReference getModel_ReqDeclaration();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.ReqDeclaration <em>Req Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Req Declaration</em>'.
-   * @see org.xtext.example.cNL.ReqDeclaration
-   * @generated
-   */
-  EClass getReqDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.ReqDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.cNL.ReqDeclaration#getName()
-   * @see #getReqDeclaration()
-   * @generated
-   */
-  EAttribute getReqDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.ReqDeclaration#getRequirement <em>Requirement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Requirement</em>'.
-   * @see org.xtext.example.cNL.ReqDeclaration#getRequirement()
-   * @see #getReqDeclaration()
-   * @generated
-   */
-  EReference getReqDeclaration_Requirement();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Requirement <em>Requirement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Requirement</em>'.
-   * @see org.xtext.example.cNL.Requirement
-   * @generated
-   */
-  EClass getRequirement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Requirement#getTrigger <em>Trigger</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Trigger</em>'.
-   * @see org.xtext.example.cNL.Requirement#getTrigger()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_Trigger();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Requirement#getInvariant <em>Invariant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Invariant</em>'.
-   * @see org.xtext.example.cNL.Requirement#getInvariant()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_Invariant();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Trig <em>Trig</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Trig</em>'.
-   * @see org.xtext.example.cNL.Trig
-   * @generated
-   */
-  EClass getTrig();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getTrig <em>Trig</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Trig</em>'.
-   * @see org.xtext.example.cNL.Trig#getTrig()
-   * @see #getTrig()
-   * @generated
-   */
-  EReference getTrig_Trig();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getInvariant <em>Invariant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Invariant</em>'.
-   * @see org.xtext.example.cNL.Trig#getInvariant()
-   * @see #getTrig()
-   * @generated
-   */
-  EReference getTrig_Invariant();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getRelease_reaction <em>Release reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Release reaction</em>'.
-   * @see org.xtext.example.cNL.Trig#getRelease_reaction()
-   * @see #getTrig()
-   * @generated
-   */
-  EReference getTrig_Release_reaction();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getDelay_final <em>Delay final</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Delay final</em>'.
-   * @see org.xtext.example.cNL.Trig#getDelay_final()
-   * @see #getTrig()
-   * @generated
-   */
-  EReference getTrig_Delay_final();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Inv <em>Inv</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Inv</em>'.
-   * @see org.xtext.example.cNL.Inv
-   * @generated
-   */
-  EClass getInv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv#getInv <em>Inv</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Inv</em>'.
-   * @see org.xtext.example.cNL.Inv#getInv()
-   * @see #getInv()
-   * @generated
-   */
-  EReference getInv_Inv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv#getDelay_final <em>Delay final</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Delay final</em>'.
-   * @see org.xtext.example.cNL.Inv#getDelay_final()
-   * @see #getInv()
-   * @generated
-   */
-  EReference getInv_Delay_final();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv#getRelease_reaction <em>Release reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Release reaction</em>'.
-   * @see org.xtext.example.cNL.Inv#getRelease_reaction()
-   * @see #getInv()
-   * @generated
-   */
-  EReference getInv_Release_reaction();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Inv_always <em>Inv always</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Inv always</em>'.
-   * @see org.xtext.example.cNL.Inv_always
-   * @generated
-   */
-  EClass getInv_always();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv_always#getInv <em>Inv</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Inv</em>'.
-   * @see org.xtext.example.cNL.Inv_always#getInv()
-   * @see #getInv_always()
-   * @generated
-   */
-  EReference getInv_always_Inv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv_always#getRelease_reaction <em>Release reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Release reaction</em>'.
-   * @see org.xtext.example.cNL.Inv_always#getRelease_reaction()
-   * @see #getInv_always()
-   * @generated
-   */
-  EReference getInv_always_Release_reaction();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.RelRea <em>Rel Rea</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Rel Rea</em>'.
-   * @see org.xtext.example.cNL.RelRea
-   * @generated
-   */
-  EClass getRelRea();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.RelRea#getReaction <em>Reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Reaction</em>'.
-   * @see org.xtext.example.cNL.RelRea#getReaction()
-   * @see #getRelRea()
-   * @generated
-   */
-  EReference getRelRea_Reaction();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.RelRea#getDelay_final <em>Delay final</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Delay final</em>'.
-   * @see org.xtext.example.cNL.RelRea#getDelay_final()
-   * @see #getRelRea()
-   * @generated
-   */
-  EReference getRelRea_Delay_final();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Reaction <em>Reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Reaction</em>'.
-   * @see org.xtext.example.cNL.Reaction
-   * @generated
-   */
-  EClass getReaction();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.DelFin <em>Del Fin</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Del Fin</em>'.
-   * @see org.xtext.example.cNL.DelFin
-   * @generated
-   */
-  EClass getDelFin();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Delay <em>Delay</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Delay</em>'.
-   * @see org.xtext.example.cNL.Delay
-   * @generated
-   */
-  EClass getDelay();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sentence</em>'.
-   * @see org.xtext.example.cNL.Sentence
-   * @generated
-   */
-  EClass getSentence();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Sentence#getDelay <em>Delay</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Delay</em>'.
-   * @see org.xtext.example.cNL.Sentence#getDelay()
-   * @see #getSentence()
-   * @generated
-   */
-  EReference getSentence_Delay();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Fin</em>'.
-   * @see org.xtext.example.cNL.Sentence#getFin()
-   * @see #getSentence()
-   * @generated
-   */
-  EReference getSentence_Fin();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.Sentence#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.cNL.Sentence#getName()
-   * @see #getSentence()
-   * @generated
-   */
-  EAttribute getSentence_Name();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.cNL.DeclVarInput <em>Decl Var Input</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1750,15 +1443,15 @@ public interface CNLPackage extends EPackage
   EClass getSentDeclaration();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.SentDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.SentDeclaration#getDeclarationName <em>Declaration Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.cNL.SentDeclaration#getName()
+   * @return the meta object for the attribute '<em>Declaration Name</em>'.
+   * @see org.xtext.example.cNL.SentDeclaration#getDeclarationName()
    * @see #getSentDeclaration()
    * @generated
    */
-  EAttribute getSentDeclaration_Name();
+  EAttribute getSentDeclaration_DeclarationName();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.SentDeclaration#getSentenceDeclaration <em>Sentence Declaration</em>}'.
@@ -1782,15 +1475,15 @@ public interface CNLPackage extends EPackage
   EClass getSentenceDeclaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.SentenceDeclaration#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.SentenceDeclaration#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see org.xtext.example.cNL.SentenceDeclaration#getName()
    * @see #getSentenceDeclaration()
    * @generated
    */
-  EReference getSentenceDeclaration_Name();
+  EAttribute getSentenceDeclaration_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.SentenceDeclaration#getLogicExpression <em>Logic Expression</em>}'.
@@ -1993,6 +1686,17 @@ public interface CNLPackage extends EPackage
   EClass getPrimaryExpression();
 
   /**
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.PrimaryExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see org.xtext.example.cNL.PrimaryExpression#getName()
+   * @see #getPrimaryExpression()
+   * @generated
+   */
+  EReference getPrimaryExpression_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.cNL.PrimaryExpression#getConstant <em>Constant</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2015,17 +1719,6 @@ public interface CNLPackage extends EPackage
   EReference getPrimaryExpression_Tau();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.PrimaryExpression#getV <em>V</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>V</em>'.
-   * @see org.xtext.example.cNL.PrimaryExpression#getV()
-   * @see #getPrimaryExpression()
-   * @generated
-   */
-  EAttribute getPrimaryExpression_V();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.PrimaryExpression#getNestExpr <em>Nest Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2035,6 +1728,261 @@ public interface CNLPackage extends EPackage
    * @generated
    */
   EReference getPrimaryExpression_NestExpr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.ReqDeclaration <em>Req Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Req Declaration</em>'.
+   * @see org.xtext.example.cNL.ReqDeclaration
+   * @generated
+   */
+  EClass getReqDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.cNL.ReqDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.cNL.ReqDeclaration#getName()
+   * @see #getReqDeclaration()
+   * @generated
+   */
+  EAttribute getReqDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.ReqDeclaration#getRequirement <em>Requirement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Requirement</em>'.
+   * @see org.xtext.example.cNL.ReqDeclaration#getRequirement()
+   * @see #getReqDeclaration()
+   * @generated
+   */
+  EReference getReqDeclaration_Requirement();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Requirement <em>Requirement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Requirement</em>'.
+   * @see org.xtext.example.cNL.Requirement
+   * @generated
+   */
+  EClass getRequirement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Requirement#getTrigger <em>Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Trigger</em>'.
+   * @see org.xtext.example.cNL.Requirement#getTrigger()
+   * @see #getRequirement()
+   * @generated
+   */
+  EReference getRequirement_Trigger();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Requirement#getInvariant <em>Invariant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Invariant</em>'.
+   * @see org.xtext.example.cNL.Requirement#getInvariant()
+   * @see #getRequirement()
+   * @generated
+   */
+  EReference getRequirement_Invariant();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Trig <em>Trig</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Trig</em>'.
+   * @see org.xtext.example.cNL.Trig
+   * @generated
+   */
+  EClass getTrig();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Trig#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see org.xtext.example.cNL.Trig#getName()
+   * @see #getTrig()
+   * @generated
+   */
+  EReference getTrig_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getInvariant <em>Invariant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Invariant</em>'.
+   * @see org.xtext.example.cNL.Trig#getInvariant()
+   * @see #getTrig()
+   * @generated
+   */
+  EReference getTrig_Invariant();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getRelease_reaction <em>Release reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Release reaction</em>'.
+   * @see org.xtext.example.cNL.Trig#getRelease_reaction()
+   * @see #getTrig()
+   * @generated
+   */
+  EReference getTrig_Release_reaction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Trig#getDelay_final <em>Delay final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Delay final</em>'.
+   * @see org.xtext.example.cNL.Trig#getDelay_final()
+   * @see #getTrig()
+   * @generated
+   */
+  EReference getTrig_Delay_final();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Inv <em>Inv</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inv</em>'.
+   * @see org.xtext.example.cNL.Inv
+   * @generated
+   */
+  EClass getInv();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Inv#getInv <em>Inv</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Inv</em>'.
+   * @see org.xtext.example.cNL.Inv#getInv()
+   * @see #getInv()
+   * @generated
+   */
+  EReference getInv_Inv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv#getDelay_final <em>Delay final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Delay final</em>'.
+   * @see org.xtext.example.cNL.Inv#getDelay_final()
+   * @see #getInv()
+   * @generated
+   */
+  EReference getInv_Delay_final();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv#getRelease_reaction <em>Release reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Release reaction</em>'.
+   * @see org.xtext.example.cNL.Inv#getRelease_reaction()
+   * @see #getInv()
+   * @generated
+   */
+  EReference getInv_Release_reaction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Inv_always <em>Inv always</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inv always</em>'.
+   * @see org.xtext.example.cNL.Inv_always
+   * @generated
+   */
+  EClass getInv_always();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Inv_always#getInv <em>Inv</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Inv</em>'.
+   * @see org.xtext.example.cNL.Inv_always#getInv()
+   * @see #getInv_always()
+   * @generated
+   */
+  EReference getInv_always_Inv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Inv_always#getRelease_reaction <em>Release reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Release reaction</em>'.
+   * @see org.xtext.example.cNL.Inv_always#getRelease_reaction()
+   * @see #getInv_always()
+   * @generated
+   */
+  EReference getInv_always_Release_reaction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.RelRea <em>Rel Rea</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rel Rea</em>'.
+   * @see org.xtext.example.cNL.RelRea
+   * @generated
+   */
+  EClass getRelRea();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.RelRea#getReaction <em>Reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Reaction</em>'.
+   * @see org.xtext.example.cNL.RelRea#getReaction()
+   * @see #getRelRea()
+   * @generated
+   */
+  EReference getRelRea_Reaction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.RelRea#getDelay_final <em>Delay final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Delay final</em>'.
+   * @see org.xtext.example.cNL.RelRea#getDelay_final()
+   * @see #getRelRea()
+   * @generated
+   */
+  EReference getRelRea_Delay_final();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Reaction <em>Reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Reaction</em>'.
+   * @see org.xtext.example.cNL.Reaction
+   * @generated
+   */
+  EClass getReaction();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.DelFin <em>Del Fin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Del Fin</em>'.
+   * @see org.xtext.example.cNL.DelFin
+   * @generated
+   */
+  EClass getDelFin();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Delay <em>Delay</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Delay</em>'.
+   * @see org.xtext.example.cNL.Delay
+   * @generated
+   */
+  EClass getDelay();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cNL.Rel <em>Rel</em>}'.
@@ -2047,10 +1995,10 @@ public interface CNLPackage extends EPackage
   EClass getRel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Rel#getRel <em>Rel</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Rel#getRel <em>Rel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rel</em>'.
+   * @return the meta object for the reference '<em>Rel</em>'.
    * @see org.xtext.example.cNL.Rel#getRel()
    * @see #getRel()
    * @generated
@@ -2068,15 +2016,47 @@ public interface CNLPackage extends EPackage
   EClass getRea();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Rea#getRea <em>Rea</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Rea#getRea <em>Rea</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rea</em>'.
+   * @return the meta object for the reference '<em>Rea</em>'.
    * @see org.xtext.example.cNL.Rea#getRea()
    * @see #getRea()
    * @generated
    */
   EReference getRea_Rea();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sentence</em>'.
+   * @see org.xtext.example.cNL.Sentence
+   * @generated
+   */
+  EClass getSentence();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Sentence#getDelay <em>Delay</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Delay</em>'.
+   * @see org.xtext.example.cNL.Sentence#getDelay()
+   * @see #getSentence()
+   * @generated
+   */
+  EReference getSentence_Delay();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Sentence#getFin <em>Fin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Fin</em>'.
+   * @see org.xtext.example.cNL.Sentence#getFin()
+   * @see #getSentence()
+   * @generated
+   */
+  EReference getSentence_Fin();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cNL.Del <em>Del</em>}'.
@@ -2089,10 +2069,10 @@ public interface CNLPackage extends EPackage
   EClass getDel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cNL.Del#getDel <em>Del</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.cNL.Del#getDel <em>Del</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Del</em>'.
+   * @return the meta object for the reference '<em>Del</em>'.
    * @see org.xtext.example.cNL.Del#getDel()
    * @see #getDel()
    * @generated
@@ -2185,250 +2165,6 @@ public interface CNLPackage extends EPackage
     EReference MODEL__REQ_DECLARATION = eINSTANCE.getModel_ReqDeclaration();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.ReqDeclarationImpl <em>Req Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.ReqDeclarationImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReqDeclaration()
-     * @generated
-     */
-    EClass REQ_DECLARATION = eINSTANCE.getReqDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQ_DECLARATION__NAME = eINSTANCE.getReqDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Requirement</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQ_DECLARATION__REQUIREMENT = eINSTANCE.getReqDeclaration_Requirement();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.RequirementImpl <em>Requirement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.RequirementImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRequirement()
-     * @generated
-     */
-    EClass REQUIREMENT = eINSTANCE.getRequirement();
-
-    /**
-     * The meta object literal for the '<em><b>Trigger</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__TRIGGER = eINSTANCE.getRequirement_Trigger();
-
-    /**
-     * The meta object literal for the '<em><b>Invariant</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__INVARIANT = eINSTANCE.getRequirement_Invariant();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.TrigImpl <em>Trig</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.TrigImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTrig()
-     * @generated
-     */
-    EClass TRIG = eINSTANCE.getTrig();
-
-    /**
-     * The meta object literal for the '<em><b>Trig</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRIG__TRIG = eINSTANCE.getTrig_Trig();
-
-    /**
-     * The meta object literal for the '<em><b>Invariant</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRIG__INVARIANT = eINSTANCE.getTrig_Invariant();
-
-    /**
-     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRIG__RELEASE_REACTION = eINSTANCE.getTrig_Release_reaction();
-
-    /**
-     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TRIG__DELAY_FINAL = eINSTANCE.getTrig_Delay_final();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.InvImpl <em>Inv</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.InvImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv()
-     * @generated
-     */
-    EClass INV = eINSTANCE.getInv();
-
-    /**
-     * The meta object literal for the '<em><b>Inv</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INV__INV = eINSTANCE.getInv_Inv();
-
-    /**
-     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INV__DELAY_FINAL = eINSTANCE.getInv_Delay_final();
-
-    /**
-     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INV__RELEASE_REACTION = eINSTANCE.getInv_Release_reaction();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.Inv_alwaysImpl <em>Inv always</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.Inv_alwaysImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv_always()
-     * @generated
-     */
-    EClass INV_ALWAYS = eINSTANCE.getInv_always();
-
-    /**
-     * The meta object literal for the '<em><b>Inv</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INV_ALWAYS__INV = eINSTANCE.getInv_always_Inv();
-
-    /**
-     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INV_ALWAYS__RELEASE_REACTION = eINSTANCE.getInv_always_Release_reaction();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.RelReaImpl <em>Rel Rea</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.RelReaImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRelRea()
-     * @generated
-     */
-    EClass REL_REA = eINSTANCE.getRelRea();
-
-    /**
-     * The meta object literal for the '<em><b>Reaction</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REL_REA__REACTION = eINSTANCE.getRelRea_Reaction();
-
-    /**
-     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REL_REA__DELAY_FINAL = eINSTANCE.getRelRea_Delay_final();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.ReactionImpl <em>Reaction</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.ReactionImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReaction()
-     * @generated
-     */
-    EClass REACTION = eINSTANCE.getReaction();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.DelFinImpl <em>Del Fin</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.DelFinImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelFin()
-     * @generated
-     */
-    EClass DEL_FIN = eINSTANCE.getDelFin();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.DelayImpl <em>Delay</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.DelayImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelay()
-     * @generated
-     */
-    EClass DELAY = eINSTANCE.getDelay();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cNL.impl.SentenceImpl <em>Sentence</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cNL.impl.SentenceImpl
-     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentence()
-     * @generated
-     */
-    EClass SENTENCE = eINSTANCE.getSentence();
-
-    /**
-     * The meta object literal for the '<em><b>Delay</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SENTENCE__DELAY = eINSTANCE.getSentence_Delay();
-
-    /**
-     * The meta object literal for the '<em><b>Fin</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SENTENCE__FIN = eINSTANCE.getSentence_Fin();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SENTENCE__NAME = eINSTANCE.getSentence_Name();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.cNL.impl.DeclVarInputImpl <em>Decl Var Input</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2501,12 +2237,12 @@ public interface CNLPackage extends EPackage
     EClass SENT_DECLARATION = eINSTANCE.getSentDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Declaration Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SENT_DECLARATION__NAME = eINSTANCE.getSentDeclaration_Name();
+    EAttribute SENT_DECLARATION__DECLARATION_NAME = eINSTANCE.getSentDeclaration_DeclarationName();
 
     /**
      * The meta object literal for the '<em><b>Sentence Declaration</b></em>' containment reference feature.
@@ -2527,12 +2263,12 @@ public interface CNLPackage extends EPackage
     EClass SENTENCE_DECLARATION = eINSTANCE.getSentenceDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SENTENCE_DECLARATION__NAME = eINSTANCE.getSentenceDeclaration_Name();
+    EAttribute SENTENCE_DECLARATION__NAME = eINSTANCE.getSentenceDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Logic Expression</b></em>' containment reference feature.
@@ -2705,6 +2441,14 @@ public interface CNLPackage extends EPackage
     EClass PRIMARY_EXPRESSION = eINSTANCE.getPrimaryExpression();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_EXPRESSION__NAME = eINSTANCE.getPrimaryExpression_Name();
+
+    /**
      * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2721,20 +2465,222 @@ public interface CNLPackage extends EPackage
     EReference PRIMARY_EXPRESSION__TAU = eINSTANCE.getPrimaryExpression_Tau();
 
     /**
-     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRIMARY_EXPRESSION__V = eINSTANCE.getPrimaryExpression_V();
-
-    /**
      * The meta object literal for the '<em><b>Nest Expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PRIMARY_EXPRESSION__NEST_EXPR = eINSTANCE.getPrimaryExpression_NestExpr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.ReqDeclarationImpl <em>Req Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.ReqDeclarationImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReqDeclaration()
+     * @generated
+     */
+    EClass REQ_DECLARATION = eINSTANCE.getReqDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REQ_DECLARATION__NAME = eINSTANCE.getReqDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Requirement</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQ_DECLARATION__REQUIREMENT = eINSTANCE.getReqDeclaration_Requirement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.RequirementImpl <em>Requirement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.RequirementImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRequirement()
+     * @generated
+     */
+    EClass REQUIREMENT = eINSTANCE.getRequirement();
+
+    /**
+     * The meta object literal for the '<em><b>Trigger</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQUIREMENT__TRIGGER = eINSTANCE.getRequirement_Trigger();
+
+    /**
+     * The meta object literal for the '<em><b>Invariant</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQUIREMENT__INVARIANT = eINSTANCE.getRequirement_Invariant();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.TrigImpl <em>Trig</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.TrigImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getTrig()
+     * @generated
+     */
+    EClass TRIG = eINSTANCE.getTrig();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIG__NAME = eINSTANCE.getTrig_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Invariant</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIG__INVARIANT = eINSTANCE.getTrig_Invariant();
+
+    /**
+     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIG__RELEASE_REACTION = eINSTANCE.getTrig_Release_reaction();
+
+    /**
+     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRIG__DELAY_FINAL = eINSTANCE.getTrig_Delay_final();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.InvImpl <em>Inv</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.InvImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv()
+     * @generated
+     */
+    EClass INV = eINSTANCE.getInv();
+
+    /**
+     * The meta object literal for the '<em><b>Inv</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INV__INV = eINSTANCE.getInv_Inv();
+
+    /**
+     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INV__DELAY_FINAL = eINSTANCE.getInv_Delay_final();
+
+    /**
+     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INV__RELEASE_REACTION = eINSTANCE.getInv_Release_reaction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.Inv_alwaysImpl <em>Inv always</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.Inv_alwaysImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getInv_always()
+     * @generated
+     */
+    EClass INV_ALWAYS = eINSTANCE.getInv_always();
+
+    /**
+     * The meta object literal for the '<em><b>Inv</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INV_ALWAYS__INV = eINSTANCE.getInv_always_Inv();
+
+    /**
+     * The meta object literal for the '<em><b>Release reaction</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INV_ALWAYS__RELEASE_REACTION = eINSTANCE.getInv_always_Release_reaction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.RelReaImpl <em>Rel Rea</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.RelReaImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getRelRea()
+     * @generated
+     */
+    EClass REL_REA = eINSTANCE.getRelRea();
+
+    /**
+     * The meta object literal for the '<em><b>Reaction</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REL_REA__REACTION = eINSTANCE.getRelRea_Reaction();
+
+    /**
+     * The meta object literal for the '<em><b>Delay final</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REL_REA__DELAY_FINAL = eINSTANCE.getRelRea_Delay_final();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.ReactionImpl <em>Reaction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.ReactionImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getReaction()
+     * @generated
+     */
+    EClass REACTION = eINSTANCE.getReaction();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.DelFinImpl <em>Del Fin</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.DelFinImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelFin()
+     * @generated
+     */
+    EClass DEL_FIN = eINSTANCE.getDelFin();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.DelayImpl <em>Delay</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.DelayImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getDelay()
+     * @generated
+     */
+    EClass DELAY = eINSTANCE.getDelay();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cNL.impl.RelImpl <em>Rel</em>}' class.
@@ -2747,7 +2693,7 @@ public interface CNLPackage extends EPackage
     EClass REL = eINSTANCE.getRel();
 
     /**
-     * The meta object literal for the '<em><b>Rel</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Rel</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2765,12 +2711,38 @@ public interface CNLPackage extends EPackage
     EClass REA = eINSTANCE.getRea();
 
     /**
-     * The meta object literal for the '<em><b>Rea</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Rea</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference REA__REA = eINSTANCE.getRea_Rea();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cNL.impl.SentenceImpl <em>Sentence</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cNL.impl.SentenceImpl
+     * @see org.xtext.example.cNL.impl.CNLPackageImpl#getSentence()
+     * @generated
+     */
+    EClass SENTENCE = eINSTANCE.getSentence();
+
+    /**
+     * The meta object literal for the '<em><b>Delay</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SENTENCE__DELAY = eINSTANCE.getSentence_Delay();
+
+    /**
+     * The meta object literal for the '<em><b>Fin</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SENTENCE__FIN = eINSTANCE.getSentence_Fin();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cNL.impl.DelImpl <em>Del</em>}' class.
@@ -2783,7 +2755,7 @@ public interface CNLPackage extends EPackage
     EClass DEL = eINSTANCE.getDel();
 
     /**
-     * The meta object literal for the '<em><b>Del</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Del</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

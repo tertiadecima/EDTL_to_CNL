@@ -4,7 +4,6 @@
 package org.xtext.example.cNL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -13,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Rel;
-import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,14 +30,14 @@ import org.xtext.example.cNL.Sentence;
 public class RelImpl extends RelReaImpl implements Rel
 {
   /**
-   * The cached value of the '{@link #getRel() <em>Rel</em>}' containment reference.
+   * The cached value of the '{@link #getRel() <em>Rel</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRel()
    * @generated
    * @ordered
    */
-  protected Sentence rel;
+  protected SentenceDeclaration rel;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +66,27 @@ public class RelImpl extends RelReaImpl implements Rel
    * @generated
    */
   @Override
-  public Sentence getRel()
+  public SentenceDeclaration getRel()
+  {
+    if (rel != null && rel.eIsProxy())
+    {
+      InternalEObject oldRel = (InternalEObject)rel;
+      rel = (SentenceDeclaration)eResolveProxy(oldRel);
+      if (rel != oldRel)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.REL__REL, oldRel, rel));
+      }
+    }
+    return rel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SentenceDeclaration basicGetRel()
   {
     return rel;
   }
@@ -77,54 +96,13 @@ public class RelImpl extends RelReaImpl implements Rel
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRel(Sentence newRel, NotificationChain msgs)
+  @Override
+  public void setRel(SentenceDeclaration newRel)
   {
-    Sentence oldRel = rel;
+    SentenceDeclaration oldRel = rel;
     rel = newRel;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.REL__REL, oldRel, newRel);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRel(Sentence newRel)
-  {
-    if (newRel != rel)
-    {
-      NotificationChain msgs = null;
-      if (rel != null)
-        msgs = ((InternalEObject)rel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.REL__REL, null, msgs);
-      if (newRel != null)
-        msgs = ((InternalEObject)newRel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.REL__REL, null, msgs);
-      msgs = basicSetRel(newRel, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.REL__REL, newRel, newRel));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CNLPackage.REL__REL:
-        return basicSetRel(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.REL__REL, oldRel, rel));
   }
 
   /**
@@ -138,7 +116,8 @@ public class RelImpl extends RelReaImpl implements Rel
     switch (featureID)
     {
       case CNLPackage.REL__REL:
-        return getRel();
+        if (resolve) return getRel();
+        return basicGetRel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,7 +133,7 @@ public class RelImpl extends RelReaImpl implements Rel
     switch (featureID)
     {
       case CNLPackage.REL__REL:
-        setRel((Sentence)newValue);
+        setRel((SentenceDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +150,7 @@ public class RelImpl extends RelReaImpl implements Rel
     switch (featureID)
     {
       case CNLPackage.REL__REL:
-        setRel((Sentence)null);
+        setRel((SentenceDeclaration)null);
         return;
     }
     super.eUnset(featureID);

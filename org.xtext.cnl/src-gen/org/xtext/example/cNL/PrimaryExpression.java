@@ -13,9 +13,9 @@ package org.xtext.example.cNL;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.cNL.PrimaryExpression#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cNL.PrimaryExpression#getConstant <em>Constant</em>}</li>
  *   <li>{@link org.xtext.example.cNL.PrimaryExpression#getTau <em>Tau</em>}</li>
- *   <li>{@link org.xtext.example.cNL.PrimaryExpression#getV <em>V</em>}</li>
  *   <li>{@link org.xtext.example.cNL.PrimaryExpression#getNestExpr <em>Nest Expr</em>}</li>
  * </ul>
  *
@@ -25,6 +25,28 @@ package org.xtext.example.cNL;
  */
 public interface PrimaryExpression extends UnExpression
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(VarDeclaration)
+   * @see org.xtext.example.cNL.CNLPackage#getPrimaryExpression_Name()
+   * @model
+   * @generated
+   */
+  VarDeclaration getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.cNL.PrimaryExpression#getName <em>Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
+   * @generated
+   */
+  void setName(VarDeclaration value);
+
   /**
    * Returns the value of the '<em><b>Constant</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -68,28 +90,6 @@ public interface PrimaryExpression extends UnExpression
    * @generated
    */
   void setTau(TauExpression value);
-
-  /**
-   * Returns the value of the '<em><b>V</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>V</em>' attribute.
-   * @see #setV(String)
-   * @see org.xtext.example.cNL.CNLPackage#getPrimaryExpression_V()
-   * @model
-   * @generated
-   */
-  String getV();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.cNL.PrimaryExpression#getV <em>V</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>V</em>' attribute.
-   * @see #getV()
-   * @generated
-   */
-  void setV(String value);
 
   /**
    * Returns the value of the '<em><b>Nest Expr</b></em>' containment reference.

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Expression;
-import org.xtext.example.cNL.Sentence;
 import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
@@ -34,14 +33,24 @@ import org.xtext.example.cNL.SentenceDeclaration;
 public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implements SentenceDeclaration
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected Sentence name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getLogicExpression() <em>Logic Expression</em>}' containment reference.
@@ -80,7 +89,7 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public Sentence getName()
+  public String getName()
   {
     return name;
   }
@@ -90,38 +99,13 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Sentence newName, NotificationChain msgs)
+  @Override
+  public void setName(String newName)
   {
-    Sentence oldName = name;
+    String oldName = name;
     name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE_DECLARATION__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(Sentence newName)
-  {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE_DECLARATION__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE_DECLARATION__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE_DECLARATION__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -184,8 +168,6 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case CNLPackage.SENTENCE_DECLARATION__NAME:
-        return basicSetName(null, msgs);
       case CNLPackage.SENTENCE_DECLARATION__LOGIC_EXPRESSION:
         return basicSetLogicExpression(null, msgs);
     }
@@ -221,7 +203,7 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case CNLPackage.SENTENCE_DECLARATION__NAME:
-        setName((Sentence)newValue);
+        setName((String)newValue);
         return;
       case CNLPackage.SENTENCE_DECLARATION__LOGIC_EXPRESSION:
         setLogicExpression((Expression)newValue);
@@ -241,7 +223,7 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case CNLPackage.SENTENCE_DECLARATION__NAME:
-        setName((Sentence)null);
+        setName(NAME_EDEFAULT);
         return;
       case CNLPackage.SENTENCE_DECLARATION__LOGIC_EXPRESSION:
         setLogicExpression((Expression)null);
@@ -261,11 +243,28 @@ public class SentenceDeclarationImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case CNLPackage.SENTENCE_DECLARATION__NAME:
-        return name != null;
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CNLPackage.SENTENCE_DECLARATION__LOGIC_EXPRESSION:
         return logicExpression != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //SentenceDeclarationImpl

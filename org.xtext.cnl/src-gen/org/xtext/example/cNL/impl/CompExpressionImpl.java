@@ -36,7 +36,7 @@ public class CompExpressionImpl extends AndExpressionImpl implements CompExpress
    * @generated
    * @ordered
    */
-  protected static final CompOperator COMP_OP_EDEFAULT = CompOperator.LESS;
+  protected static final CompOperator COMP_OP_EDEFAULT = CompOperator.LESS_EQU;
 
   /**
    * The cached value of the '{@link #getCompOp() <em>Comp Op</em>}' attribute.

@@ -111,15 +111,8 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_SentDeclaration(context, (SentDeclaration) semanticObject); 
 				return; 
 			case CNLPackage.SENTENCE:
-				if (rule == grammarAccess.getDelFinRule()) {
-					sequence_DelFin(context, (Sentence) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getSentenceRule()) {
-					sequence_Sentence(context, (Sentence) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DelFin(context, (Sentence) semanticObject); 
+				return; 
 			case CNLPackage.SENTENCE_DECLARATION:
 				sequence_SentenceDeclaration(context, (SentenceDeclaration) semanticObject); 
 				return; 
@@ -244,7 +237,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DelFin returns Sentence
 	 *
 	 * Constraint:
-	 *     ((delay=Delay fin=Sentence?) | fin=Sentence | fin=Sentence)
+	 *     ((delay=Delay fin=[SentenceDeclaration|Sentence]?) | fin=[SentenceDeclaration|Sentence] | fin=[SentenceDeclaration|Sentence])
 	 * </pre>
 	 */
 	protected void sequence_DelFin(ISerializationContext context, Sentence semanticObject) {
@@ -258,7 +251,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Delay returns Del
 	 *
 	 * Constraint:
-	 *     del=Sentence
+	 *     del=[SentenceDeclaration|Sentence]
 	 * </pre>
 	 */
 	protected void sequence_Delay(ISerializationContext context, Del semanticObject) {
@@ -267,7 +260,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.DEL__DEL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDelayAccess().getDelSentenceParserRuleCall_2_0(), semanticObject.getDel());
+		feeder.accept(grammarAccess.getDelayAccess().getDelSentenceDeclarationSentenceParserRuleCall_2_0_1(), semanticObject.eGet(CNLPackage.Literals.DEL__DEL, false));
 		feeder.finish();
 	}
 	
@@ -340,7 +333,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Inv returns Inv
 	 *
 	 * Constraint:
-	 *     (inv=Sentence (delay_final=DelFin | release_reaction=RelRea)?)
+	 *     (inv=[SentenceDeclaration|Sentence] (delay_final=DelFin | release_reaction=RelRea)?)
 	 * </pre>
 	 */
 	protected void sequence_Inv(ISerializationContext context, Inv semanticObject) {
@@ -354,7 +347,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Inv_always returns Inv_always
 	 *
 	 * Constraint:
-	 *     (inv=Sentence release_reaction=RelRea)
+	 *     (inv=[SentenceDeclaration|Sentence] release_reaction=RelRea)
 	 * </pre>
 	 */
 	protected void sequence_Inv_always(ISerializationContext context, Inv_always semanticObject) {
@@ -365,7 +358,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.INV_ALWAYS__RELEASE_REACTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInv_alwaysAccess().getInvSentenceParserRuleCall_1_0_0(), semanticObject.getInv());
+		feeder.accept(grammarAccess.getInv_alwaysAccess().getInvSentenceDeclarationSentenceParserRuleCall_1_0_0_1(), semanticObject.eGet(CNLPackage.Literals.INV_ALWAYS__INV, false));
 		feeder.accept(grammarAccess.getInv_alwaysAccess().getRelease_reactionRelReaParserRuleCall_1_6_0(), semanticObject.getRelease_reaction());
 		feeder.finish();
 	}
@@ -402,7 +395,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PrimaryExpression returns PrimaryExpression
 	 *
 	 * Constraint:
-	 *     (constant=Constant | tau=TauExpression | v=ID | nestExpr=Expression)
+	 *     (name=[VarDeclaration|ID] | constant=Constant | tau=TauExpression | nestExpr=Expression)
 	 * </pre>
 	 */
 	protected void sequence_PrimaryExpression(ISerializationContext context, PrimaryExpression semanticObject) {
@@ -416,7 +409,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Reaction returns Rea
 	 *
 	 * Constraint:
-	 *     rea=Sentence
+	 *     rea=[SentenceDeclaration|Sentence]
 	 * </pre>
 	 */
 	protected void sequence_Reaction(ISerializationContext context, Rea semanticObject) {
@@ -425,7 +418,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.REA__REA));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getReactionAccess().getReaSentenceParserRuleCall_3_0(), semanticObject.getRea());
+		feeder.accept(grammarAccess.getReactionAccess().getReaSentenceDeclarationSentenceParserRuleCall_3_0_1(), semanticObject.eGet(CNLPackage.Literals.REA__REA, false));
 		feeder.finish();
 	}
 	
@@ -436,7 +429,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RelRea returns Rea
 	 *
 	 * Constraint:
-	 *     ((reaction=Reaction delay_final=DelFin?) | (rea=Sentence delay_final=DelFin?))
+	 *     ((reaction=Reaction delay_final=DelFin?) | (rea=[SentenceDeclaration|Sentence] delay_final=DelFin?))
 	 * </pre>
 	 */
 	protected void sequence_RelRea(ISerializationContext context, Rea semanticObject) {
@@ -450,7 +443,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RelRea returns Rel
 	 *
 	 * Constraint:
-	 *     ((rel=Sentence reaction=Reaction delay_final=DelFin?) | rel=Sentence)
+	 *     ((rel=[SentenceDeclaration|Sentence] reaction=Reaction delay_final=DelFin?) | rel=[SentenceDeclaration|Sentence])
 	 * </pre>
 	 */
 	protected void sequence_RelRea(ISerializationContext context, Rel semanticObject) {
@@ -501,18 +494,18 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SentDeclaration returns SentDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID sentenceDeclaration=SentenceDeclaration)
+	 *     (DeclarationName=ID sentenceDeclaration=SentenceDeclaration)
 	 * </pre>
 	 */
 	protected void sequence_SentDeclaration(ISerializationContext context, SentDeclaration semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENT_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENT_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENT_DECLARATION__DECLARATION_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENT_DECLARATION__DECLARATION_NAME));
 			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENT_DECLARATION__SENTENCE_DECLARATION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENT_DECLARATION__SENTENCE_DECLARATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSentDeclarationAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSentDeclarationAccess().getDeclarationNameIDTerminalRuleCall_2_0(), semanticObject.getDeclarationName());
 		feeder.accept(grammarAccess.getSentDeclarationAccess().getSentenceDeclarationSentenceDeclarationParserRuleCall_3_0(), semanticObject.getSentenceDeclaration());
 		feeder.finish();
 	}
@@ -537,26 +530,6 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSentenceDeclarationAccess().getNameSentenceParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSentenceDeclarationAccess().getLogicExpressionExpressionParserRuleCall_3_0(), semanticObject.getLogicExpression());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Sentence returns Sentence
-	 *
-	 * Constraint:
-	 *     name=ID_or_INTEGER
-	 * </pre>
-	 */
-	protected void sequence_Sentence(ISerializationContext context, Sentence semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CNLPackage.Literals.SENTENCE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CNLPackage.Literals.SENTENCE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSentenceAccess().getNameID_or_INTEGERParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -607,7 +580,7 @@ public class CNLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Trig returns Trig
 	 *
 	 * Constraint:
-	 *     (trig=Sentence? (invariant=Inv | release_reaction=RelRea | delay_final=DelFin))
+	 *     (name=[SentenceDeclaration|Sentence]? (invariant=Inv | release_reaction=RelRea | delay_final=DelFin))
 	 * </pre>
 	 */
 	protected void sequence_Trig(ISerializationContext context, Trig semanticObject) {

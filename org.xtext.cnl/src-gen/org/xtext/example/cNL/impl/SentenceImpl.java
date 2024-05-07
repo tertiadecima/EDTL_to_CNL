@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.xtext.example.cNL.CNLPackage;
 import org.xtext.example.cNL.Delay;
 import org.xtext.example.cNL.Sentence;
+import org.xtext.example.cNL.SentenceDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +26,6 @@ import org.xtext.example.cNL.Sentence;
  * <ul>
  *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getDelay <em>Delay</em>}</li>
  *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getFin <em>Fin</em>}</li>
- *   <li>{@link org.xtext.example.cNL.impl.SentenceImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,34 +43,14 @@ public class SentenceImpl extends DelFinImpl implements Sentence
   protected Delay delay;
 
   /**
-   * The cached value of the '{@link #getFin() <em>Fin</em>}' containment reference.
+   * The cached value of the '{@link #getFin() <em>Fin</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFin()
    * @generated
    * @ordered
    */
-  protected Sentence fin;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected SentenceDeclaration fin;
 
   /**
    * <!-- begin-user-doc -->
@@ -149,7 +129,27 @@ public class SentenceImpl extends DelFinImpl implements Sentence
    * @generated
    */
   @Override
-  public Sentence getFin()
+  public SentenceDeclaration getFin()
+  {
+    if (fin != null && fin.eIsProxy())
+    {
+      InternalEObject oldFin = (InternalEObject)fin;
+      fin = (SentenceDeclaration)eResolveProxy(oldFin);
+      if (fin != oldFin)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CNLPackage.SENTENCE__FIN, oldFin, fin));
+      }
+    }
+    return fin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SentenceDeclaration basicGetFin()
   {
     return fin;
   }
@@ -159,63 +159,13 @@ public class SentenceImpl extends DelFinImpl implements Sentence
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFin(Sentence newFin, NotificationChain msgs)
+  @Override
+  public void setFin(SentenceDeclaration newFin)
   {
-    Sentence oldFin = fin;
+    SentenceDeclaration oldFin = fin;
     fin = newFin;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, oldFin, newFin);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setFin(Sentence newFin)
-  {
-    if (newFin != fin)
-    {
-      NotificationChain msgs = null;
-      if (fin != null)
-        msgs = ((InternalEObject)fin).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE__FIN, null, msgs);
-      if (newFin != null)
-        msgs = ((InternalEObject)newFin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CNLPackage.SENTENCE__FIN, null, msgs);
-      msgs = basicSetFin(newFin, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, newFin, newFin));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CNLPackage.SENTENCE__FIN, oldFin, fin));
   }
 
   /**
@@ -230,8 +180,6 @@ public class SentenceImpl extends DelFinImpl implements Sentence
     {
       case CNLPackage.SENTENCE__DELAY:
         return basicSetDelay(null, msgs);
-      case CNLPackage.SENTENCE__FIN:
-        return basicSetFin(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -249,9 +197,8 @@ public class SentenceImpl extends DelFinImpl implements Sentence
       case CNLPackage.SENTENCE__DELAY:
         return getDelay();
       case CNLPackage.SENTENCE__FIN:
-        return getFin();
-      case CNLPackage.SENTENCE__NAME:
-        return getName();
+        if (resolve) return getFin();
+        return basicGetFin();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -270,10 +217,7 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         setDelay((Delay)newValue);
         return;
       case CNLPackage.SENTENCE__FIN:
-        setFin((Sentence)newValue);
-        return;
-      case CNLPackage.SENTENCE__NAME:
-        setName((String)newValue);
+        setFin((SentenceDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -293,10 +237,7 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         setDelay((Delay)null);
         return;
       case CNLPackage.SENTENCE__FIN:
-        setFin((Sentence)null);
-        return;
-      case CNLPackage.SENTENCE__NAME:
-        setName(NAME_EDEFAULT);
+        setFin((SentenceDeclaration)null);
         return;
     }
     super.eUnset(featureID);
@@ -316,27 +257,8 @@ public class SentenceImpl extends DelFinImpl implements Sentence
         return delay != null;
       case CNLPackage.SENTENCE__FIN:
         return fin != null;
-      case CNLPackage.SENTENCE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //SentenceImpl

@@ -23,25 +23,25 @@ package org.xtext.example.cNL;
 public interface Rea extends RelRea, Reaction
 {
   /**
-   * Returns the value of the '<em><b>Rea</b></em>' containment reference.
+   * Returns the value of the '<em><b>Rea</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rea</em>' containment reference.
-   * @see #setRea(Sentence)
+   * @return the value of the '<em>Rea</em>' reference.
+   * @see #setRea(SentenceDeclaration)
    * @see org.xtext.example.cNL.CNLPackage#getRea_Rea()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Sentence getRea();
+  SentenceDeclaration getRea();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cNL.Rea#getRea <em>Rea</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.cNL.Rea#getRea <em>Rea</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rea</em>' containment reference.
+   * @param value the new value of the '<em>Rea</em>' reference.
    * @see #getRea()
    * @generated
    */
-  void setRea(Sentence value);
+  void setRea(SentenceDeclaration value);
 
 } // Rea

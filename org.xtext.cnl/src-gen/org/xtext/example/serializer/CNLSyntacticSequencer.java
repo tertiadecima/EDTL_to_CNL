@@ -30,8 +30,8 @@ public class CNLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCommaRule())
-			return getCommaToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getCOMMARule())
+			return getCOMMAToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getTIME_PREF_LITERALRule())
 			return getTIME_PREF_LITERALToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getXOR_OPERATORRule())
@@ -40,9 +40,10 @@ public class CNLSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * Comma: ',';
+	 * COMMA  returns ecore::EString: 
+	 * ',';
 	 */
-	protected String getCommaToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getCOMMAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return ",";
@@ -86,7 +87,7 @@ public class CNLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'immediately'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'which' 'must' 'occur' (ambiguity) 'after' fin=Sentence
+	 *     (rule start) 'which' 'must' 'occur' (ambiguity) 'after' fin=[SentenceDeclaration|Sentence]
 	 
 	 * </pre>
 	 */

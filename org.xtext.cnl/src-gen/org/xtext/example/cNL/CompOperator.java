@@ -21,26 +21,6 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum CompOperator implements Enumerator
 {
   /**
-   * The '<em><b>LESS</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #LESS_VALUE
-   * @generated
-   * @ordered
-   */
-  LESS(0, "LESS", "<"),
-
-  /**
-   * The '<em><b>GREATER</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #GREATER_VALUE
-   * @generated
-   * @ordered
-   */
-  GREATER(1, "GREATER", ">"),
-
-  /**
    * The '<em><b>LESS EQU</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,7 +28,7 @@ public enum CompOperator implements Enumerator
    * @generated
    * @ordered
    */
-  LESS_EQU(2, "LESS_EQU", "<="),
+  LESS_EQU(0, "LESS_EQU", "<="),
 
   /**
    * The '<em><b>GREATER EQU</b></em>' literal object.
@@ -58,29 +38,27 @@ public enum CompOperator implements Enumerator
    * @generated
    * @ordered
    */
-  GREATER_EQU(3, "GREATER_EQU", ">=");
+  GREATER_EQU(1, "GREATER_EQU", ">="),
 
   /**
-   * The '<em><b>LESS</b></em>' literal value.
+   * The '<em><b>LESS</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #LESS
-   * @model literal="&lt;"
+   * @see #LESS_VALUE
    * @generated
    * @ordered
    */
-  public static final int LESS_VALUE = 0;
+  LESS(2, "LESS", "<"),
 
   /**
-   * The '<em><b>GREATER</b></em>' literal value.
+   * The '<em><b>GREATER</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #GREATER
-   * @model literal="&gt;"
+   * @see #GREATER_VALUE
    * @generated
    * @ordered
    */
-  public static final int GREATER_VALUE = 1;
+  GREATER(3, "GREATER", ">");
 
   /**
    * The '<em><b>LESS EQU</b></em>' literal value.
@@ -91,7 +69,7 @@ public enum CompOperator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int LESS_EQU_VALUE = 2;
+  public static final int LESS_EQU_VALUE = 0;
 
   /**
    * The '<em><b>GREATER EQU</b></em>' literal value.
@@ -102,7 +80,29 @@ public enum CompOperator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int GREATER_EQU_VALUE = 3;
+  public static final int GREATER_EQU_VALUE = 1;
+
+  /**
+   * The '<em><b>LESS</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #LESS
+   * @model literal="&lt;"
+   * @generated
+   * @ordered
+   */
+  public static final int LESS_VALUE = 2;
+
+  /**
+   * The '<em><b>GREATER</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #GREATER
+   * @model literal="&gt;"
+   * @generated
+   * @ordered
+   */
+  public static final int GREATER_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Comp Operator</b></em>' enumerators.
@@ -113,10 +113,10 @@ public enum CompOperator implements Enumerator
   private static final CompOperator[] VALUES_ARRAY =
     new CompOperator[]
     {
-      LESS,
-      GREATER,
       LESS_EQU,
       GREATER_EQU,
+      LESS,
+      GREATER,
     };
 
   /**
@@ -181,10 +181,10 @@ public enum CompOperator implements Enumerator
   {
     switch (value)
     {
-      case LESS_VALUE: return LESS;
-      case GREATER_VALUE: return GREATER;
       case LESS_EQU_VALUE: return LESS_EQU;
       case GREATER_EQU_VALUE: return GREATER_EQU;
+      case LESS_VALUE: return LESS;
+      case GREATER_VALUE: return GREATER;
     }
     return null;
   }

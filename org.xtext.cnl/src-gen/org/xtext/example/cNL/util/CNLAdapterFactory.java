@@ -81,56 +81,6 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseReqDeclaration(ReqDeclaration object)
-      {
-        return createReqDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseRequirement(Requirement object)
-      {
-        return createRequirementAdapter();
-      }
-      @Override
-      public Adapter caseTrig(Trig object)
-      {
-        return createTrigAdapter();
-      }
-      @Override
-      public Adapter caseInv(Inv object)
-      {
-        return createInvAdapter();
-      }
-      @Override
-      public Adapter caseInv_always(Inv_always object)
-      {
-        return createInv_alwaysAdapter();
-      }
-      @Override
-      public Adapter caseRelRea(RelRea object)
-      {
-        return createRelReaAdapter();
-      }
-      @Override
-      public Adapter caseReaction(Reaction object)
-      {
-        return createReactionAdapter();
-      }
-      @Override
-      public Adapter caseDelFin(DelFin object)
-      {
-        return createDelFinAdapter();
-      }
-      @Override
-      public Adapter caseDelay(Delay object)
-      {
-        return createDelayAdapter();
-      }
-      @Override
-      public Adapter caseSentence(Sentence object)
-      {
-        return createSentenceAdapter();
-      }
-      @Override
       public Adapter caseDeclVarInput(DeclVarInput object)
       {
         return createDeclVarInputAdapter();
@@ -201,6 +151,51 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
         return createPrimaryExpressionAdapter();
       }
       @Override
+      public Adapter caseReqDeclaration(ReqDeclaration object)
+      {
+        return createReqDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseRequirement(Requirement object)
+      {
+        return createRequirementAdapter();
+      }
+      @Override
+      public Adapter caseTrig(Trig object)
+      {
+        return createTrigAdapter();
+      }
+      @Override
+      public Adapter caseInv(Inv object)
+      {
+        return createInvAdapter();
+      }
+      @Override
+      public Adapter caseInv_always(Inv_always object)
+      {
+        return createInv_alwaysAdapter();
+      }
+      @Override
+      public Adapter caseRelRea(RelRea object)
+      {
+        return createRelReaAdapter();
+      }
+      @Override
+      public Adapter caseReaction(Reaction object)
+      {
+        return createReactionAdapter();
+      }
+      @Override
+      public Adapter caseDelFin(DelFin object)
+      {
+        return createDelFinAdapter();
+      }
+      @Override
+      public Adapter caseDelay(Delay object)
+      {
+        return createDelayAdapter();
+      }
+      @Override
       public Adapter caseRel(Rel object)
       {
         return createRelAdapter();
@@ -209,6 +204,11 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRea(Rea object)
       {
         return createReaAdapter();
+      }
+      @Override
+      public Adapter caseSentence(Sentence object)
+      {
+        return createSentenceAdapter();
       }
       @Override
       public Adapter caseDel(Del object)
@@ -248,156 +248,6 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.ReqDeclaration <em>Req Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.ReqDeclaration
-   * @generated
-   */
-  public Adapter createReqDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Requirement <em>Requirement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Requirement
-   * @generated
-   */
-  public Adapter createRequirementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Trig <em>Trig</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Trig
-   * @generated
-   */
-  public Adapter createTrigAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Inv <em>Inv</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Inv
-   * @generated
-   */
-  public Adapter createInvAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Inv_always <em>Inv always</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Inv_always
-   * @generated
-   */
-  public Adapter createInv_alwaysAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.RelRea <em>Rel Rea</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.RelRea
-   * @generated
-   */
-  public Adapter createRelReaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Reaction <em>Reaction</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Reaction
-   * @generated
-   */
-  public Adapter createReactionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.DelFin <em>Del Fin</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.DelFin
-   * @generated
-   */
-  public Adapter createDelFinAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Delay <em>Delay</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Delay
-   * @generated
-   */
-  public Adapter createDelayAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cNL.Sentence
-   * @generated
-   */
-  public Adapter createSentenceAdapter()
   {
     return null;
   }
@@ -613,6 +463,141 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.ReqDeclaration <em>Req Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.ReqDeclaration
+   * @generated
+   */
+  public Adapter createReqDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Requirement <em>Requirement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Requirement
+   * @generated
+   */
+  public Adapter createRequirementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Trig <em>Trig</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Trig
+   * @generated
+   */
+  public Adapter createTrigAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Inv <em>Inv</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Inv
+   * @generated
+   */
+  public Adapter createInvAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Inv_always <em>Inv always</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Inv_always
+   * @generated
+   */
+  public Adapter createInv_alwaysAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.RelRea <em>Rel Rea</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.RelRea
+   * @generated
+   */
+  public Adapter createRelReaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Reaction <em>Reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Reaction
+   * @generated
+   */
+  public Adapter createReactionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.DelFin <em>Del Fin</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.DelFin
+   * @generated
+   */
+  public Adapter createDelFinAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Delay <em>Delay</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Delay
+   * @generated
+   */
+  public Adapter createDelayAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Rel <em>Rel</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -638,6 +623,21 @@ public class CNLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cNL.Sentence <em>Sentence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cNL.Sentence
+   * @generated
+   */
+  public Adapter createSentenceAdapter()
   {
     return null;
   }
