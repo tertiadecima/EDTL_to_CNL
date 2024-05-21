@@ -27,4 +27,5 @@ Export-Package: org.xtext.example.services,
  org.xtext.example.cNL.util,
  org.xtext.example.parser.antlr
 Import-Package: org.apache.log4j,
+ org.eclipse.xtext.ui.editor.quickfix,
  org.xtext.example.cNL

@@ -12,7 +12,7 @@ Model:
 	reqDeclaration+=ReqDeclaration
 )*;
 
-// Объявление входных/выходных переменных
+	/* ======================= Объявление входных/выходных переменных ======================= */
 
 VariableType returns ecore::EString:
 	'BOOL' | 'INT';
@@ -32,8 +32,8 @@ DeclVarOutput:
 VarDeclaration:
 	name=ID ':' type=VariableType;
 	
-// Объявление частей требования и соответствующих логических выражений
-
+		/* ======================= Объявление частей требования и соответствующих логических выражений ======================= */
+		
 SentDeclaration:
 	{SentDeclaration}
 	'SENTENCE' DeclarationName=ID
@@ -114,7 +114,7 @@ terminal fragment DIGIT:
 terminal BOOLEAN_LITERAL:
 	'TRUE' | 'FALSE';
 
-// Объявление требований
+		/* ======================= Объявление требований ======================= */
 
 ReqDeclaration:
 	'REQUIREMENT'
@@ -189,4 +189,5 @@ Sentence returns ecore::EString:
 	STRING;
 
 COMMA  returns ecore::EString: 
-',';
+	',';
+	

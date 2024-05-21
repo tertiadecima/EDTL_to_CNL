@@ -41,7 +41,7 @@ public class CNLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * COMMA  returns ecore::EString: 
-	 * ',';
+	 * 	',';
 	 */
 	protected String getCOMMAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)

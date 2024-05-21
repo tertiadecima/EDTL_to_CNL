@@ -85,7 +85,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cBOOLKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cINTKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//// Объявление входных/выходных переменных
+		//    /* ======================= Объявление входных/выходных переменных ======================= */
 		//VariableType returns ecore::EString:
 		//    'BOOL' | 'INT';
 		@Override public ParserRule getRule() { return rule; }
@@ -231,7 +231,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cSentenceDeclarationSentenceDeclarationParserRuleCall_3_0 = (RuleCall)cSentenceDeclarationAssignment_3.eContents().get(0);
 		private final Keyword cEND_SENTENCEKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//// Объявление частей требования и соответствующих логических выражений
+		//        /* ======================= Объявление частей требования и соответствующих логических выражений ======================= */
 		//SentDeclaration:
 		//    {SentDeclaration}
 		//    'SENTENCE' DeclarationName=ID
@@ -769,7 +769,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cRequirementRequirementParserRuleCall_2_0 = (RuleCall)cRequirementAssignment_2.eContents().get(0);
 		private final Keyword cEND_REQUIREMENTKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//// Объявление требований
+		//        /* ======================= Объявление требований ======================= */
 		//ReqDeclaration:
 		//    'REQUIREMENT'
 		//    name=ID
@@ -1520,7 +1520,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cCommaKeyword = (Keyword)rule.eContents().get(1);
 		
 		//COMMA  returns ecore::EString:
-		//',';
+		//    ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//','
@@ -1732,7 +1732,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getModelAccess().getRule();
 	}
 	
-	//// Объявление входных/выходных переменных
+	//    /* ======================= Объявление входных/выходных переменных ======================= */
 	//VariableType returns ecore::EString:
 	//    'BOOL' | 'INT';
 	public VariableTypeElements getVariableTypeAccess() {
@@ -1779,7 +1779,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getVarDeclarationAccess().getRule();
 	}
 	
-	//// Объявление частей требования и соответствующих логических выражений
+	//        /* ======================= Объявление частей требования и соответствующих логических выражений ======================= */
 	//SentDeclaration:
 	//    {SentDeclaration}
 	//    'SENTENCE' DeclarationName=ID
@@ -2008,7 +2008,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return tBOOLEAN_LITERAL;
 	}
 	
-	//// Объявление требований
+	//        /* ======================= Объявление требований ======================= */
 	//ReqDeclaration:
 	//    'REQUIREMENT'
 	//    name=ID
@@ -2150,7 +2150,7 @@ public class CNLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//COMMA  returns ecore::EString:
-	//',';
+	//    ',';
 	public COMMAElements getCOMMAAccess() {
 		return pCOMMA;
 	}
