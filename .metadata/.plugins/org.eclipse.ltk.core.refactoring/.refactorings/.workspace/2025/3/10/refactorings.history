@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 5 resources" deleteContents="true" description="Delete 5 resources" element1="/org.xtext.example.edtl_to_cnl" element2="/org.xtext.example.edtl_to_cnl.ide" element3="/org.xtext.example.edtl_to_cnl.tests" element4="/org.xtext.example.edtl_to_cnl.ui" element5="/org.xtext.example.edtl_to_cnl.ui.tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="5" stamp="1741015441022"/>
+</session>

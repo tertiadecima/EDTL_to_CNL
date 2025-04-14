@@ -6,13 +6,21 @@ package org.xtext.example.validation;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.example.cNL.*;
+
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.pipeline.*;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.trees.TreeCoreAnnotations;
+import edu.stanford.nlp.util.CoreMap;
 
 /**
  * This class contains custom validation rules.
@@ -180,7 +188,90 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 		EcoreUtil2.findCrossReferences(context, targetSet, acceptor);
 		return !res.isEmpty();
 	}
+	
+	/* ======================= STANFORD CORENLP ======================= */
+	 private static final StanfordCoreNLP pipeline;
 
+	    static {
+	        Properties props = new Properties();
+	        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,parse");
+	        pipeline = new StanfordCoreNLP(props);
+	    }
+	    
+//	    public void parseSentence(SentenceDeclaration sentDecl) {
+//	        String input = sentDecl.getName().replaceAll("^\"|\"$", "");
+//
+//	        CoreDocument doc = new CoreDocument(input);
+//	        pipeline.annotate(doc);
+//
+//	        for (CoreSentence sentence : doc.sentences()) {
+//	            // Log sentence content
+//	            System.out.println("Analyzing sentence: " + sentence.text());
+//
+//	            // Log tokens
+//	            List<String> tokens = sentence.tokens().stream()
+//	                .map(token -> token.word())
+//	                .collect(Collectors.toList());
+//	            System.out.println("Tokens: " + tokens);
+//
+//	            // Log POS tags
+//	            List<String> posTags = sentence.posTags();
+//	            System.out.println("POS Tags: " + posTags);
+//
+//	            // Log the constituency parse tree
+//	            Tree parseTree = sentence.constituencyParse();
+//	            System.out.println("Parse Tree:\n" + parseTree);
+//	        }
+//	    }
+	    
+		 /* ======================= SENTENCE HAS A SUBJ & A PREDICATE ======================= */
+	    
+	    @Check
+	    public void checkSentenceIsGrammaticallyValid(SentenceDeclaration sentenceDecl) {
+	        String rawSentence = sentenceDecl.getName().replaceAll("^\"|\"$", ""); // remove quotes
+	        Annotation doc = new Annotation(rawSentence);
+	        pipeline.annotate(doc);
+
+	        List<CoreMap> sentences = doc.get(CoreAnnotations.SentencesAnnotation.class);
+	        if (sentences == null || sentences.isEmpty()) {
+	            error("В высказывании может содержаться грамматическая ошибка.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            return;
+	        }
+
+	        Tree parseTree = sentences.get(0).get(TreeCoreAnnotations.TreeAnnotation.class);
+	        if (!parseTree.toString().contains("NP")) {
+	            warning("В высказывании может отсутствовать подлежащее.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	        }
+	        if (!parseTree.toString().contains("VP")) {
+	            warning("В высказывании может отсутствовать сказуемое.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	        }
+//	        if (!posTags.contains("VB") && !posTags.contains("VBD") && !posTags.contains("VBP") && !posTags.contains("VBZ")) {
+//                warning("Высказывание может быть не завершено (отсутствует глагол).",
+//                        CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+//            }
+	    }
+	    
+	 /* ======================= SENTENCE IS IN PRESENT TENSE ======================= */
+	    
+	    @Check
+	    public void checkUsePresentTense(SentenceDeclaration sentenceDecl) {
+	        String input = sentenceDecl.getName().replaceAll("^\"|\"$", "");
+	        CoreDocument doc = new CoreDocument(input);
+	        pipeline.annotate(doc);
+	        
+	        for (CoreSentence sentence : doc.sentences()) {
+	            List<String> tokens = sentence.tokens().stream()
+	                .map(token -> token.word())
+	                .collect(Collectors.toList());
+	            
+	            List<String> posTags = sentence.posTags();
+
+	            if (tokens.contains("was") || tokens.contains("were") || posTags.contains("VBD")) {
+	                warning("Используйте настоящее время в высказываниях.",
+	                        CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            }
+	        }
+	    }
 
 
 }

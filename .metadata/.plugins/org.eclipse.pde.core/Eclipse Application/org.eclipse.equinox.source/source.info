@@ -79,7 +79,6 @@ org.eclipse.ecf.filetransfer.source,5.1.103.v20230705-0614,file:/C:/Users/qaza2/
 org.eclipse.ecf.identity.source,3.10.0.v20230422-0242,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.identity.source_3.10.0.v20230422-0242.jar,-1,false
 org.eclipse.ecf.provider.filetransfer.httpclient5.source,1.1.0.v20230423-0417,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5.source_1.1.0.v20230423-0417.jar,-1,false
 org.eclipse.ecf.provider.filetransfer.httpclient5.win32.source,1.1.0.v20230423-0417,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5.win32.source_1.1.0.v20230423-0417.jar,-1,false
-org.eclipse.ecf.provider.filetransfer.httpclientjava.source,2.0.200.v20231114-1017,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclientjava.source_2.0.200.v20231114-1017.jar,-1,false
 org.eclipse.ecf.provider.filetransfer.source,3.3.0.v20230422-0242,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.source_3.3.0.v20230422-0242.jar,-1,false
 org.eclipse.ecf.provider.filetransfer.ssl.source,1.1.0.v20230422-0242,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.ssl.source_1.1.0.v20230422-0242.jar,-1,false
 org.eclipse.ecf.source,3.11.0.v20230507-1923,file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.source_3.11.0.v20230507-1923.jar,-1,false

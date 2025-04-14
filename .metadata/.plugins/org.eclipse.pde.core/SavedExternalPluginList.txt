@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1716212925844
+# List of external plug-in models previously loaded. Timestamp: 1744633785174
 file:/C:/Users/qaza2/.p2/pool/plugins/bcpg_1.77.0.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/bcpkix_1.77.0.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/bcprov_1.77.0.jar
@@ -144,7 +144,6 @@ file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.identity_3.10.0.v20230422-
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer_3.3.0.v20230422-0242.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5_1.1.0.v20230423-0417.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5.win32_1.1.0.v20230423-0417.jar
-file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclientjava_2.0.200.v20231114-1017.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.ssl_1.1.0.v20230422-0242.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.ssl_1.3.0.v20230507-1921.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.egit_6.8.0.202311291450-r.jar
@@ -707,7 +706,6 @@ file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.filetransfer.source_5.1.10
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.identity.source_3.10.0.v20230422-0242.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5.source_1.1.0.v20230423-0417.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclient5.win32.source_1.1.0.v20230423-0417.jar
-file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.httpclientjava.source_2.0.200.v20231114-1017.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.source_3.3.0.v20230422-0242.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.provider.filetransfer.ssl.source_1.1.0.v20230422-0242.jar
 file:/C:/Users/qaza2/.p2/pool/plugins/org.eclipse.ecf.source_3.11.0.v20230507-1923.jar
