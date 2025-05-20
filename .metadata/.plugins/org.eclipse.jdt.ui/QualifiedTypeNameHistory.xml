@@ -40,8 +40,8 @@
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreAnnotations"/>
     <fullyQualifiedTypeName name="edu.stanford.nlp.util.CoreMap"/>
-    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreLabel"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="edu.stanford.nlp.trees.Tree"/>
     <fullyQualifiedTypeName name="edu.stanford.nlp.trees.TreeCoreAnnotations"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreLabel"/>
 </qualifiedTypeNameHistroy>

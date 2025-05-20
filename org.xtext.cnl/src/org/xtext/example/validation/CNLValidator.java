@@ -17,6 +17,7 @@ import org.eclipse.xtext.validation.Check;
 import org.xtext.example.cNL.*;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.*;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.trees.TreeCoreAnnotations;
@@ -42,8 +43,7 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 				for (DeclVarOutput declVarOutput : model.getDeclVarOutput()) {
 					for (VarDeclaration otherVarDecl : declVarOutput.getVarDecls()) {
 						if (varDecl != otherVarDecl && varName.equals(otherVarDecl.getName())) {
-							error("Повторяется переменная '" + varName + "' в VAR_INPUT и VAR_OUTPUT", varDecl, null,
-									-1);
+							error("Повторяется переменная '" + varName + "' в VAR_INPUT и VAR_OUTPUT", varDecl, null, -1);
 						}
 					}
 				}
@@ -100,7 +100,6 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 	/*
 	 * ======================= SAME TYPE IN LOGIC EXPRESSION =======================
 	 */
-	// TODO: нельзя сравнивать BOOL и чиселку
 	@Check
 	public void checkSameTypeInExpression(Expression expression) {
 		Set<VarDeclaration> usedVars = new HashSet<>();
@@ -121,17 +120,6 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 				}
 			}
 		}
-
-//		if (usedElements.size() > 1) {
-//			String expectedEl = usedElements.iterator().next();
-//			for (String El : usedElements) {
-//				if ((El.chars().allMatch(Character::isDigit) && expectedEl.equals("BOOL"))) {
-//					warning("Разные типы переменных в логическом выражении", CNLPackage.Literals.EXPRESSION__RIGHT,
-//							"inconsistent-types");
-//					return;
-//				}
-//			}
-//		}
 	}
 	
 	private void collectVarDeclarationNames(Expression expression, Set<VarDeclaration> usedVars,
@@ -189,7 +177,9 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 		return !res.isEmpty();
 	}
 	
+	/* ================================================================ */
 	/* ======================= STANFORD CORENLP ======================= */
+	/* ================================================================ */
 	 private static final StanfordCoreNLP pipeline;
 
 	    static {
@@ -198,27 +188,27 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 	        pipeline = new StanfordCoreNLP(props);
 	    }
 	    
-//	    public void parseSentence(SentenceDeclaration sentDecl) {
+//	    public void parseSentence(SentenceDeclaration sentDecl) { // логирование для проверки
 //	        String input = sentDecl.getName().replaceAll("^\"|\"$", "");
 //
 //	        CoreDocument doc = new CoreDocument(input);
 //	        pipeline.annotate(doc);
 //
 //	        for (CoreSentence sentence : doc.sentences()) {
-//	            // Log sentence content
+//	            // текст предложения
 //	            System.out.println("Analyzing sentence: " + sentence.text());
 //
-//	            // Log tokens
+//	            // токены
 //	            List<String> tokens = sentence.tokens().stream()
 //	                .map(token -> token.word())
 //	                .collect(Collectors.toList());
 //	            System.out.println("Tokens: " + tokens);
 //
-//	            // Log POS tags
+//	            // POS теги
 //	            List<String> posTags = sentence.posTags();
 //	            System.out.println("POS Tags: " + posTags);
 //
-//	            // Log the constituency parse tree
+//	            // parse tree
 //	            Tree parseTree = sentence.constituencyParse();
 //	            System.out.println("Parse Tree:\n" + parseTree);
 //	        }
@@ -228,22 +218,22 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 	    
 	    @Check
 	    public void checkSentenceIsGrammaticallyValid(SentenceDeclaration sentenceDecl) {
-	        String rawSentence = sentenceDecl.getName().replaceAll("^\"|\"$", ""); // remove quotes
+	        String rawSentence = sentenceDecl.getName();
 	        Annotation doc = new Annotation(rawSentence);
 	        pipeline.annotate(doc);
 
 	        List<CoreMap> sentences = doc.get(CoreAnnotations.SentencesAnnotation.class);
 	        if (sentences == null || sentences.isEmpty()) {
-	            error("В высказывании может содержаться грамматическая ошибка.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            error("В предложении содержится грамматическая ошибка", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
 	            return;
 	        }
 
 	        Tree parseTree = sentences.get(0).get(TreeCoreAnnotations.TreeAnnotation.class);
 	        if (!parseTree.toString().contains("NP")) {
-	            warning("В высказывании может отсутствовать подлежащее.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            warning("В предложении отсутствует подлежащее", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
 	        }
 	        if (!parseTree.toString().contains("VP")) {
-	            warning("В высказывании может отсутствовать сказуемое.", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            warning("В предложении отсутствует сказуемое", CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
 	        }
 //	        if (!posTags.contains("VB") && !posTags.contains("VBD") && !posTags.contains("VBP") && !posTags.contains("VBZ")) {
 //                warning("Высказывание может быть не завершено (отсутствует глагол).",
@@ -255,7 +245,7 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 	    
 	    @Check
 	    public void checkUsePresentTense(SentenceDeclaration sentenceDecl) {
-	        String input = sentenceDecl.getName().replaceAll("^\"|\"$", "");
+	        String input = sentenceDecl.getName();
 	        CoreDocument doc = new CoreDocument(input);
 	        pipeline.annotate(doc);
 	        
@@ -267,11 +257,79 @@ public class CNLValidator<VariableType> extends AbstractCNLValidator {
 	            List<String> posTags = sentence.posTags();
 
 	            if (tokens.contains("was") || tokens.contains("were") || posTags.contains("VBD")) {
-	                warning("Используйте настоящее время в высказываниях.",
+	                warning("Используйте настоящее время в предложениях",
 	                        CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
 	            }
 	        }
 	    }
 
+		 /* ======================= SENTENCE IS TOO LONG ======================= */
+
+	    @Check
+	    public void checkSentenceLength(SentenceDeclaration sentDecl) {
+	        String input = sentDecl.getName();
+
+	        CoreDocument doc = new CoreDocument(input);
+	        pipeline.annotate(doc);
+
+	        for (CoreSentence sentence : doc.sentences()) {
+	            if (sentence.tokens().size() > 10) {
+	                warning("Предложение может быть слишком длинным (>10 слов).", 
+	                        CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	            }
+	        }
+	    }
+	    
+	    /* ======================= NOUN CLUSTERS ======================= */
+
+	    @Check
+	    public void checkNounClusterLength(SentenceDeclaration sentDecl) {
+	        String input = sentDecl.getName();
+
+	        CoreDocument doc = new CoreDocument(input);
+	        pipeline.annotate(doc);
+
+	        for (CoreSentence sentence : doc.sentences()) {
+	            List<String> posTags = sentence.posTags();
+	            int clusterLength = 0;
+	            for (String tag : posTags) {
+	                if (tag.matches("NN|NNS|NNP|NNPS")) {
+	                    clusterLength++;
+	                    if (clusterLength > 2) {
+	                        warning("Избегайте скопления существительных.",
+	                                CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	                        break;
+	                    }
+	                } else {
+	                    clusterLength = 0; // на не-сущ сброс
+	                }
+	            }
+	        }
+	    }
+	    
+	    /* ======================= PERSONAL PRONOUNS ======================= */
+
+	    @Check
+	    public void checkNoPersonalPronouns(SentenceDeclaration sentDecl) {
+	        String input = sentDecl.getName();
+
+	        CoreDocument doc = new CoreDocument(input);
+	        pipeline.annotate(doc);
+
+	        for (CoreSentence sentence : doc.sentences()) {
+	            List<String> posTags = sentence.posTags();
+	            List<String> tokens = sentence.tokens().stream().map(CoreLabel::originalText).toList();
+
+	            for (int i = 0; i < posTags.size(); i++) {
+	                String pos = posTags.get(i);
+	                if ("PRP".equals(pos) || "PRP$".equals(pos)) {
+	                    String pronoun = tokens.get(i);
+	                    warning("Избегайте личных местоимений в требованиях: \"" + pronoun + "\"",
+	                            CNLPackage.Literals.SENTENCE_DECLARATION__NAME);
+	                    break;
+	                }
+	            }
+	        }
+	    }
 
 }

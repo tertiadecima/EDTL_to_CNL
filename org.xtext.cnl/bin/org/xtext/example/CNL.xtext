@@ -32,7 +32,7 @@ DeclVarOutput:
 VarDeclaration:
 	name=ID ':' type=VariableType;
 	
-		/* ======================= Объявление частей требования и соответствующих логических выражений ======================= */
+		/* ======================= Объявление частей требования и соответствующих им логических выражений ======================= */
 		
 SentDeclaration:
 	{SentDeclaration}
@@ -131,7 +131,7 @@ Trig:
         ('After' name=[SentenceDeclaration|Sentence] COMMA)
         | 'Always'
     )
-    (invariant=Inv | release_reaction=RelRea | delay_final=DelFin); // TODO: тут проблема с развилкой правил
+    (invariant=Inv | release_reaction=RelRea | delay_final=DelFin); // TODO: доработать развилку правил
 
 Inv:
     
